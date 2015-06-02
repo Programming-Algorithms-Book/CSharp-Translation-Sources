@@ -1,0 +1,7 @@
+arithmet.c => ArithmeticCoding
+entropy.c => Entropy
+huffman1.c => Huffman1
+huffman2.c => Huffman2
+huffman3.c => Huffman3
+lpc.c => LinearPredictionCoding
+lzw.c => LempelZiwWelch

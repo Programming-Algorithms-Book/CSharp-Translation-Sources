@@ -1,0 +1,10 @@
+aselect.c => ActivityScheduling
+colorg.c => GraphColoring
+egypt.c => EgyptianFractions
+fracknap.c => FractionalKnapsack
+hamgray.c => HamiltonianCycleGrayCodes
+knightg.c => KnightsTour
+pi.c => GuessingPi
+prime_mc.c => PrimeMonteCarlo
+schedule.c => Scheduling
+tspgenet.c => TravellingSalesmanGenetic
