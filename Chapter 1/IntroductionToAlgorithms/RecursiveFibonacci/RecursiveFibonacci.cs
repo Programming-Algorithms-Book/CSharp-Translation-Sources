@@ -1,17 +1,24 @@
-﻿using System;
-
-class RecursiveFibonacci
+﻿namespace RecursiveFibonacci
 {
-    const uint n = 7;
+    using System;
 
-    static ulong GetFibonacciNumber(uint n)
+    public class RecursiveFibonacci
     {
-        if (n < 2) return n;
-        return GetFibonacciNumber(n - 1) + GetFibonacciNumber(n - 2);
-    }
+        private const uint N = 7;
 
-    static void Main()
-    {
-        Console.WriteLine("Fibonacci({0}) = {1}", n, GetFibonacciNumber(n));
+        internal static void Main()
+        {
+            Console.WriteLine("Fibonacci({0}) = {1}", N, GetFibonacciNumber(N));
+        }
+
+        private static ulong GetFibonacciNumber(uint number)
+        {
+            if (number < 2)
+            {
+                return number;
+            }
+
+            return GetFibonacciNumber(number - 1) + GetFibonacciNumber(number - 2);
+        }
     }
 }

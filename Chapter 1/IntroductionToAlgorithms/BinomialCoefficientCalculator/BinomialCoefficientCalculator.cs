@@ -1,63 +1,81 @@
-﻿using System;
-using System.Collections.Generic;
-
-class BinomialCoefficientCalculator
+﻿namespace BinomialCoefficientCalculator
 {
-    static long n = 7;
-    static long k = 3;
-    static readonly List<long> Primes = new List<long>();
-    static readonly List<long> Counts = new List<long>();
+    using System;
+    using System.Collections.Generic;
 
-    static void Modify(long x, long how)
+    public class BinomialCoefficientCalculator
     {
-        for (int i = 0; i < Primes.Count; i++)
-            if (Primes[i] == x)
+        private static readonly List<long> Primes = new List<long>();
+        private static readonly List<long> Counts = new List<long>();
+
+        private static long n = 7;
+        private static long k = 3;
+
+        internal static void Main()
+        {
+            Console.Write("C({0}, {1}) = ", n, k);
+            if (n - k < k)
             {
-                Counts[i] += how;
-                return;
+                k = n - k;
             }
 
-        Counts.Add(how);
-        Primes.Add(x);
-    }
+            Solve(n - k + 1, n, 1); // Факторизира числителя (n – k + 1), ..., n
+            Solve(1, k, -1); // Факторизира знаменателя 1, ..., k
+            Console.WriteLine(CalculateBinomialCoefficient());
+        }
 
-    static void Solve(long start, long end, long inc)
-    {
-        for (long i = start; i <= end; i++)
+        private static void Modify(long x, long how)
         {
-            long multiplier = i;
-            long prime = 2;
-            while (multiplier != 1)
+            for (int i = 0; i < Primes.Count; i++)
             {
-                int how = 0;
-                while (multiplier % prime == 0)
+                if (Primes[i] == x)
                 {
-                    multiplier /= prime;
-                    how++;
+                    Counts[i] += how;
+                    return;
                 }
+            }
 
-                if (how > 0) Modify(prime, inc * how);
-                prime++;
+            Counts.Add(how);
+            Primes.Add(x);
+        }
+
+        private static void Solve(long start, long end, long inc)
+        {
+            for (long i = start; i <= end; i++)
+            {
+                long multiplier = i;
+                long prime = 2;
+                while (multiplier != 1)
+                {
+                    int how = 0;
+                    while (multiplier % prime == 0)
+                    {
+                        multiplier /= prime;
+                        how++;
+                    }
+
+                    if (how > 0)
+                    {
+                        Modify(prime, inc * how);
+                    }
+
+                    prime++;
+                }
             }
         }
-    }
 
-    static long CalculateBinomialCoefficient()
-    {
-        long result = 1;
-        for (int i = 0; i < Primes.Count; i++)
-            for (long j = 0; j < Counts[i]; j++)
-                result *= Primes[i];
-        return result;
-    }
+        private static long CalculateBinomialCoefficient()
+        {
+            long result = 1;
+            for (int i = 0; i < Primes.Count; i++)
+            {
+                for (long j = 0; j < Counts[i]; j++)
+                {
+                    result *= Primes[i];
+                }
+            }
 
-    static void Main()
-    {
-        Console.Write("C({0}, {1}) = ", n, k);
-        if (n - k < k) k = n - k;
-        Solve(n - k + 1, n, 1); // Факторизира числителя (n – k + 1), ..., n
-        Solve(1, k, -1); // Факторизира знаменателя 1, ..., k
-        Console.WriteLine(CalculateBinomialCoefficient());
+            return result;
+        }
     }
-
 }

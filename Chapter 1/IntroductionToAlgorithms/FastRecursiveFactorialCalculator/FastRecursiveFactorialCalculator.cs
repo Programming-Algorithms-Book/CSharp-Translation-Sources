@@ -1,19 +1,26 @@
-﻿using System;
-
-class FastRecursiveFactorialCalculator
+﻿namespace FastRecursiveFactorialCalculator
 {
-    const uint n = 6;
-    static uint i = 0;
+    using System;
 
-    static ulong GetFactorial()
+    public class FastRecursiveFactorialCalculator
     {
-        if (i == 1) return 1;
-        return --i * GetFactorial();
-    }
+        private const uint N = 6;
+        private static uint i = 0;
 
-    static void Main()
-    {
-        i = n + 1;
-        Console.WriteLine("{0}! = {1}", n, GetFactorial());
+        internal static void Main()
+        {
+            i = N + 1;
+            Console.WriteLine("{0}! = {1}", N, GetFactorial());
+        }
+
+        private static ulong GetFactorial()
+        {
+            if (i == 1)
+            {
+                return 1;
+            }
+
+            return --i * GetFactorial();
+        }
     }
 }

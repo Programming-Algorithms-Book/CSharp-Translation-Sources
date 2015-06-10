@@ -1,34 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-
-class PermutationsGenerator
+﻿namespace PermutationsGenerator
 {
-    const uint n = 3;
+    using System;
+    using System.Collections.Generic;
 
-    static readonly uint[] Permutation = new uint[n];
-    static readonly HashSet<uint> Used = new HashSet<uint>();
-
-    static void Print()
+    public class PermutationsGenerator
     {
-        for (int i = 0; i < n; i++) Console.Write("{0} ", Permutation[i] + 1);
-        Console.WriteLine();
-    }
+        private const uint N = 3;
 
-    static void GeneratePermutations(uint i)
-    {
-        if (i >= n) { Print(); return; }
-        for (uint k = 0; k < n; k++)
-            if (!Used.Contains(k))
+        private static readonly uint[] Permutation = new uint[N];
+        private static readonly HashSet<uint> Used = new HashSet<uint>();
+
+        internal static void Main()
+        {
+            GeneratePermutations(0);
+        }
+
+        private static void Print()
+        {
+            for (int i = 0; i < N; i++)
             {
-                Used.Add(k);
-                Permutation[i] = k;
-                GeneratePermutations(i + 1);
-                Used.Remove(k);
+                Console.Write("{0} ", Permutation[i] + 1);
             }
-    }
 
-    static void Main()
-    {
-        GeneratePermutations(0);
+            Console.WriteLine();
+        }
+
+        private static void GeneratePermutations(uint i)
+        {
+            if (i >= N)
+            {
+                Print();
+                return;
+            }
+
+            for (uint k = 0; k < N; k++)
+            {
+                if (!Used.Contains(k))
+                {
+                    Used.Add(k);
+                    Permutation[i] = k;
+                    GeneratePermutations(i + 1);
+                    Used.Remove(k);
+                }
+            }
+        }
     }
 }

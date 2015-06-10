@@ -1,14 +1,20 @@
-﻿using System;
-
-class DigitsOfNFactorial
+﻿namespace DigitsOfNFactorial
 {
-    const uint n = 123;
+    using System;
 
-    static void Main()
+    public class DigitsOfNFactorial
     {
-        double digitsCount = 0;
-        for (int i = 1; i <= n; i++)
-            digitsCount += Math.Log(i, 10);
-        Console.WriteLine("Броят на цифрите на {0}! е {1}", n, (ulong)digitsCount + 1);
+        private const uint N = 123;
+
+        internal static void Main()
+        {
+            double digitsCount = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                digitsCount += Math.Log(i, 10);
+            }
+
+            Console.WriteLine("Броят на цифрите на {0}! е {1}", N, (ulong)digitsCount + 1);
+        }
     }
 }

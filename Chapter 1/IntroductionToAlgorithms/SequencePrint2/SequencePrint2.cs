@@ -1,22 +1,29 @@
-﻿using System;
-
-class SequencePrint2
+﻿namespace SequencePrint2
 {
-    const uint n = 5;
+    using System;
 
-    static uint k = 0;
-
-    static void PrintSequence(ulong result)
+    public class SequencePrint2
     {
-        k++;
-        Console.Write("{0} ", result);
-        if (k < n) PrintSequence(result * 10);
-        Console.Write("{0} ", result);
-    }
+        private const uint N = 5;
 
-    static void Main()
-    {
-        PrintSequence(10);
-        Console.WriteLine();
+        private static uint k = 0;
+
+        internal static void Main()
+        {
+            PrintSequence(10);
+            Console.WriteLine();
+        }
+
+        private static void PrintSequence(ulong result)
+        {
+            k++;
+            Console.Write("{0} ", result);
+            if (k < N)
+            {
+                PrintSequence(result * 10);
+            }
+
+            Console.Write("{0} ", result);
+        }
     }
 }

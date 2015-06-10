@@ -1,27 +1,42 @@
-﻿using System;
-
-class PrimeNumbersFinder
+﻿namespace PrimeNumbersFinder
 {
-    const uint n = 23;
+    using System;
 
-    static void Main()
+    public class PrimeNumbersFinder
     {
-        if (IsPrime(n))
-            Console.WriteLine("Числото {0} е просто.", n);
-        else
-            Console.WriteLine("Числото {0} е съставно.", n);
-    }
+        private const uint N = 23;
 
-    static bool IsPrime(uint number)
-    {
-        if (number == 2) return true;
-        uint divider = 2;
-        while (divider <= Math.Sqrt(number))
+        internal static void Main()
         {
-            if (number % divider == 0) return false;
-            divider++;
+            if (IsPrime(N))
+            {
+                Console.WriteLine("Числото {0} е просто.", N);
+            }
+            else
+            {
+                Console.WriteLine("Числото {0} е съставно.", N);
+            }
         }
 
-        return true;
+        private static bool IsPrime(uint number)
+        {
+            if (number == 2)
+            {
+                return true;
+            }
+
+            uint divider = 2;
+            while (divider <= Math.Sqrt(number))
+            {
+                if (number % divider == 0)
+                {
+                    return false;
+                }
+
+                divider++;
+            }
+
+            return true;
+        }
     }
 }

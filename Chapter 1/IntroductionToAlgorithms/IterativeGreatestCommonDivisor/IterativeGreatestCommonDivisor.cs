@@ -1,26 +1,32 @@
-﻿using System;
-
-class IterativeGreatestCommonDivisor
+﻿namespace IterativeGreatestCommonDivisor
 {
-    const uint a = 24;
-    const uint b = 108;
+    using System;
 
-    static uint GetGreatestCommonDivisor(uint a, uint b)
+    public class IterativeGreatestCommonDivisor
     {
-        uint swap = 0;
-        while (b > 0)
+        private const uint A = 24;
+        private const uint B = 108;
+
+        internal static void Main()
         {
-            swap = b;
-            b = a % b;
-            a = swap;
+            Console.WriteLine(
+                              "Най-големият общ делител на {0} и {1} е {2}",
+                              A,
+                              B,
+                              GetGreatestCommonDivisor(A, B));
         }
 
-        return a;
-    }
+        private static uint GetGreatestCommonDivisor(uint a, uint b)
+        {
+            uint swap = 0;
+            while (b > 0)
+            {
+                swap = b;
+                b = a % b;
+                a = swap;
+            }
 
-    static void Main()
-    {
-        Console.WriteLine("Най-големият общ делител на {0} и {1} е {2}",
-            a, b, GetGreatestCommonDivisor(a, b));
+            return a;
+        }
     }
 }

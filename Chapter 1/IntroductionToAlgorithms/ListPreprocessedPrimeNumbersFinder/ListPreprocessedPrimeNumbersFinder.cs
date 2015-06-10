@@ -1,42 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-
-class ListPreprocessedPrimeNumbersFinder
+﻿namespace ListPreprocessedPrimeNumbersFinder
 {
-    const uint n = 500;
-    static List<uint> primeNumbers = new List<uint>();
+    using System;
+    using System.Collections.Generic;
 
-    static void Main()
+    public class ListPreprocessedPrimeNumbersFinder
     {
-        FindPrimeNumbersToN(n);
-        Console.WriteLine();
-    }
+        private const uint N = 500;
+        private static IList<uint> primeNumbers = new List<uint>();
 
-    static void FindPrimeNumbersToN(uint n)
-    {
-        uint i = 2;
-        while (i < n)
+        internal static void Main()
         {
-            if (IsPrime(i))
+            FindPrimeNumbersToN(N);
+            Console.WriteLine();
+        }
+
+        private static void FindPrimeNumbersToN(uint n)
+        {
+            uint i = 2;
+            while (i < n)
             {
-                primeNumbers.Add(i);
-                Console.Write("{0} ", i);
+                if (IsPrime(i))
+                {
+                    primeNumbers.Add(i);
+                    Console.Write("{0} ", i);
+                }
+
+                i++;
+            }
+        }
+
+        private static bool IsPrime(uint number)
+        {
+            int i = 0;
+            int primeNumbersCount = primeNumbers.Count;
+            while (i < primeNumbersCount && primeNumbers[i] * primeNumbers[i] <= N)
+            {
+                if (number % primeNumbers[i] == 0)
+                {
+                    return false;
+                }
+
+                i++;
             }
 
-            i++;
+            return true;
         }
-    }
-
-    static bool IsPrime(uint number)
-    {
-        int i = 0;
-        int primeNumbersCount = primeNumbers.Count;
-        while (i < primeNumbersCount && primeNumbers[i] * primeNumbers[i] <= n)
-        {
-            if (number % primeNumbers[i] == 0) return false;
-            i++;
-        }
-
-        return true;
     }
 }

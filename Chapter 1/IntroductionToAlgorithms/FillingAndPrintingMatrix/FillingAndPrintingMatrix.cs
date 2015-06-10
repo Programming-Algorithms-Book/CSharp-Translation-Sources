@@ -1,45 +1,55 @@
-﻿using System;
-
-class FillingAndPrintingMatrix
+﻿namespace FillingAndPrintingMatrix
 {
-    static void Main()
-    {
-        int[,] A = new int[5, 4];
-        FillMatrixByRows(A);
-        PrintMatrix(A);
+    using System;
 
-        int[,] B = new int[5, 4];
-        FillMatrixByColumns(B);
-        PrintMatrix(B);
-    }
-
-    static void FillMatrixByRows(int[,] matrix)
+    public class FillingAndPrintingMatrix
     {
-        for (int row = 0; row < matrix.GetLength(0); row++)
-            for (int col = 0; col < matrix.GetLength(1); col++)
-            {
-                Console.Write("Въведи число на ред {0} колона {1}: ", row, col);
-                matrix[row, col] = int.Parse(Console.ReadLine());
-            }
-    }
+        internal static void Main()
+        {
+            int[,] a = new int[5, 4];
+            FillMatrixByRows(a);
+            PrintMatrix(a);
 
-    static void FillMatrixByColumns(int[,] matrix)
-    {
-        for (int col = 0; col < matrix.GetLength(1); col++)
+            int[,] b = new int[5, 4];
+            FillMatrixByColumns(b);
+            PrintMatrix(b);
+        }
+
+        private static void FillMatrixByRows(int[,] matrix)
+        {
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                Console.Write("Въведи число на ред {0} колона {1}: ", row, col);
-                matrix[row, col] = int.Parse(Console.ReadLine());
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write("Въведи число на ред {0} колона {1}: ", row, col);
+                    matrix[row, col] = int.Parse(Console.ReadLine());
+                }
             }
-    }
+        }
 
-    static void PrintMatrix(int[,] matrix)
-    {
-        for (int row = 0; row < matrix.GetLength(0); row++)
+        private static void FillMatrixByColumns(int[,] matrix)
         {
             for (int col = 0; col < matrix.GetLength(1); col++)
-                Console.Write("{0, 3} ", matrix[row, col]);
-            Console.WriteLine();
+            {
+                for (int row = 0; row < matrix.GetLength(0); row++)
+                {
+                    Console.Write("Въведи число на ред {0} колона {1}: ", row, col);
+                    matrix[row, col] = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
+        private static void PrintMatrix(int[,] matrix)
+        {
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write("{0, 3} ", matrix[row, col]);
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }

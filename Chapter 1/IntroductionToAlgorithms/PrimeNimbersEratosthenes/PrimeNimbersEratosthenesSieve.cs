@@ -1,33 +1,36 @@
-﻿using System;
-
-class PrimeNimbersEratosthenesSieve
+﻿namespace PrimeNimbersEratosthenes
 {
-    const uint n = 200;
-    static bool[] sieve = new bool[n + 1];
+    using System;
 
-    static void Main()
+    public class PrimeNimbersEratosthenesSieve
     {
-        FindPrimeNumbersToN(n);
-        Console.WriteLine();
-    }
+        private const uint N = 200;
+        private static bool[] sieve = new bool[N + 1];
 
-    static void FindPrimeNumbersToN(uint n)
-    {
-        uint i = 2;
-        while (i <= n)
+        internal static void Main()
         {
-            if (!sieve[i])
-            {
-                Console.Write("{0} ", i);
-                uint j = i * i;
-                while (j <= n)
-                {
-                    sieve[j] = true;
-                    j += i;
-                }
-            }
+            FindPrimeNumbersToN(N);
+            Console.WriteLine();
+        }
 
-            i++;
+        private static void FindPrimeNumbersToN(uint n)
+        {
+            uint i = 2;
+            while (i <= n)
+            {
+                if (!sieve[i])
+                {
+                    Console.Write("{0} ", i);
+                    uint j = i * i;
+                    while (j <= n)
+                    {
+                        sieve[j] = true;
+                        j += i;
+                    }
+                }
+
+                i++;
+            }
         }
     }
 }
