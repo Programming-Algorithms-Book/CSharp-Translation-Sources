@@ -1,43 +1,45 @@
-﻿using System;
-
-class DevNumber1
+﻿namespace DevNumber1
 {
-    const int Number = 7;
-    static int[] mp = new int[Number + 1];
+    using System;
 
-    static void Print(int length)
+    public class DevNumber1
     {
-        for (int i = 1; i < length; i++)
+        private const int Number = 7;
+        private static int[] mp = new int[Number + 1];
+
+        internal static void Main()
         {
-            Console.Write("{0} + ", mp[i]);
+            mp[0] = Number + 1;
+            DevNum(Number, 1);
         }
 
-        Console.WriteLine("{0}", mp[length]);
-    }
-
-    static void DevNum(int n, int pos)
-    {
-        if (n == 0)
+        private static void Print(int length)
         {
-            Print(pos - 1);
-        }
-        else
-        {
-            for (int k = n; k >= 1; k--)
+            for (int i = 1; i < length; i++)
             {
-                mp[pos] = k;
-                if (mp[pos] <= mp[pos - 1])
+                Console.Write("{0} + ", mp[i]);
+            }
+
+            Console.WriteLine("{0}", mp[length]);
+        }
+
+        private static void DevNum(int n, int pos)
+        {
+            if (n == 0)
+            {
+                Print(pos - 1);
+            }
+            else
+            {
+                for (int k = n; k >= 1; k--)
                 {
-                    DevNum(n - k, pos + 1);
+                    mp[pos] = k;
+                    if (mp[pos] <= mp[pos - 1])
+                    {
+                        DevNum(n - k, pos + 1);
+                    }
                 }
             }
         }
-
-    }
-
-    static void Main()
-    {
-        mp[0] = Number + 1;
-        DevNum(Number, 1);
     }
 }

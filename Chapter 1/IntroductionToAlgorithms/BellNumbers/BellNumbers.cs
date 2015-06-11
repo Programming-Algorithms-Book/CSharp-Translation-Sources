@@ -1,48 +1,51 @@
-﻿using System;
-
-class BellNumbers
+﻿namespace BellNumbers
 {
-    const int MaxN = 100;
-    const ulong N = 10;
+    using System;
 
-    static ulong[] M = new ulong[MaxN + 1];
-
-    static void Stirling(ulong n)
+    public class BellNumbers
     {
-        if (n == 0)
+        private const int MaxN = 100;
+        private const ulong N = 10;
+
+        private static ulong[] m = new ulong[MaxN + 1];
+
+        internal static void Main()
         {
-            M[0] = 1;
-        }
-        else
-        {
-            M[0] = 0;
+            Stirling(N);
+            Console.WriteLine("Bell({0}) = {1}", N, Bell(N));
         }
 
-        for (ulong i = 1; i <= n; i++)
+        private static void Stirling(ulong n)
         {
-            M[i] = 1;
-
-            for (ulong j = i - 1; j >= 1; j--)
+            if (n == 0)
             {
-                M[j] = j * M[j] + M[j - 1];
+                m[0] = 1;
+            }
+            else
+            {
+                m[0] = 0;
+            }
+
+            for (ulong i = 1; i <= n; i++)
+            {
+                m[i] = 1;
+
+                for (ulong j = i - 1; j >= 1; j--)
+                {
+                    m[j] = (j * m[j]) + m[j - 1];
+                }
             }
         }
-    }
 
-    static ulong Bell(ulong n)
-    {
-        ulong result = 0;
-        for (ulong i = 0; i <= n; i++)
+        private static ulong Bell(ulong n)
         {
-            result += M[i];
+            ulong result = 0;
+            for (ulong i = 0; i <= n; i++)
+            {
+                result += m[i];
+            }
+
+            return result;
         }
-
-        return result;
-    }
-
-    static void Main()
-    {
-        Stirling(N);
-        Console.WriteLine("Bell({0}) = {1}", N, Bell(N));
     }
 }

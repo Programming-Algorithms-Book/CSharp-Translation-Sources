@@ -1,35 +1,47 @@
-﻿using System;
-
-class VariationsGenerator
+﻿namespace VariationsGenerator
 {
-    const uint n = 4;
-    const uint k = 2;
+    using System;
 
-    static readonly uint[] Variation = new uint[k];
-
-    static void Print(uint i)
+    public class VariationsGenerator
     {
-        Console.Write("( ");
-        for (uint k = 0; k < i; k++) Console.Write("{0} ", Variation[k] + 1);
-        Console.WriteLine(")");
-    }
+        private const uint N = 4;
+        private const uint K = 2;
 
-    // Вариации на n елемента от клас k
-    static void GenerateVariations(uint i)
-    {
-        /* Без if (i >= k) и return; тук (а само Print(i); ако искаме всички
-         * генерирания с дължина 1, 2, …, k, а не само вариациите с дължина k */
-        if (i >= k) { Print(i); return; }
-        for (uint j = 0; j < n; j++)
+        private static readonly uint[] Variation = new uint[K];
+
+        internal static void Main()
         {
-            // if (allowed(k)) {
-            Variation[i] = j;
-            GenerateVariations(i + 1);
+            GenerateVariations(0);
         }
-    }
 
-    static void Main()
-    {
-        GenerateVariations(0);
+        private static void Print(uint i)
+        {
+            Console.Write("( ");
+            for (uint k = 0; k < i; k++)
+            {
+                Console.Write("{0} ", Variation[k] + 1);
+            }
+
+            Console.WriteLine(")");
+        }
+
+        // Вариации на n елемента от клас k
+        private static void GenerateVariations(uint i)
+        {
+            /* Без if (i >= k) и return; тук (а само Print(i); ако искаме всички
+         * генерирания с дължина 1, 2, …, k, а не само вариациите с дължина k */
+            if (i >= K)
+            {
+                Print(i);
+                return;
+            }
+
+            for (uint j = 0; j < N; j++)
+            {
+                // if (allowed(k)) {
+                Variation[i] = j;
+                GenerateVariations(i + 1);
+            }
+        }
     }
 }

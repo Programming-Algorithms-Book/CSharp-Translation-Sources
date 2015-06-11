@@ -1,19 +1,22 @@
-﻿using System;
-
-class FactorialTrailingZeroesFinder
+﻿namespace FactorialZeroesCountAtTheEnd
 {
-    const uint n = 10;
+    using System;
 
-    static void Main()
+    public class FactorialTrailingZeroesFinder
     {
-        uint zeroesCount = 0;
-        uint p = 5;
-        while (n >= p)
-        {
-            zeroesCount += (n / p);
-            p *= 5;
-        }
+        private const uint N = 10;
 
-        Console.WriteLine("Броят на нулите в края на {0}! е {1}", n, zeroesCount);
+        internal static void Main()
+        {
+            uint zeroesCount = 0;
+            uint p = 5;
+            while (N >= p)
+            {
+                zeroesCount += N / p;
+                p *= 5;
+            }
+
+            Console.WriteLine("Броят на нулите в края на {0}! е {1}", N, zeroesCount);
+        }
     }
 }

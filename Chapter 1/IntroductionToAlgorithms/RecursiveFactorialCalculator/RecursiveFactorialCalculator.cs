@@ -1,17 +1,24 @@
-﻿using System;
-
-class RecursiveFactorialCalculator
+﻿namespace RecursiveFactorialCalculator
 {
-    const uint n = 6;
+    using System;
 
-    static ulong GetFactorial(uint i)
+    public class RecursiveFactorialCalculator
     {
-        if (i < 2) return i;
-        return i * GetFactorial(i - 1);
-    }
+        private const uint N = 6;
 
-    static void Main()
-    {
-        Console.WriteLine("{0}! = {1}", n, GetFactorial(n));
+        internal static void Main()
+        {
+            Console.WriteLine("{0}! = {1}", N, GetFactorial(N));
+        }
+
+        private static ulong GetFactorial(uint i)
+        {
+            if (i < 2)
+            {
+                return i;
+            }
+
+            return i * GetFactorial(i - 1);
+        }
     }
 }

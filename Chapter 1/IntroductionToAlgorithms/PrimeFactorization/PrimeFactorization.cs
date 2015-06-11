@@ -1,29 +1,33 @@
-﻿using System;
-
-class PrimeFactorization
+﻿namespace PrimeFactorization
 {
-    static uint n = 435; // Число, което ще се разлага
+    using System;
 
-    static void Main()
+    public class PrimeFactorization
     {
-        Console.Write("{0} = ", n);
-        uint i = 1;
-        while (n != 1)
+        // Число, което ще се разлага
+        private static uint n = 435; 
+
+        internal static void Main()
         {
-            i++;
-            uint how = 0;
-            while (n % i == 0)
+            Console.Write("{0} = ", n);
+            uint i = 1;
+            while (n != 1)
             {
-                how++;
-                n /= i;
+                i++;
+                uint how = 0;
+                while (n % i == 0)
+                {
+                    how++;
+                    n /= i;
+                }
+
+                for (int j = 0; j < how; j++)
+                {
+                    Console.Write("{0} ", i);
+                }
             }
 
-            for (int j = 0; j < how; j++)
-            {
-                Console.Write("{0} ", i);
-            }
+            Console.WriteLine();
         }
-
-        Console.WriteLine();
     }
 }

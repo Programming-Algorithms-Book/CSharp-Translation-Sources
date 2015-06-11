@@ -1,22 +1,28 @@
-﻿using System;
-
-class GetPowerOfANumber
+﻿namespace GetPowerOfANumber
 {
-    static void Main()
-    {
-        Console.Write("Въведете основа x: ");
-        double number = double.Parse(Console.ReadLine());
-        Console.Write("Въведете стенеп y: ");
-        uint power = uint.Parse(Console.ReadLine());
-        double result = GetPower(number, power);
-        Console.WriteLine("{0} повдигнато на степен {1} e {2}", number, power, result);
-    }
+    using System;
 
-    static double GetPower(double number, uint power)
+    public class GetPowerOfANumber
     {
-        double result = number;
-        for (uint i = 1; i < power; i++)
-            result *= number;
-        return result;
+        internal static void Main()
+        {
+            Console.Write("Въведете основа x: ");
+            double number = double.Parse(Console.ReadLine());
+            Console.Write("Въведете стенеп y: ");
+            uint power = uint.Parse(Console.ReadLine());
+            double result = GetPower(number, power);
+            Console.WriteLine("{0} повдигнато на степен {1} e {2}", number, power, result);
+        }
+
+        private static double GetPower(double number, uint power)
+        {
+            double result = number;
+            for (uint i = 1; i < power; i++)
+            {
+                result *= number;
+            }
+
+            return result;
+        }
     }
 }

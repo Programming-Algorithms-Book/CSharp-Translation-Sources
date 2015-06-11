@@ -1,18 +1,24 @@
-﻿using System;
-
-class RecursiveGreatestCommonDivisor
+﻿namespace RecursiveGreatestCommonDivisor
 {
-    const uint a = 24;
-    const uint b = 108;
+    using System;
 
-    static uint GetGreatestCommonDivisor(uint a, uint b)
+    public class RecursiveGreatestCommonDivisor
     {
-        return (b == 0) ? a : GetGreatestCommonDivisor(b, a % b);
-    }
+        private const uint A = 24;
+        private const uint B = 108;
 
-    static void Main()
-    {
-        Console.WriteLine("Най-големият общ делител на {0} и {1} е {2}",
-            a, b, GetGreatestCommonDivisor(a, b));
+        internal static void Main()
+        {
+            Console.WriteLine(
+                "Най-големият общ делител на {0} и {1} е {2}",        
+                A,
+                B, 
+                GetGreatestCommonDivisor(A, B));
+        }
+
+        private static uint GetGreatestCommonDivisor(uint a, uint b)
+        {
+            return (b == 0) ? a : GetGreatestCommonDivisor(b, a % b);
+        }
     }
 }

@@ -1,32 +1,47 @@
-﻿using System;
-
-class CombinationsGenerator
+﻿namespace CombinationsGenerator
 {
-    const uint n = 5;
-    const uint k = 3;
+    using System;
 
-    static readonly uint[] Combination = new uint[k];
-
-    static void Print()
+    public class CombinationsGenerator
     {
-        for (uint i = 0; i < k; i++) Console.Write("{0} ", Combination[i]);
-        Console.WriteLine();
-    }
+        private const uint N = 5;
+        private const uint K = 3;
 
-    static void GenerateCombinations(uint i, uint after)
-    {
-        if (i > k) return;
-        for (uint j = after + 1; j <= n; j++)
+        private static readonly uint[] Combination = new uint[K];
+
+        internal static void Main()
         {
-            Combination[i - 1] = j;
-            if (i == k) Print();
-            GenerateCombinations(i + 1, j);
+            Console.WriteLine("C({0}, {1}): ", N, K);
+            GenerateCombinations(1, 0);
         }
-    }
 
-    static void Main()
-    {
-        Console.WriteLine("C({0}, {1}): ", n, k);
-        GenerateCombinations(1, 0);
+        private static void Print()
+        {
+            for (uint i = 0; i < K; i++)
+            {
+                Console.Write("{0} ", Combination[i]);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void GenerateCombinations(uint i, uint after)
+        {
+            if (i > K)
+            {
+                return;
+            }
+
+            for (uint j = after + 1; j <= N; j++)
+            {
+                Combination[i - 1] = j;
+                if (i == K)
+                {
+                    Print();
+                }
+
+                GenerateCombinations(i + 1, j);
+            }
+        }
     }
 }

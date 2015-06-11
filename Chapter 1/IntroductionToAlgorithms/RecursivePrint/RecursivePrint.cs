@@ -1,18 +1,25 @@
-﻿using System;
-
-class RecursivePrint
+﻿namespace RecursivePrint
 {
-    const uint n = 7892;
+    using System;
 
-    static void PrintN(uint n)
+    public class RecursivePrint
     {
-        if (n >= 10) PrintN(n / 10);
-        Console.Write(n % 10);
-    }
+        private const uint N = 7892;
 
-    static void Main()
-    {
-        PrintN(n);
-        Console.WriteLine();
+        internal static void PrintN(uint n)
+        {
+            if (n >= 10)
+            {
+                PrintN(n / 10);
+            }
+
+            Console.Write(n % 10);
+        }
+
+        internal static void Main()
+        {
+            PrintN(N);
+            Console.WriteLine();
+        }
     }
 }
