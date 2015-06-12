@@ -7,13 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.1.4. Primeri", "6.1.4. Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.1. Удолетворимост на булева функция", "6.3.1. Удолетворимост на булева функция\6.3.1. Удолетворимост на булева функция.csproj", "{CE47E8DD-CF91-452B-B371-1B22827AB73E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.2. Оцветяване на граф", "6.3.2. Оцветяване на граф\6.3.2. Оцветяване на граф.csproj", "{5E936129-E35E-4BBA-AE2A-97AF11695FC1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.3. Най-дълъг прост път в цикличен граф", "6.3.3. Най-дълъг прост път в цикличен граф\6.3.3. Най-дълъг прост път в цикличен граф.csproj", "{CC32B4CD-160A-469D-B3AD-569B76B96F8E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.4. Разходка на коня", "6.3.4. Разходка на коня\6.3.4. Разходка на коня.csproj", "{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.5. Задача за осемте царици", "6.3.5. Задача за осемте царици\6.3.5. Задача за осемте царици.csproj", "{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.6. Разписание на училищна програма", "6.3.6. Разписание на училищна програма\6.3.6. Разписание на училищна програма.csproj", "{45EF91F4-3359-4D8B-A025-FCC988914B8B}"
 EndProject
@@ -31,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sorting - setsort2", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{D35C0529-2106-4799-8593-6F0093D3DB40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenQueensProblem", "SevenQueensProblem\SevenQueensProblem.csproj", "{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphColoring", "GraphColoring\GraphColoring.csproj", "{5E936129-E35E-4BBA-AE2A-97AF11695FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinightsTour", "KinightsTour\KinightsTour.csproj", "{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,22 +45,10 @@ Global
 		{CE47E8DD-CF91-452B-B371-1B22827AB73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE47E8DD-CF91-452B-B371-1B22827AB73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE47E8DD-CF91-452B-B371-1B22827AB73E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC32B4CD-160A-469D-B3AD-569B76B96F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC32B4CD-160A-469D-B3AD-569B76B96F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC32B4CD-160A-469D-B3AD-569B76B96F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC32B4CD-160A-469D-B3AD-569B76B96F8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45EF91F4-3359-4D8B-A025-FCC988914B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45EF91F4-3359-4D8B-A025-FCC988914B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45EF91F4-3359-4D8B-A025-FCC988914B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +81,18 @@ Global
 		{D35C0529-2106-4799-8593-6F0093D3DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BB8293-70DB-4E8F-BEAB-434E8F3E6921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E936129-E35E-4BBA-AE2A-97AF11695FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3211BC4-6284-4DFF-89E3-38FC3CAE2522}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
