@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountSorter2.cs" />
+    <Compile Include="Element.cs" />
+    <Compile Include="List.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -1,119 +1,97 @@
-﻿using System;
-
-class StackExample
+﻿namespace Stack
 {
-    static void Main()
+    using System;
+
+    public class Stack<T>
     {
-        Stack<int> stack = new Stack<int>();
+        private const int DefaultCapacity = 4;
+        private T[] stack;
+        private int top;
 
-        // Четат се цели числа от клавиатурата до прочитане на 0 и се включват в стека
-        int number = int.Parse(Console.ReadLine());
-
-        while (number != 0)
+        public Stack(int capacity = DefaultCapacity)
         {
-            stack.Push(number);
-            number = int.Parse(Console.ReadLine());
+            if (capacity <= 0)
+            {
+                throw new ArgumentException("Капацитетът на стека трябва да бъде положително число!");
+            }
+
+            this.stack = new T[capacity];
+            this.top = 0;
         }
 
-        // Изключват се последователно всички елементи от стека и се печатат. Това ще
-        // доведе до отпечатване на първоначално въведената последователност в обратен ред
-        while (!stack.IsEmpty())
+        public void Push(T item)
         {
-            int numberOnTop = stack.Pop();
-            Console.WriteLine(numberOnTop);
-        }
-    }
-}
+            this.stack[this.top] = item;
+            this.top++;
 
-class Stack<T>
-{
-    private const int DefaultCapacity = 4;
-    private T[] stack;
-    private int top;
-
-    public Stack(int capacity = DefaultCapacity)
-    {
-        if (capacity <= 0)
-        {
-            throw new ArgumentException("Капацитетът на стека трябва да бъде положително число!");
+            if (this.top >= this.stack.Length)
+            {
+                this.EnsureCapacity();
+            }
         }
 
-        this.stack = new T[capacity];
-        this.top = 0;
-    }
-
-    public void Push(T item)
-    {
-        this.stack[this.top] = item;
-        this.top++;
-
-        if (this.top >= this.stack.Length)
+        public T Pop()
         {
-            EnsureCapacity();
-        }
-    }
+            if (this.top == 0)
+            {
+                throw new InvalidOperationException("Грешка: Стекът е празен!");
+            }
 
-    public T Pop()
-    {
-        if (this.top == 0)
-        {
-            throw new InvalidOperationException("Грешка: Стекът е празен!");
+            this.top--;
+            T item = this.stack[this.top];
+
+            return item;
         }
 
-        this.top--;
-        T item = this.stack[this.top];
-
-        return item;
-    }
-
-    public T Peek()
-    {
-        if (this.top == 0)
+        public T Peek()
         {
-            throw new InvalidOperationException("Грешка: Стекът е празен!");
+            if (this.top == 0)
+            {
+                throw new InvalidOperationException("Грешка: Стекът е празен!");
+            }
+
+            T item = this.stack[this.top];
+            return item;
         }
 
-        T item = this.stack[this.top];
-        return item;
-    }
-
-    public void Clear()
-    {
-        this.stack = new T[DefaultCapacity];
-        this.top = 0;
-    }
-
-    public bool IsEmpty()
-    {
-        if (this.top == 0)
+        public void Clear()
         {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private void EnsureCapacity()
-    {
-        int newCapacity;
-        if (this.stack.Length == 0)
-        {
-            newCapacity = DefaultCapacity;
-        }
-        else
-        {
-            newCapacity = this.stack.Length * 2;
+            this.stack = new T[DefaultCapacity];
+            this.top = 0;
         }
 
-        T[] newStack = new T[newCapacity];
-
-        for (int i = 0; i < this.stack.Length; i++)
+        public bool IsEmpty()
         {
-            newStack[i] = this.stack[i];
+            if (this.top == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        this.stack = newStack;
+        private void EnsureCapacity()
+        {
+            int newCapacity;
+            if (this.stack.Length == 0)
+            {
+                newCapacity = DefaultCapacity;
+            }
+            else
+            {
+                newCapacity = this.stack.Length * 2;
+            }
+
+            T[] newStack = new T[newCapacity];
+
+            for (int i = 0; i < this.stack.Length; i++)
+            {
+                newStack[i] = this.stack[i];
+            }
+
+            this.stack = newStack;
+        }
     }
 }
