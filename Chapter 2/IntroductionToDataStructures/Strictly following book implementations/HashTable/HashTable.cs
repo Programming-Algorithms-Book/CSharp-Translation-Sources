@@ -1,124 +1,123 @@
-﻿using System;
-
-class HashTable
+﻿namespace HashTable
 {
-    private const int N = 211;
-    private const int NotExist = -1;
-    private static readonly LinkedList[] hashTable = new LinkedList[N];
+    using System;
 
-    static void Put(long key, int data)
+    public class HashTable
     {
-        long place = HashFunction(key);
-        InsertBegin(ref hashTable[place], key, data);
-    }
+        private const int N = 211;
+        private const int NotExist = -1;
+        private static readonly LinkedList[] InnerHashTable = new LinkedList[N];
 
-    static int Get(long key)
-    {
-        long place = HashFunction(key);
-        LinkedList list = Search(hashTable[place], key);
-
-        if (list == null)
+        internal static void Main()
         {
-            return NotExist;
-        }
-        else
-        {
-            return list.Data;
-        }
-    }
+            Put(1234, 100); // в слот 179
+            Put(1774, 120); // в слот 86
+            Put(86, 180); // в слот 86 -> колизия
 
-    // Включва елемент в началото на свързан списък
-    static void InsertBegin(ref LinkedList list, long key, int data)
-    {
-        if (list == null)
-        {
-            list = new LinkedList();
-            list.Key = key;
-            list.Data = data;
-        }
-        else
-        {
-            LinkedList newList = new LinkedList();
-
-            newList.Key = list.Key;
-            newList.Data = list.Data;
-            newList.Next = list.Next;
-
-            list.Next = newList;
-            list.Key = key;
-            list.Data = data;
-        }
-    }
-
-    // Изтриване на елемент от списъка
-    static void DeleteNode(LinkedList list, long key)
-    {
-        LinkedList current = list;
-
-        if (list.Key.Equals(key)) // Трябва да се изтрие първия елемент
-        {
-            current = list.Next;
-            list.Key = current.Key;
-            list.Data = current.Data;
-            list.Next = current.Next;
-            return;
+            Console.WriteLine("Отпечатва данните на елемента с ключ 86: {0}", Get(86));
+            Console.WriteLine("Отпечатва данните на елемента с ключ 1234: {0}", Get(1234));
+            Console.WriteLine("Отпечатва данните на елемента с ключ 1774: {0}", Get(1774));
+            Console.WriteLine("Отпечатва данните на елемента с ключ 1773: {0}", Get(1773));
         }
 
-        while (current.Next != null && !current.Next.Key.Equals(key))
+        private static void Put(long key, int data)
         {
-            current = current.Next;
+            long place = HashFunction(key);
+            InsertBegin(ref InnerHashTable[place], key, data);
         }
 
-        if (current.Next == null)
+        private static int Get(long key)
         {
-            throw new InvalidOperationException("Грешка: Елементът за изтриване не е намерен!");
-        }
-        else
-        {
-            current.Next = current.Next.Next;
-        }
-    }
+            long place = HashFunction(key);
+            LinkedList list = Search(InnerHashTable[place], key);
 
-    // Търси по ключ елемент в свързан списък
-    static LinkedList Search(LinkedList list, long key)
-    {
-        while (list != null)
-        {
-            if (list.Key.Equals(key))
+            if (list == null)
             {
-                return list;
+                return NotExist;
             }
             else
             {
-                list = list.Next;
+                return list.Data;
             }
         }
 
-        return null;
-    }
+        // Включва елемент в началото на свързан списък
+        private static void InsertBegin(ref LinkedList list, long key, int data)
+        {
+            if (list == null)
+            {
+                list = new LinkedList
+                {
+                    Key = key,
+                    Data = data
+                };
+            }
+            else
+            {
+                LinkedList newList = new LinkedList
+                {
+                    Key = list.Key,
+                    Data = list.Data,
+                    Next = list.Next
+                };
 
-    static long HashFunction(long key)
-    {
-        return key % N;
-    }
+                list.Next = newList;
+                list.Key = key;
+                list.Data = data;
+            }
+        }
 
-    static void Main()
-    {
-        Put(1234, 100); // в слот 179
-        Put(1774, 120); // в слот 86
-        Put(86, 180); // в слот 86 -> колизия
+        // Изтриване на елемент от списъка
+        private static void DeleteNode(LinkedList list, long key)
+        {
+            LinkedList current = list;
 
-        Console.WriteLine("Отпечатва данните на елемента с ключ 86: {0}", Get(86));
-        Console.WriteLine("Отпечатва данните на елемента с ключ 1234: {0}", Get(1234));
-        Console.WriteLine("Отпечатва данните на елемента с ключ 1774: {0}", Get(1774));
-        Console.WriteLine("Отпечатва данните на елемента с ключ 1773: {0}", Get(1773));
+            // Трябва да се изтрие първия елемент
+            if (list.Key.Equals(key))
+            {
+                current = list.Next;
+                list.Key = current.Key;
+                list.Data = current.Data;
+                list.Next = current.Next;
+                return;
+            }
+
+            while (current.Next != null && !current.Next.Key.Equals(key))
+            {
+                current = current.Next;
+            }
+
+            if (current.Next == null)
+            {
+                throw new InvalidOperationException("Грешка: Елементът за изтриване не е намерен!");
+            }
+            else
+            {
+                current.Next = current.Next.Next;
+            }
+        }
+
+        // Търси по ключ елемент в свързан списък
+        private static LinkedList Search(LinkedList list, long key)
+        {
+            while (list != null)
+            {
+                if (list.Key.Equals(key))
+                {
+                    return list;
+                }
+                else
+                {
+                    list = list.Next;
+                }
+            }
+
+            return null;
+        }
+
+        private static long HashFunction(long key)
+        {
+            return key % N;
+        }
     }
 }
-
-class LinkedList
-{
-    public long Key { get; set; }
-    public int Data { get; set; }
-    public LinkedList Next { get; set; }
-}
-
