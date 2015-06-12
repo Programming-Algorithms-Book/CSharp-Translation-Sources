@@ -1,79 +1,57 @@
-﻿using System;
-
-class Program
+﻿namespace Stack2
 {
-    static void Main()
+    using System;
+
+    public class Stack<T>
     {
-        Stack<int> stack = new Stack<int>();
+        private const int Max = 10;
 
-        // Четат се цели числа от клавиатурата до прочитане на 0 и се включват в стека
-        int number = int.Parse(Console.ReadLine());
+        private readonly T[] stack;
+        private int top;
 
-        while (number != 0)
+        public Stack()
         {
-            stack.Push(number);
-            number = int.Parse(Console.ReadLine());
+            this.stack = new T[Max];
+            this.top = 0;
         }
 
-        // Изключват се последователно всички елементи от стека и се печатат. Това ще
-        // доведе до отпечатване на първоначално въведената последователност в обратен ред
-        while (!stack.IsEmpty())
+        public void Push(T item)
         {
-            int numberOnTop = stack.Pop();
-            Console.WriteLine(numberOnTop);
+            if (this.top == Max)
+            {
+                throw new InvalidOperationException("Препълване на стека!");
+            }
+            else
+            {
+                this.stack[this.top] = item;
+                this.top++;
+            }
         }
-    }
-}
 
-public class Stack<T>
-{
-    private const int Max = 10;
-
-    private readonly T[] stack;
-    private int top;
-
-    public Stack()
-    {
-        this.stack = new T[Max];
-        this.top = 0;
-    }
-
-    public void Push(T item)
-    {
-        if (this.top == Max)
+        public T Pop()
         {
-            throw new InvalidOperationException("Препълване на стека!");
+            if (this.top == 0)
+            {
+                throw new InvalidOperationException("Стекът е празен!");
+            }
+            else
+            {
+                this.top--;
+                T item = this.stack[this.top];
+                return item;
+            }
         }
-        else
-        {
-            this.stack[this.top] = item;
-            this.top++;
-        }
-    }
 
-    public T Pop()
-    {
-        if (this.top == 0)
+        public bool IsEmpty()
         {
-            throw new InvalidOperationException("Стекът е празен!");
-        }
-        else
-        {
-            this.top--;
-            T item = this.stack[this.top];
-            return item;
-        }
-    }
-
-    public bool IsEmpty()
-    {
-        if (this.top == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+            if (this.top == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

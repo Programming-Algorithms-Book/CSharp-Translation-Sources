@@ -1,97 +1,67 @@
-﻿using System;
-
-class Program
+﻿namespace Queue
 {
-    private const int Max = 10;
+    using System;
 
-    static void Main()
+    public class Queue<T>
     {
-        Queue<int> queue = new Queue<int>(Max);
+        private readonly int max;
+        private readonly T[] queue;
 
-        for (int i = 0; i < 2 * Max; i++)
+        private int front;
+        private int rear;
+        private bool empty;
+
+        public Queue(int max)
         {
-            queue.Put(i);
-            int itemInFront = queue.Get();
-            Console.Write("{0} ", itemInFront);
-        }
-
-        // Това ще причини препълване при последното включване
-        //for (var i = 0; i < Max + 1; i++)
-        //{
-        //    queue.Put(i);
-        //}
-
-        // Това ще причини грешка при последното изключване, тъй като опашката е празна
-        //for (var i = 0; i < Max; i++)
-        //{
-        //    queue.Put(i);
-        //}
-
-        //for (int i = 0; i < Max + 1; i++)
-        //{
-        //    queue.Get();
-        //}
-    }
-}
-
-public class Queue<T>
-{
-    private readonly int Max;
-    private readonly T[] queue;
-
-    private int front;
-    private int rear;
-    private bool empty;
-
-    public Queue(int max)
-    {
-        this.Max = max;
-        this.queue = new T[Max];
-        this.front = 0;
-        this.rear = 0;
-        this.empty = true;
-    }
-
-    public void Put(T item)
-    {
-        if (this.front == this.rear && !this.empty) // Проверка за препълване 
-        {
-            // Препълване - индексите са равни, а опашката не е празна 
-            throw new InvalidOperationException("Препълване на опашката!");
-        }
-
-        this.queue[this.rear] = item;
-        this.rear++;
-
-        if (this.rear >= Max)
-        {
-            this.rear = 0;
-        }
-
-        this.empty = false;
-    }
-
-    public T Get()
-    {
-        if (this.empty) // Проверка за празна опашка 
-        {
-            throw new InvalidOperationException("Опашката е празна!");
-        }
-
-        T item = this.queue[this.front];
-        this.front++;
-
-        if (this.front >= Max)
-        {
+            this.max = max;
+            this.queue = new T[this.max];
             this.front = 0;
-        }
-
-        if (this.front == this.rear)
-        {
+            this.rear = 0;
             this.empty = true;
         }
 
-        return item;
+        public void Put(T item)
+        {
+            // Проверка за препълване 
+            if (this.front == this.rear && !this.empty)
+            {
+                // Препълване - индексите са равни, а опашката не е празна 
+                throw new InvalidOperationException("Препълване на опашката!");
+            }
+
+            this.queue[this.rear] = item;
+            this.rear++;
+
+            if (this.rear >= this.max)
+            {
+                this.rear = 0;
+            }
+
+            this.empty = false;
+        }
+
+        public T Get()
+        {
+            // Проверка за празна опашка 
+            if (this.empty)
+            {
+                throw new InvalidOperationException("Опашката е празна!");
+            }
+
+            T item = this.queue[this.front];
+            this.front++;
+
+            if (this.front >= this.max)
+            {
+                this.front = 0;
+            }
+
+            if (this.front == this.rear)
+            {
+                this.empty = true;
+            }
+
+            return item;
+        }
     }
 }
-

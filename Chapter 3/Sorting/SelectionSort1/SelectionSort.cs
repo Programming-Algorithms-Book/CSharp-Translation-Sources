@@ -1,107 +1,106 @@
-﻿using System;
-using System.Diagnostics;
-
-class SelectionSort
+﻿namespace SelectionSort1
 {
-    private const int Max = 100;
-    private const int TestLoopCount = 100;
+    using System;
+    using System.Diagnostics;
 
-    private static Random random = new Random();
-
-    struct CustomElement
+    public class SelectionSort
     {
-        public int Key { get; set; }
-        // Структурата може да има още данни
-    }
+        private const int Max = 100;
+        private const int TestLoopCount = 100;
 
-    // Запълва масива със случайни цели числа
-    static void Init(CustomElement[] elements)
-    {
-        for (int i = 0; i < elements.Length; i++)
+        private static readonly Random Random = new Random();
+
+        internal static void Main()
         {
-            int key = random.Next() % elements.Length;
-            elements[i] = new CustomElement() { Key = key };
-        }
-    }
+            CustomElement[] elements = new CustomElement[Max];
 
-    static void Swap(CustomElement e1, CustomElement e2)
-    {
-        CustomElement old = e1;
-        e1 = e2;
-        e2 = old;
-    }
-
-    static void StraightSelection(CustomElement[] elements)
-    {
-        for (int i = 0; i < elements.Length - 1; i++)
-        {
-            for (int j = i + 1; j < elements.Length; j++)
+            for (int i = 1; i <= TestLoopCount; i++)
             {
-                if (elements[i].Key > elements[j].Key)
+                Console.WriteLine("{0}<<<<< Тест {1} >>>>>", Environment.NewLine, i);
+                Init(elements);
+
+                Console.WriteLine("Масивът преди сортирането:");
+                Print(elements);
+                StraightSelection(elements);
+
+                Console.WriteLine("Масивът след сортирането:");
+                Print(elements);
+
+                Check(elements);
+            }
+        }
+
+        // Запълва масива със случайни цели числа
+        private static void Init(CustomElement[] elements)
+        {
+            for (int i = 0; i < elements.Length; i++)
+            {
+                int key = Random.Next() % elements.Length;
+                elements[i] = new CustomElement() { Key = key };
+            }
+        }
+
+        private static void Swap(CustomElement e1, CustomElement e2)
+        {
+            CustomElement old = e1;
+            e1 = e2;
+            e2 = old;
+        }
+
+        private static void StraightSelection(CustomElement[] elements)
+        {
+            for (int i = 0; i < elements.Length - 1; i++)
+            {
+                for (int j = i + 1; j < elements.Length; j++)
                 {
-                    Swap(elements[i], elements[j]);
-                    CustomElement old = elements[i];
-                    elements[i] = elements[j];
-                    elements[j] = old;
+                    if (elements[i].Key > elements[j].Key)
+                    {
+                        Swap(elements[i], elements[j]);
+                        CustomElement old = elements[i];
+                        elements[i] = elements[j];
+                        elements[j] = old;
+                    }
                 }
             }
         }
-    }
 
-    // Извежда ключовете на масива на екрана
-    static void Print(CustomElement[] elements)
-    {
-        for (int i = 0; i < elements.Length; i++)
+        // Извежда ключовете на масива на екрана
+        private static void Print(CustomElement[] elements)
         {
-            Console.Write("{0} ", elements[i].Key);
-        }
-        Console.WriteLine();
-    }
-
-    static void Check(CustomElement[] elements)
-    {
-        // 1. Проверка за наредба във възходящ ре
-        for (int i = 0; i < elements.Length - 1; i++)
-        {
-            Debug.Assert(elements[i].Key <= elements[i + 1].Key);
-        }
-
-        // 2. Проверка за пермутация на изходните елементи
-        bool[] found = new bool[elements.Length];
-
-        for (int i = 0; i < elements.Length; i++)
-        {
-            for (int j = 0; j < elements.Length; j++)
+            for (int i = 0; i < elements.Length; i++)
             {
-                if (!found[j] && elements[i].Key == elements[j].Key)
-                {
-                    found[j] = true;
-                    break;
-                }
-
-                // Пропада, ако не е намерен съответен
-                Debug.Assert(j < elements.Length);
+                Console.Write("{0} ", elements[i].Key);
             }
+
+            Console.WriteLine();
         }
-    }
 
-    static void Main()
-    {
-        CustomElement[] elements = new CustomElement[Max];
-
-        for (int i = 1; i <= TestLoopCount; i++)
+        // TODO: Transfer to unit tests
+        private static void Check(CustomElement[] elements)
         {
-            Console.WriteLine("{0}<<<<< Тест {1} >>>>>", Environment.NewLine, i);
-            Init(elements);
+            // 1. Проверка за наредба във възходящ ре
+            for (int i = 0; i < elements.Length - 1; i++)
+            {
+                Debug.Assert(elements[i].Key <= elements[i + 1].Key, "Wrong order");
+            }
 
-            Console.WriteLine("Масивът преди сортирането:");
-            Print(elements);
-            StraightSelection(elements);
+            // 2. Проверка за пермутация на изходните елементи
+            bool[] found = new bool[elements.Length];
 
-            Console.WriteLine("Масивът след сортирането:");
-            Print(elements);
+            for (int i = 0; i < elements.Length; i++)
+            {
+                for (int j = 0; j < elements.Length; j++)
+                {
+                    if (!found[j] && elements[i].Key == elements[j].Key)
+                    {
+                        found[j] = true;
+                        break;
+                    }
 
-            Check(elements);
+                    // Пропада, ако не е намерен съответен
+                    Debug.Assert(j < elements.Length, "No element found");
+                }
+            }
         }
     }
 }
