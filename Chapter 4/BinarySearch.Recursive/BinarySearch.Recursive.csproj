@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearchRecursive.cs" />
+    <Compile Include="Element.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
