@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.1.4. Primeri", "6.1.4. Primeri\6.1.4. Primeri.csproj", "{C6F83521-EFE4-4EF9-A8F5-79EAEFFB6EFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.1. Удолетворимост на булева функция", "6.3.1. Удолетворимост на булева функция\6.3.1. Удолетворимост на булева функция.csproj", "{CE47E8DD-CF91-452B-B371-1B22827AB73E}"
@@ -19,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.3.7. Побуквено �
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.4.1. Задача за раницата (оптимална селекция)", "6.4.1. Задача за раницата (оптимална селекция)\6.4.1. Задача за раницата (оптимална селекция).csproj", "{B9C968F1-F51D-4A29-BADC-B97C51EFAE12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.5.1. Игра 'X'-чета и 'O'", "6.5.1. Игра 'X'-чета и 'O'\6.5.1. Игра 'X'-чета и 'O'.csproj", "{D35C0529-2106-4799-8593-6F0093D3DB40}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sorting - shell2", "02. Sorting - shell2\02. Sorting - shell2.csproj", "{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sorting - shell", "02. Sorting - shell\02. Sorting - shell.csproj", "{BB569CD1-94AC-450D-BC87-907A1F7E0B24}"
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sorting - shaker", "02. Sorting - shaker\02. Sorting - shaker.csproj", "{D64E2772-16CC-416B-9016-A465C00831C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Sorting - setsort2", "02. Sorting - setsort2\02. Sorting - setsort2.csproj", "{47F4505E-79FB-4D51-A900-0CE569FE227C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{D35C0529-2106-4799-8593-6F0093D3DB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +73,6 @@ Global
 		{B9C968F1-F51D-4A29-BADC-B97C51EFAE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9C968F1-F51D-4A29-BADC-B97C51EFAE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9C968F1-F51D-4A29-BADC-B97C51EFAE12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D35C0529-2106-4799-8593-6F0093D3DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D35C0529-2106-4799-8593-6F0093D3DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -91,6 +89,10 @@ Global
 		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35C0529-2106-4799-8593-6F0093D3DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35C0529-2106-4799-8593-6F0093D3DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35C0529-2106-4799-8593-6F0093D3DB40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

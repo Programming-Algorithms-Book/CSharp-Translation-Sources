@@ -72,8 +72,8 @@ class Program
         Assign(i + 1);
     }
 
-    static void Main(string[] args)
-    {
-        Assign(0);
-    }
+    ////static void Main(string[] args)
+    ////{
+    ////    Assign(0);
+    ////}
 }

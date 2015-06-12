@@ -11,7 +11,7 @@ class Program
     static uint[] taken = new uint[MAXN],
     saveTaken = new uint[MAXN];
     static uint tn, sn;
-    static float VmaX, Vtemp, Ttemp, totalV;
+    static double VmaX, Vtemp, Ttemp, totalV;
 
     static void generate(uint i)
     {
@@ -31,6 +31,7 @@ class Program
             }
             return;
         }
+
         taken[tn++] = i;
         Vtemp += c[i];
         totalV -= c[i];

@@ -1,6 +1,6 @@
 ﻿using System;
 
-class queens
+class Queens
 {
     /* Максимален размер на дъската */
     const int MAXN = 100;
@@ -8,15 +8,15 @@ class queens
     /* Размер на дъската */
     const uint n = 13;
 
-    static uint[] col = new uint[MAXN], 
-        RD = new uint[2*MAXN - 1],
-        LD = new uint[2*MAXN], 
+    static uint[] col = new uint[MAXN],
+        RD = new uint[2 * MAXN - 1],
+        LD = new uint[2 * MAXN],
         queens = new uint[MAXN];
 
     /* Отпечатва намереното разположение на цариците */
     static void PrintBoard()
     {
-        uint i , j ;
+        uint i, j;
         for (i = 0; i < n; i++)
         {
             Console.WriteLine();
@@ -35,10 +35,10 @@ class queens
     {
         if (i == n)
             PrintBoard();
-        uint k;    
+        uint k;
         for (k = 0; k <= n; k++)
         {
-            if (col[k]!=0 && RD[i + k]!=0 && LD[n + i - k]!=0)
+            if (col[k] != 0 && RD[i + k] != 0 && LD[n + i - k] != 0)
             {
                 col[k] = 0;
                 RD[i + k] = 0;
