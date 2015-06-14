@@ -1,63 +1,81 @@
-﻿using System;
-
-class MinimalHamiltonianCycle
+﻿namespace MinimalHamiltonianCycle
 {
-    const int VerticesCount = 6;
+    using System;
 
-    static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
+    internal class MinimalHamiltonianCycle
     {
-        { 0, 5, 0, 0, 7, 7 },
-        { 5, 0, 5, 0, 0, 0 },
-        { 0, 5, 0, 6, 5, 0 },
-        { 0, 0, 6, 0, 3, 3 },
-        { 7, 0, 5, 3, 0, 5 },
-        { 7, 0, 0, 3, 5, 0 }
-    };
-    static readonly bool[] Used = new bool[VerticesCount];
-    static readonly int[] CurrentCycle = new int[VerticesCount];
-    static readonly int[] MinimalCycle = new int[VerticesCount];
-    static int currentSum = 0, minSum = int.MaxValue;
+        private const int VerticesCount = 6;
 
-    static void FindMinHamiltonianCycle(int vertex, int level)
-    {
-        if (vertex == 0 && level > 0)
+        private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
+                                               {
+                                                   { 0, 5, 0, 0, 7, 7 },
+                                                   { 5, 0, 5, 0, 0, 0 },
+                                                   { 0, 5, 0, 6, 5, 0 },
+                                                   { 0, 0, 6, 0, 3, 3 },
+                                                   { 7, 0, 5, 3, 0, 5 },
+                                                   { 7, 0, 0, 3, 5, 0 }
+                                               };
+
+        private static readonly bool[] Used = new bool[VerticesCount];
+        private static readonly int[] CurrentCycle = new int[VerticesCount];
+        private static readonly int[] MinimalCycle = new int[VerticesCount];
+        private static int currentSum = 0, minSum = int.MaxValue;
+
+        private static void FindMinHamiltonianCycle(int vertex, int level)
         {
-            if (level == VerticesCount)
+            if (vertex == 0 && level > 0)
             {
-                minSum = currentSum;
-                CurrentCycle.CopyTo(MinimalCycle, 0);
+                if (level == VerticesCount)
+                {
+                    minSum = currentSum;
+                    CurrentCycle.CopyTo(MinimalCycle, 0);
+                }
+
+                return;
             }
 
-            return;
+            if (Used[vertex])
+            {
+                return;
+            }
+
+            Used[vertex] = true;
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (Graph[vertex, i] != 0 && i != vertex)
+                {
+                    CurrentCycle[level] = i;
+                    currentSum += Graph[vertex, i];
+
+                    // Прекъсване на генерирането
+                    if (currentSum < minSum)
+                    {
+                        FindMinHamiltonianCycle(i, level + 1);
+                    }
+
+                    currentSum -= Graph[vertex, i];
+                }
+            }
+
+            Used[vertex] = false;
         }
 
-        if (Used[vertex]) return;
-        Used[vertex] = true;
-        for (int i = 0; i < VerticesCount; i++)
-            if (Graph[vertex, i] != 0 && i != vertex)
+        private static void PrintCycle()
+        {
+            Console.Write("Минимален Хамилтонов цикъл: 1");
+            for (int i = 0; i < VerticesCount; i++)
             {
-                CurrentCycle[level] = i;
-                currentSum += Graph[vertex, i];
-                if (currentSum < minSum) // Прекъсване на генерирането
-                    FindMinHamiltonianCycle(i, level + 1);
-                currentSum -= Graph[vertex, i];
+                Console.Write(" {0}", MinimalCycle[i] + 1);
             }
 
-        Used[vertex] = false;
-    }
+            Console.WriteLine(" с дължина {0}.", minSum);
+        }
 
-    static void PrintCycle()
-    {
-        Console.Write("Минимален Хамилтонов цикъл: 1");
-        for (int i = 0; i < VerticesCount; i++)
-            Console.Write(" {0}", MinimalCycle[i] + 1);
-        Console.WriteLine(" с дължина {0}.", minSum);
-    }
-
-    static void Main()
-    {
-        CurrentCycle[0] = 1;
-        FindMinHamiltonianCycle(0, 0);
-        PrintCycle();
+        private static void Main()
+        {
+            CurrentCycle[0] = 1;
+            FindMinHamiltonianCycle(0, 0);
+            PrintCycle();
+        }
     }
 }

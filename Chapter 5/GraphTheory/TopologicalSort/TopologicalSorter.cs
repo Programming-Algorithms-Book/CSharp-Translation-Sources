@@ -1,32 +1,48 @@
-﻿using System;
-
-class TopologicalSorter
+﻿namespace TopologicalSort
 {
-    const int VerticesCount = 5;
+    using System;
 
-    static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+    internal class TopologicalSorter
     {
-        { 0, 1, 0, 0, 0 },
-        { 0, 0, 1, 0, 1 },
-        { 0, 0, 0, 1, 0 },
-        { 0, 0, 0, 0, 0 },
-        { 0, 0, 1, 0, 0 }
-    };
-    static readonly bool[] Used = new bool[VerticesCount];
+        private const int VerticesCount = 5;
 
-    static void TopologicalSort(int vertex)
-    {
-        Used[vertex] = true;
-        for (int i = 0; i < VerticesCount; i++)
-            if (Graph[vertex, i] == 1 && !Used[i]) TopologicalSort(i);
-        Console.Write("{0} ", vertex + 1);
-    }
+        private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+                                                {
+                                                    { 0, 1, 0, 0, 0 },
+                                                    { 0, 0, 1, 0, 1 },
+                                                    { 0, 0, 0, 1, 0 },
+                                                    { 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 1, 0, 0 }
+                                                };
 
-    static void Main()
-    {
-        Console.Write("Топологично сортиране (в обратен ред): ");
-        for (int i = 0; i < VerticesCount; i++)
-            if (!Used[i]) TopologicalSort(i);
-        Console.WriteLine();
+        private static readonly bool[] Used = new bool[VerticesCount];
+
+        private static void TopologicalSort(int vertex)
+        {
+            Used[vertex] = true;
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (Graph[vertex, i] == 1 && !Used[i])
+                {
+                    TopologicalSort(i);
+                }
+            }
+
+            Console.Write("{0} ", vertex + 1);
+        }
+
+        private static void Main()
+        {
+            Console.Write("Топологично сортиране (в обратен ред): ");
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (!Used[i])
+                {
+                    TopologicalSort(i);
+                }
+            }
+
+            Console.WriteLine();
+        }
     }
 }

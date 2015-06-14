@@ -1,56 +1,75 @@
-﻿using System;
-
-class CyclicGraphCheck
+﻿namespace CyclicGraphCheck
 {
-    const int VerticesCount = 14;
+    using System;
 
-    static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+    internal class CyclicGraphCheck
     {
-        {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1},
-        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0}
-    };
-    static readonly bool[] Used = new bool[VerticesCount];
-    static bool isCyclicGraph = false;
+        private const int VerticesCount = 14;
 
-    // Модифициран Depth-First-Search
-    static void DFS(int vertex, int parent)
-    {
-        Used[vertex] = true;
-        for (int i = 0; i < VerticesCount; i++)
+        private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+                                                {
+                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
+                                                    { 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1 },
+                                                    { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0 }
+                                                };
+
+        private static readonly bool[] Used = new bool[VerticesCount];
+        private static bool isCyclicGraph = false;
+
+        // Модифициран Depth-First-Search
+        private static void DFS(int vertex, int parent)
         {
-            if (isCyclicGraph) return;
-            if (Graph[vertex, i] == 1)
-                if (Used[i] && i != parent)
+            Used[vertex] = true;
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (isCyclicGraph)
                 {
-                    Console.WriteLine("Графът е цикличен!");
-                    isCyclicGraph = true;
                     return;
                 }
-                else if (i != parent)
-                    DFS(i, vertex);
-        }
-    }
 
-    static void Main()
-    {
-        for (int i = 0; i < VerticesCount; i++)
+                if (Graph[vertex, i] == 1)
+                {
+                    if (Used[i] && i != parent)
+                    {
+                        Console.WriteLine("Графът е цикличен!");
+                        isCyclicGraph = true;
+                        return;
+                    }
+                    else if (i != parent)
+                    {
+                        DFS(i, vertex);
+                    }
+                }
+            }
+        }
+
+        private static void Main()
         {
-            if (!Used[i]) DFS(i, -1);
-            if (isCyclicGraph) return;
-        }
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (!Used[i])
+                {
+                    DFS(i, -1);
+                }
 
-        Console.WriteLine("Графът е дърво (не съдържа цикли)!");
+                if (isCyclicGraph)
+                {
+                    return;
+                }
+            }
+
+            Console.WriteLine("Графът е дърво (не съдържа цикли)!");
+        }
     }
 }

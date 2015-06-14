@@ -1,42 +1,50 @@
-﻿using System;
-
-class DepthFirstSearch
+﻿namespace DepthFirstSearch
 {
-    const int VerticesCount = 14;
-    const int StartVertex = 5;
+    using System;
 
-    static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+    internal class DepthFirstSearch
     {
-        {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1},
-        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0}
-    };
-    static readonly bool[] Used = new bool[VerticesCount];
+        private const int VerticesCount = 14;
+        private const int StartVertex = 5;
 
-    static void DFS(int vertex)
-    {
-        Used[vertex] = true;
-        Console.Write("{0} ", vertex + 1);
-        for (int i = 0; i < VerticesCount; i++)
-            if (Graph[vertex, i] == 1 && !Used[i])
-                DFS(i);
-    }
+        private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
+                                                {
+                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+                                                    { 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
+                                                    { 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1 },
+                                                    { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0 }
+                                                };
 
-    static void Main()
-    {
-        Console.WriteLine("Обхождане в дълбочина от връх {0}:", StartVertex);
-        DFS(StartVertex - 1);
-        Console.WriteLine();
+        private static readonly bool[] Used = new bool[VerticesCount];
+
+        private static void DFS(int vertex)
+        {
+            Used[vertex] = true;
+            Console.Write("{0} ", vertex + 1);
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (Graph[vertex, i] == 1 && !Used[i])
+                {
+                    DFS(i);
+                }
+            }
+        }
+
+        private static void Main()
+        {
+            Console.WriteLine("Обхождане в дълбочина от връх {0}:", StartVertex);
+            DFS(StartVertex - 1);
+            Console.WriteLine();
+        }
     }
 }
