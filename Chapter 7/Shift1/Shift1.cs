@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Shift1
 {
-    struct Element
+    internal struct Element
     {
-        public int Data { get; set; } 
+        public int Data { get; set; }
     }
 
-    class Shift1
+    internal class Shift1
     {
-        const int N = 10; /* Брой елементи в масива */
-        const int K = 2;  /* Брой позиции на отместване */
-        
-        static void InitializeArray(Element[] array)
+        private const int N = 10; /* Брой елементи в масива */
+        private const int K = 2; /* Брой позиции на отместване */
+
+        private static void InitializeArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
+            {
                 array[i].Data = i;
+            }
         }
 
-        static int GreatestCommonDivisor(int x, int y)
+        private static int GreatestCommonDivisor(int x, int y)
         {
             while (y > 0)
             {
@@ -33,7 +35,7 @@ namespace Shift1
             return x;
         }
 
-        static void ShiftLeft(Element[] array)
+        private static void ShiftLeft(Element[] array)
         {
             var tempElement = new Element();
             var greatestCommonDivisor = GreatestCommonDivisor(N, K);
@@ -43,20 +45,24 @@ namespace Shift1
                 tempElement = array[i];
                 var nextIndex = currentIndex + K;
                 if (nextIndex >= N)
+                {
                     nextIndex -= N;
+                }
                 while (nextIndex != i)
                 {
                     array[currentIndex] = array[nextIndex];
                     currentIndex = nextIndex;
                     nextIndex += K;
                     if (nextIndex >= N)
+                    {
                         nextIndex -= N;
+                    }
                 }
                 array[currentIndex] = tempElement;
             }
         }
 
-        static void PrintArray(Element[] array)
+        private static void PrintArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -65,7 +71,7 @@ namespace Shift1
             Console.WriteLine();
         }
 
-        static void Main()
+        private static void Main()
         {
             Element[] elements = new Element[N];
             InitializeArray(elements);

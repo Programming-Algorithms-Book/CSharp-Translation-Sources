@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Shift3
 {
-    struct Element
+    internal struct Element
     {
         public int Data { get; set; }
     }
 
-    class Shift3
+    internal class Shift3
     {
-        const int N = 10; /* Брой елементи в масива */
-        const int K = 2;  /* Брой позицции на отместване */
+        private const int N = 10; /* Брой елементи в масива */
+        private const int K = 2; /* Брой позицции на отместване */
 
-        static void InitializeArray(Element[] array)
+        private static void InitializeArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
+            {
                 array[i].Data = i;
+            }
         }
 
-        static void Reverse(Element[] array, int a, int b)  /* Обръща подмасива m[a..b] */
+        private static void Reverse(Element[] array, int a, int b) /* Обръща подмасива m[a..b] */
         {
             int count = (b - a) / 2;
             int k = a;
@@ -35,14 +37,15 @@ namespace Shift3
             }
         }
 
-        static void ShiftLeft(Element[] array)
-        { /* Измества масива m на k позиции наляво, на три стъпки */
+        private static void ShiftLeft(Element[] array)
+        {
+            /* Измества масива m на k позиции наляво, на три стъпки */
             Reverse(array, 0, K - 1);
             Reverse(array, K, N - 1);
             Reverse(array, 0, N - 1);
         }
 
-        static void PrintArray(Element[] array)
+        private static void PrintArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -51,7 +54,7 @@ namespace Shift3
             Console.WriteLine();
         }
 
-        static void Main()
+        private static void Main()
         {
             Element[] elements = new Element[N];
             InitializeArray(elements);

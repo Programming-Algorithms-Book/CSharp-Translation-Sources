@@ -1,6 +1,6 @@
 ﻿using System;
 
-class MiddleFindKthElement2
+internal class MiddleFindKthElement2
 {
     private static int[] array;
 
@@ -54,12 +54,14 @@ class MiddleFindKthElement2
             }
         }
         if (i == right) /* Всички са <= x. Стесняване на областта с 1. */
+        {
             i--;
+        }
 
         return i;
     }
 
-    static void Main()
+    private static void Main()
     {
         int n = 10;
         int k = 4;

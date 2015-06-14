@@ -1,9 +1,10 @@
 ﻿using System;
 
-class Program
+internal class Program
 {
     /* Елемент от свързан списък */
-    class Node
+
+    private class Node
     {
         public int Value { get; set; }
         public Node Next { get; set; }
@@ -17,9 +18,9 @@ class Program
         }
     }
 
-    const int n = 100;
+    private const int n = 100;
 
-    static void Main()
+    private static void Main()
     {
         Node l = Generate(n);
         Console.WriteLine("Преди сортирането:");
@@ -31,7 +32,8 @@ class Program
     }
 
     /* Генерира примерно множество */
-    static Node Generate(int n)
+
+    private static Node Generate(int n)
     {
         var rand = new Random();
         Node p = Node.Z;
@@ -44,13 +46,16 @@ class Program
     }
 
     /* Извежда списъка на екрана */
-    static void PrintList(Node p)
+
+    private static void PrintList(Node p)
     {
         for (; p != Node.Z; p = p.Next)
+        {
             Console.Write("{0,4}", p.Value);
+        }
     }
 
-    static Node Merge(Node a, Node b)
+    private static Node Merge(Node a, Node b)
     {
         /* Предполага се, че и двата списъка съдържат поне по един елемент */
         Node tail = Node.Z;
@@ -68,13 +73,14 @@ class Program
                 tail = b;
                 b = b.Next;
             }
-        } while (tail != Node.Z);
+        }
+        while (tail != Node.Z);
         tail = Node.Z.Next;
         Node.Z.Next = Node.Z;
         return tail;
     }
 
-    static Node MergeSort(Node c)
+    private static Node MergeSort(Node c)
     {
         Node head = new Node { Next = c };
         head.Next = c;
@@ -89,20 +95,26 @@ class Program
                 /* Отделяне на a[] */
                 a = t;
                 for (int i = 1; i < n; i++)
+                {
                     t = t.Next;
+                }
                 /* Отделяне на b[] */
                 Node b = t.Next;
                 t.Next = Node.Z;
                 t = b;
                 for (int i = 1; i < n; i++)
+                {
                     t = t.Next;
+                }
                 /* Сливане на a[] и b[] */
                 todo = t.Next;
                 t.Next = Node.Z;
                 c.Next = Merge(a, b);
                 /* Пропускане на слетия масив */
                 for (int i = 1; i <= n * 2; i++)
+                {
                     c = c.Next;
+                }
             }
         }
         return head.Next;

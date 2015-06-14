@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Majorant13
 {
-    class Majorant13
+    internal class Majorant13
     {
-        static bool FindMajority<T>(T[] array, out T majority)
+        private static bool FindMajority<T>(T[] array, out T majority)
         {
             majority = default(T);
             int size = array.Length;
@@ -21,29 +21,42 @@ namespace Majorant13
                     counter = 1;
                 }
                 else if (array[i].Equals(majority))
+                {
                     counter++;
+                }
                 else
+                {
                     counter--;
+                }
             }
             if (counter > 0)
             {
                 counter = 0;
                 for (int i = 0; i < size; i++)
+                {
                     if (array[i].Equals(majority))
+                    {
                         counter++;
-                bool isThereMajority = counter > size/2;
+                    }
+                }
+                bool isThereMajority = counter > size / 2;
                 return isThereMajority;
             }
             return false;
         }
-        static void Main()
+
+        private static void Main()
         {
             char majority;
             char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
             if (FindMajority(array, out majority))
+            {
                 Console.WriteLine("Мажорант: {0}", majority);
+            }
             else
+            {
                 Console.WriteLine("Няма мажорант.");
+            }
         }
     }
 }

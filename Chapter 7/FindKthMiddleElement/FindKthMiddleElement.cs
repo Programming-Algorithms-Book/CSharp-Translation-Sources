@@ -8,7 +8,7 @@ internal class FindKthMiddleElement
     {
         for (int i = 0; i < array.Length; i++)
         {
-            array[i] = rand.Next()%(2*array.Length + 1);
+            array[i] = rand.Next() % (2 * array.Length + 1);
         }
     }
 
@@ -41,19 +41,31 @@ internal class FindKthMiddleElement
 
             while (true)
             {
-                while (x > array[i]) i++;
-                while (x < array[j]) j--;
+                while (x > array[i])
+                {
+                    i++;
+                }
+                while (x < array[j])
+                {
+                    j--;
+                }
                 if (i > j)
+                {
                     break;
+                }
 
                 Swap(ref array[i], ref array[j]);
                 i++;
                 j--;
             }
             if (j < k)
+            {
                 left = i;
+            }
             if (k < i)
+            {
                 right = j;
+            }
         }
     }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MergingSortedArrays
 {
-    struct Element
+    internal struct Element
     {
         public int Key { get; set; }
 
@@ -14,7 +14,7 @@ namespace MergingSortedArrays
         }
     }
 
-    class CList
+    internal class CList
     {
         public int Point { get; set; }
 
@@ -25,13 +25,13 @@ namespace MergingSortedArrays
         public int Length { get; set; }
     }
 
-    class MergingSortedArrays
+    internal class MergingSortedArrays
     {
-        static Random rand = new Random();
+        private static Random rand = new Random();
         private const int NumberOfArrays = 6;
         private const int ArraysLength = 12;
 
-        static CList InitializeArray(int modul)
+        private static CList InitializeArray(int modul)
         {
             CList head = null;
             for (int i = 0; i < NumberOfArrays; i++)
@@ -42,7 +42,9 @@ namespace MergingSortedArrays
                 currentList.Data = new Element[ArraysLength];
                 currentList.Data[0].Key = rand.Next() % modul;
                 for (int j = 1; j < ArraysLength; j++)
+                {
                     currentList.Data[j].Key = currentList.Data[j - 1].Key + rand.Next() % modul;
+                }
                 currentList.Next = head;
                 head = currentList;
             }
@@ -50,12 +52,14 @@ namespace MergingSortedArrays
             return head;
         }
 
-        static void PrintArrays(CList list)
+        private static void PrintArrays(CList list)
         {
             while (list != null)
             {
                 foreach (var element in list.Data)
+                {
                     Console.Write("{0} ", element.Key);
+                }
                 Console.WriteLine();
                 list = list.Next;
             }
@@ -75,7 +79,9 @@ namespace MergingSortedArrays
                     var k1 = currentList.Next.Data[currentList.Next.Point];
                     var k2 = minElementList.Next.Data[minElementList.Next.Point];
                     if (k1.Key < k2.Key)
+                    {
                         minElementList = currentList;
+                    }
                     currentList = currentList.Next;
                 }
                 Console.WriteLine(minElementList.Next.Data[minElementList.Next.Point].Key);
@@ -91,7 +97,7 @@ namespace MergingSortedArrays
             }
         }
 
-        static void Main()
+        private static void Main()
         {
             var head = InitializeArray(500);
             Console.WriteLine("Масивите преди сортирането:");

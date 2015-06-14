@@ -1,17 +1,18 @@
 ﻿using System;
 
-class Program
+internal class Program
 {
     /* Елемент от свързан списък */
-    class Node
+
+    private class Node
     {
         public int Value { get; set; }
         public Node Next { get; set; }
     }
 
-    const int n = 100;
+    private const int n = 100;
 
-    static void Main()
+    private static void Main()
     {
         Node l = Generate(n);
         Console.WriteLine("Преди сортирането:");
@@ -22,7 +23,7 @@ class Program
         PrintList(l);
     }
 
-    static Node Generate(int n)
+    private static Node Generate(int n)
     {
         var rand = new Random();
         Node p = null;
@@ -35,22 +36,29 @@ class Program
     }
 
     /* Извежда списъка на екрана */
-    static void PrintList(Node p)
+
+    private static void PrintList(Node p)
     {
         for (; p != null; p = p.Next)
+        {
             Console.Write("{0,4}", p.Value);
+        }
     }
 
-    static Node MergeSort(Node c, int n)
+    private static Node MergeSort(Node c, int n)
     {
         /* Ако списъкът съдържа само един елемент: не се прави нищо */
         if (n < 2)
+        {
             return c;
+        }
         Node a = c;
         int n2 = n / 2;
         /* Разделяне на списъка на две части */
         for (int i = 2; i <= n2; i++)
+        {
             c = c.Next;
+        }
 
         Node b = c.Next;
         c.Next = null;
@@ -59,7 +67,7 @@ class Program
         return Merge(MergeSort(a, n2), MergeSort(b, n - n2));
     }
 
-    static Node Merge(Node a, Node b)
+    private static Node Merge(Node a, Node b)
     {
         /* Предполага се, че и двата списъка съдържат поне по един елемент */
         Node tail = new Node();

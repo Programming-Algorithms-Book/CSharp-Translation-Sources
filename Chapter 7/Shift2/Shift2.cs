@@ -6,26 +6,29 @@ using System.Threading.Tasks;
 
 namespace Shift2
 {
-    struct Element
+    internal struct Element
     {
         public int Data { get; set; }
     }
 
-    class Shift2
+    internal class Shift2
     {
-        const int N = 10; /* Брой елементи в масива */
-        const int K = 2;  /* Брой позицции на отместване */
+        private const int N = 10; /* Брой елементи в масива */
+        private const int K = 2; /* Брой позицции на отместване */
 
-        static void InitializeArray(Element[] array)
+        private static void InitializeArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
+            {
                 array[i].Data = i;
+            }
         }
 
-        static void Swap(Element[] array, int a, int b, int l) /* Разменя местата на подмасивите m[a..a+l-1] и m[b..b+l-1] */
-        { 
+        private static void Swap(Element[] array, int a, int b, int l)
+            /* Разменя местата на подмасивите m[a..a+l-1] и m[b..b+l-1] */
+        {
             Element tempElement = new Element();
-            for (int i = 0; i < l; i++) 
+            for (int i = 0; i < l; i++)
             {
                 tempElement = array[a + i];
                 array[a + i] = array[b + i];
@@ -33,13 +36,14 @@ namespace Shift2
             }
         }
 
-        static void ShiftLeft(Element[] array) /* Измества масива m[] на k позиции наляво. 
+        private static void ShiftLeft(Element[] array) /* Измества масива m[] на k позиции наляво. 
    * рекурсивен процес, реализиран итеративно } */
         {
             int i = K;
             int p = K;
             int j = N - K;
             while (i != j)
+            {
                 if (i > j)
                 {
                     Swap(array, p - i, p, j);
@@ -50,10 +54,11 @@ namespace Shift2
                     Swap(array, p - i, p + j - i, i);
                     j -= i;
                 }
+            }
             Swap(array, p - i, p, i);
         }
 
-        static void PrintArray(Element[] array)
+        private static void PrintArray(Element[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -62,7 +67,7 @@ namespace Shift2
             Console.WriteLine();
         }
 
-        static void Main()
+        private static void Main()
         {
             Element[] elements = new Element[N];
             InitializeArray(elements);

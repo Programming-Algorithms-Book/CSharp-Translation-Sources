@@ -2,7 +2,7 @@
 {
     using System;
 
-    class MinAndMaxElement
+    internal class MinAndMaxElement
     {
         private static readonly Random rand = new Random();
 
@@ -59,9 +59,9 @@
         }
 
         public static void FindMinAndMax(out int min, out int max, int[] numbers, int n)
-        /* Намира едновременно максималния и минималния елементи */
+            /* Намира едновременно максималния и минималния елементи */
         {
-            int n2 = n/2; //n = 20
+            int n2 = n / 2; //n = 20
             min = max = numbers[n2];
             for (int i = 0; i < n2; i++)
             {
@@ -114,7 +114,7 @@
             return y;
         }
 
-        static void Main()
+        private static void Main()
         {
             int arrayLength = 10;
             int[] array = new int[arrayLength];
@@ -122,14 +122,14 @@
 
             Console.WriteLine("Масивът:");
             PrintArray(array);
-            
+
             Console.WriteLine("Максимален елемент: {0}", FindMaxElement(array));
             Console.WriteLine("Минимален елемент: {0}", FindMinElement(array));
 
             int min, max;
             FindMinAndMax(out min, out max, array, arrayLength);
             Console.WriteLine("Едновременно максимален: {0} и минимален: {1} елемент.", min, max);
-            
+
             Console.WriteLine("Втори по големина елемент: {0}", FindSecondMax(array, arrayLength));
         }
     }

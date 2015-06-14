@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace SolveHanoyTowers
 {
-    class SolveHanoyTowers
+    internal class SolveHanoyTowers
     {
-        static void MoveDisk(int n, char a, char b)
+        private static void MoveDisk(int n, char a, char b)
         {
             Console.WriteLine("Преместете диск {0} от {1} на {2}", n, a, b);
         }
 
-        static void SolveHanoy(char a, char c, char b, int n)
+        private static void SolveHanoy(char a, char c, char b, int n)
         {
             if (n == 1)
+            {
                 MoveDisk(1, a, c);
+            }
             else
             {
                 SolveHanoy(a, b, c, n - 1);
@@ -25,7 +27,7 @@ namespace SolveHanoyTowers
             }
         }
 
-        static void Main()
+        private static void Main()
         {
             int numberOfDisks = 5;
             Console.WriteLine("Брой дискове: {0}", numberOfDisks);
