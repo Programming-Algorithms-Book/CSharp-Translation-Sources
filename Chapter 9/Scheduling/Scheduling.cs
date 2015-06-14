@@ -1,60 +1,64 @@
-using System;
-
-internal class Program
+namespace Scheduling
 {
-    private static void Main()
-    {
-        int[] v = { 50, 40, 30, 20, 15 };
-        int[] d = { 2, 1, 2, 2, 1 };
-        /* оригинална номерация на задачите */
-        int[] p = { 5, 1, 2, 4, 3 };
+    using System;
 
-        Solve(d, v, p);
-    }
-
-    private static bool Feasible(int[] index, int[] d, int k)
+    internal class Program
     {
-        int s = 0;
-        for (int i = 0; i < index.Length; i++)
+        private static void Main()
         {
-            s += index[i];
-            if (i == d[k] - 1)
-            {
-                s += 1;
-            }
-            if (s > i + 1)
-            {
-                return false;
-            }
+            int[] v = { 50, 40, 30, 20, 15 };
+            int[] d = { 2, 1, 2, 2, 1 };
+            /* оригинална номерация на задачите */
+            int[] p = { 5, 1, 2, 4, 3 };
+
+            Solve(d, v, p);
         }
 
-        return true;
-    }
-
-    private static void Solve(int[] d, int[] v, int[] p)
-    {
-        int[] index = new int[d.Length];
-        int[] taken = new int[d.Length];
-        int tn = 0;
-        for (int k = 0; k < index.Length; k++)
+        private static bool Feasible(int[] index, int[] d, int k)
         {
-            if (Feasible(index, d, k))
+            int s = 0;
+            for (int i = 0; i < index.Length; i++)
             {
-                taken[tn++] = k;
-                index[d[k] - 1]++;
+                s += index[i];
+                if (i == d[k] - 1)
+                {
+                    s += 1;
+                }
+
+                if (s > i + 1)
+                {
+                    return false;
+                }
             }
+
+            return true;
         }
 
-        Console.Write("Оптимално разписание: ");
-
-        int income = 0;
-        for (int i = 0; i < tn; i++)
+        private static void Solve(int[] d, int[] v, int[] p)
         {
-            Console.Write("{0} ", p[taken[i]]);
-            income += v[taken[i]];
-        }
+            int[] index = new int[d.Length];
+            int[] taken = new int[d.Length];
+            int tn = 0;
+            for (int k = 0; k < index.Length; k++)
+            {
+                if (Feasible(index, d, k))
+                {
+                    taken[tn++] = k;
+                    index[d[k] - 1]++;
+                }
+            }
 
-        Console.WriteLine();
-        Console.WriteLine("Общ доход: {0}", income);
+            Console.Write("Оптимално разписание: ");
+
+            int income = 0;
+            for (int i = 0; i < tn; i++)
+            {
+                Console.Write("{0} ", p[taken[i]]);
+                income += v[taken[i]];
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Общ доход: {0}", income);
+        }
     }
 }

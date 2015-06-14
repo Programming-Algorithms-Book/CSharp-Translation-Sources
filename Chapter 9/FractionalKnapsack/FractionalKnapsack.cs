@@ -1,60 +1,70 @@
-using System;
-using System.Linq;
-
-internal class Program
+namespace FractionalKnapsack
 {
-    private static void Main()
-    {
-        const double M = 16; /* ограничително тегло на раницата */
-        double[] value = { 25.0, 12.0, 16.0 }; /* себестойност на предметите */
-        double[] quant = { 10.0, 8.0, 8.0 }; /* количества от предметите */
-        double[] ratio = value.Zip(quant, (v, q) => v / q).ToArray(); /* отношения стойност/количество  */
-        Sort(ratio, value, quant);
-        Solve(M, value, quant);
-    }
+    using System;
+    using System.Linq;
 
-    private static void Swap(ref double a, ref double b)
+    internal class Program
     {
-        double temp = a;
-        a = b;
-        b = temp;
-    }
-
-    /* сортира предметите по себестойност */
-
-    private static void Sort(double[] ratio, double[] value, double[] quant)
-    {
-        for (int i = 0; i < ratio.Length - 1; i++)
+        private static void Main()
         {
-            for (int j = i + 1; j < ratio.Length; j++)
+            const double M = 16; /* ограничително тегло на раницата */
+            double[] value = { 25.0, 12.0, 16.0 }; /* себестойност на предметите */
+            double[] quant = { 10.0, 8.0, 8.0 }; /* количества от предметите */
+            double[] ratio = value.Zip(quant, (v, q) => v / q).ToArray(); /* отношения стойност/количество  */
+            Sort(ratio, value, quant);
+            Solve(M, value, quant);
+        }
+
+        private static void Swap(ref double a, ref double b)
+        {
+            double temp = a;
+            a = b;
+            b = temp;
+        }
+
+        /* сортира предметите по себестойност */
+
+        private static void Sort(double[] ratio, double[] value, double[] quant)
+        {
+            for (int i = 0; i < ratio.Length - 1; i++)
             {
-                if (ratio[j] > ratio[i])
+                for (int j = i + 1; j < ratio.Length; j++)
                 {
-                    Swap(ref value[i], ref value[j]);
-                    Swap(ref quant[i], ref quant[j]);
-                    Swap(ref ratio[i], ref ratio[j]);
+                    if (ratio[j] > ratio[i])
+                    {
+                        Swap(ref value[i], ref value[j]);
+                        Swap(ref quant[i], ref quant[j]);
+                        Swap(ref ratio[i], ref ratio[j]);
+                    }
                 }
             }
         }
-    }
 
-    /* намира решението */
+        /* намира решението */
 
-    private static void Solve(double M, double[] value, double[] quant)
-    {
-        int i = 0;
-        double T = 0, V = 0;
-        while (T + quant[i] <= M)
+        private static void Solve(double m, double[] value, double[] quant)
         {
-            /* взима цели предмети, докато може */
-            Console.WriteLine("Избира 100% от предмет със стойност {0:F2} и тегло {1:F2}", value[i], quant[i]);
-            T += quant[i];
-            V += value[i];
-            i++;
+            int i = 0;
+            double t = 0;
+            double v = 0;
+
+            while (t + quant[i] <= m)
+            {
+                /* взима цели предмети, докато може */
+                Console.WriteLine("Избира 100% от предмет със стойност {0:F2} и тегло {1:F2}", value[i], quant[i]);
+                t += quant[i];
+                v += value[i];
+                i++;
+            }
+
+            Console.WriteLine(
+                "Избира се {0:F2}% от предмет със стойност {1:F2} и тегло {2:F2}",    
+                ((m - t) / quant[i]) * 100, 
+                value[i], 
+                quant[i]);
+
+            v += (m - t) * (value[i] / quant[i]);
+            Console.WriteLine("Обща получена цена: {0:F2}\n", v);
         }
-        Console.WriteLine("Избира се {0:F2}% от предмет със стойност {1:F2} и тегло {2:F2}",
-                          ((M - T) / quant[i]) * 100, value[i], quant[i]);
-        V += (M - T) * (value[i] / quant[i]);
-        Console.WriteLine("Обща получена цена: {0:F2}\n", V);
     }
 }

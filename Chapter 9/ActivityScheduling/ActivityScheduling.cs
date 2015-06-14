@@ -1,28 +1,32 @@
-using System;
-
-internal class Program
+namespace ActivityScheduling
 {
-    private static void Main()
-    {
-        int[] start = { 3, 5, 7, 9, 13, 15, 17 };
-        int[] end = { 8, 10, 12, 14, 15, 19, 20 };
-        Array.Sort(start, end);
-        Solve(start, end);
-    }
+    using System;
 
-    private static void Solve(int[] start, int[] end)
+    internal class Program
     {
-        int i = 1, j = 1;
-        Console.Write("Избрани лекции: {0} ", 1);
-
-        while (j++ < start.Length)
+        private static void Main()
         {
-            if (start[j - 1] > end[i - 1])
-            {
-                Console.Write("{0} ", j);
-                i = j;
-            }
+            int[] start = { 3, 5, 7, 9, 13, 15, 17 };
+            int[] end = { 8, 10, 12, 14, 15, 19, 20 };
+            Array.Sort(start, end);
+            Solve(start, end);
         }
-        Console.WriteLine();
+
+        private static void Solve(int[] start, int[] end)
+        {
+            int i = 1, j = 1;
+            Console.Write("Избрани лекции: {0} ", 1);
+
+            while (j++ < start.Length)
+            {
+                if (start[j - 1] > end[i - 1])
+                {
+                    Console.Write("{0} ", j);
+                    i = j;
+                }
+            }
+
+            Console.WriteLine();
+        }
     }
 }

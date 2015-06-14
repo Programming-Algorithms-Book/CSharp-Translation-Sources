@@ -1,43 +1,48 @@
-using System;
-
-internal class Program
+namespace EgyptianFractions
 {
-    private static void Main()
-    {
-        Solve(3, 7);
-    }
+    using System;
 
-    /* намалява p/q, докато p стане равно на 1 */
-
-    private static void Cancel(ref long p, ref long q)
+    internal class Program
     {
-        if (q % p == 0)
+        private static void Main()
         {
-            q /= p;
-            p = 1;
+            Solve(3, 7);
         }
-    }
 
-    private static void Solve(long p, long q)
-    {
-        Console.Write("{0}/{1} = ", p, q);
-        Cancel(ref p, ref q);
+        /* намалява p/q, докато p стане равно на 1 */
 
-        while (p > 1)
+        private static void Cancel(ref long p, ref long q)
         {
-            /* намира максималната дроб 1/r, 1/r<=p/q */
-            long r = (q + p) / p;
-            Console.Write("{0}/{1} + ", 1, r);
+            if (q % p == 0)
+            {
+                q /= p;
+                p = 1;
+            }
+        }
 
-            /* изчислява p/q - 1/r */
-            p = p * r - q;
-            q = q * r;
+        private static void Solve(long p, long q)
+        {
+            Console.Write("{0}/{1} = ", p, q);
             Cancel(ref p, ref q);
+
+            while (p > 1)
+            {
+                /* намира максималната дроб 1/r, 1/r<=p/q */
+                long r = (q + p) / p;
+                Console.Write("{0}/{1} + ", 1, r);
+
+                /* изчислява p/q - 1/r */
+                p = (p * r) - q;
+                q = q * r;
+                Cancel(ref p, ref q);
+            }
+
+            if (p > 0)
+            {
+                Console.Write("{0}/{1}", p, q);
+            }
+
+            Console.WriteLine();
         }
-        if (p > 0)
-        {
-            Console.Write("{0}/{1}", p, q);
-        }
-        Console.WriteLine();
     }
 }
