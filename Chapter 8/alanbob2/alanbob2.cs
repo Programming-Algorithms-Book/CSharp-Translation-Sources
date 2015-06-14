@@ -2,35 +2,44 @@
 
 namespace Translations._2.brothers
 {
-    class alanbob2
+    internal class alanbob2
     {
-        const int MaxObjects = 100; /* Максимален брой предмети */
-        const int MaxValue = 200; /* Максимална стойност на отделен предмет */
-        const int NotSet = -1;
-        const int N = 10; /* Общ брой на предметите за поделяне */
+        private const int MaxObjects = 100; /* Максимален брой предмети */
+        private const int MaxValue = 200; /* Максимална стойност на отделен предмет */
+        private const int NotSet = -1;
+        private const int N = 10; /* Общ брой на предметите за поделяне */
 
-        static int[] lastAdded = new int[MaxObjects * MaxValue]; /* Кой предмет е бил добавен последен? */
-        static readonly int[] objectValues = new int[] { 3, 2, 3, 2, 2, 77, 89, 23, 90, 11 };
+        private static int[] lastAdded = new int[MaxObjects * MaxValue]; /* Кой предмет е бил добавен последен? */
+        private static readonly int[] objectValues = new int[] { 3, 2, 3, 2, 2, 77, 89, 23, 90, 11 };
 
-        static void Solve()
+        private static void Solve()
         {
             int totalSum; /* Обща стойност на предметите за поделяне */
             int currSum = 0;
             int i, j;
 
             /* Пресмятаме totalSum */
-            for (totalSum = i = 0; i < N; totalSum += objectValues[i++]);
+            for (totalSum = i = 0; i < N; totalSum += objectValues[i++])
+            {
+                ;
+            }
 
             /* Начално инициализиране */
             for (lastAdded[0] = 0, i = 1; i <= totalSum; i++)
+            {
                 lastAdded[i] = NotSet;
+            }
 
             /* Намиране на всевъзможните суми от стойности на подаръците */
             for (i = 0; i < N; i++)
             {
                 for (j = totalSum; j + 1 > 0; j--)
+                {
                     if (NotSet != lastAdded[j] && NotSet == lastAdded[j + objectValues[i]])
+                    {
                         lastAdded[j + objectValues[i]] = i;
+                    }
+                }
                 currSum += objectValues[i];
             }
 
@@ -52,7 +61,7 @@ namespace Translations._2.brothers
             }
         }
 
-        static void Main()
+        private static void Main()
         {
             Solve();
         }

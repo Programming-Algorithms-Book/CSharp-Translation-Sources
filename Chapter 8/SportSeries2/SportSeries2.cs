@@ -1,24 +1,26 @@
-using System;
+﻿using System;
 
-class Program
+internal class Program
 {
-    const double p = 0.5; /* Вероятност A да спечели отделен мач */
-    const int n = 5;
-    
-    static double?[,] PS = new double?[n+1, n+1];
-    
-    static void Main()
+    private const double p = 0.5; /* Вероятност A да спечели отделен мач */
+    private const int n = 5;
+
+    private static double?[,] PS = new double?[n + 1, n + 1];
+
+    private static void Main()
     {
         PDynamic(n, n);
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
+            {
                 Console.Write("{0:F6} ", PS[i, j] ?? 0.0);
+            }
             Console.WriteLine();
         }
     }
-        
-    static double PDynamic(int i, int j)
+
+    private static double PDynamic(int i, int j)
     {
         for (int k = 1; k <= i; k++)
         {
@@ -30,8 +32,8 @@ class Program
         }
         return PDyn(i, j);
     }
-    
-    static double PDyn(int i, int j)    /* Динамично оптимиране */
+
+    private static double PDyn(int i, int j) /* Динамично оптимиране */
     {
         if (!PS[i, j].HasValue)
         {

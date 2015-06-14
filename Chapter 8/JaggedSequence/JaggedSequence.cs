@@ -1,24 +1,24 @@
 using System;
 
-class Program
+internal class Program
 {
-    const int NO_IND = -1;
-    
-    static int[] x = {0, 8, 3, 5, 7, 0, 8, 9, 10, 20, 20, 20, 12, 19, 11}; /* 0-ият не се ползва */
-    static readonly int n = x.Length - 1; /* Брой */
-    
-    static int[] Fmin = new int[n];      /* Целева функция: макс. дължина на редица, завършваща с НАМАЛЯВАНЕ */
-    static int[] Fmin_back = new int[n]; /* Предишен индекс от редицата на целевата функция Fmin */
-    static int[] Fmax = new int[n];      /* Целева функция: макс. дължина на редица, завършваща с НАРАСТВАНЕ */
-    static int[] Fmax_back = new int[n]; /* Предишен индекс от редицата на целевата функция Fmax */
-    
-    static void Main()
+    private const int NO_IND = -1;
+
+    private static int[] x = { 0, 8, 3, 5, 7, 0, 8, 9, 10, 20, 20, 20, 12, 19, 11 }; /* 0-ият не се ползва */
+    private static readonly int n = x.Length - 1; /* Брой */
+
+    private static int[] Fmin = new int[n]; /* Целева функция: макс. дължина на редица, завършваща с НАМАЛЯВАНЕ */
+    private static int[] Fmin_back = new int[n]; /* Предишен индекс от редицата на целевата функция Fmin */
+    private static int[] Fmax = new int[n]; /* Целева функция: макс. дължина на редица, завършваща с НАРАСТВАНЕ */
+    private static int[] Fmax_back = new int[n]; /* Предишен индекс от редицата на целевата функция Fmax */
+
+    private static void Main()
     {
         CalculateFMinMax();
         FindSolution();
     }
-    
-    static void CalculateFMinMax()
+
+    private static void CalculateFMinMax()
     {
         int ind, ind2;
         /* Инициализация */
@@ -50,12 +50,12 @@ class Program
         }
     }
 
-    static bool Operation(int a, int b)
+    private static bool Operation(int a, int b)
     {
         return a < b;
     }
-    
-    static void FindSolution()
+
+    private static void FindSolution()
     {
         int ind, bestFminInd, bestFmaxInd;
         /* Намиране (края) на най-дългата редица */
@@ -63,27 +63,41 @@ class Program
         for (ind = 1; ind < n; ind++)
         {
             if (Fmin[bestFminInd] < Fmin[ind])
+            {
                 bestFminInd = ind;
+            }
             if (Fmax[bestFmaxInd] < Fmax[ind])
+            {
                 bestFmaxInd = ind;
+            }
         }
         /* Маркиране на елементите й */
         if (Fmin[bestFminInd] > Fmax[bestFmaxInd])
+        {
             MarkSolutionElements(Fmin, Fmax, Fmin_back, Fmax_back, bestFminInd);
+        }
         else
+        {
             MarkSolutionElements(Fmax, Fmin, Fmax_back, Fmin_back, bestFmaxInd);
+        }
         /* Извеждане на решението на екрана */
         for (ind = 0; ind < n; ind++)
+        {
             if (NO_IND == Fmin[ind])
+            {
                 Console.Write("{0} ", x[ind]);
+            }
+        }
         Console.WriteLine();
     }
-    
-    static void MarkSolutionElements(
+
+    private static void MarkSolutionElements(
         int[] f1, int[] f2, int[] fInd1, int[] fInd2, int indF)
     {
         if (fInd1[indF] == NO_IND)
+        {
             return;
+        }
         f1[indF] = f2[indF] = NO_IND;
         MarkSolutionElements(f2, f1, fInd2, fInd1, fInd1[indF]);
     }

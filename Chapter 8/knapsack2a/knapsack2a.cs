@@ -1,20 +1,21 @@
 ﻿using System;
 
-class knapsack2a
+internal class knapsack2a
 {
-    const int NotCalculated = -1;
-    const int MaxN = 30;
-    const int MaxCapacity = 1000;
-    const int TotalCapacity = 70; /* Обща вместимост на раницата */
-    const int N = 8; /* Брой предмети */
+    private const int NotCalculated = -1;
+    private const int MaxN = 30;
+    private const int MaxCapacity = 1000;
+    private const int TotalCapacity = 70; /* Обща вместимост на раницата */
+    private const int N = 8; /* Брой предмети */
 
-    static bool[,] set = new bool[MaxCapacity, MaxN];
-    static int[] Fn = new int[MaxCapacity];
-    static readonly int[] weights = new int[] { 0, 30, 15, 50, 10, 20, 40, 5, 65 }; /* Тегла */
-    static readonly int[] values = new int[] { 0, 5, 3, 9, 1, 2, 7, 1, 12 }; /* Стойности */
+    private static bool[,] set = new bool[MaxCapacity, MaxN];
+    private static int[] Fn = new int[MaxCapacity];
+    private static readonly int[] weights = new int[] { 0, 30, 15, 50, 10, 20, 40, 5, 65 }; /* Тегла */
+    private static readonly int[] values = new int[] { 0, 5, 3, 9, 1, 2, 7, 1, 12 }; /* Стойности */
 
     /* Пресмята стойността на функцията за k */
-    static void CalculateFunction(int k)
+
+    private static void CalculateFunction(int k)
     {
         int i, bestI, fnBest, fnCur;
         /* Пресмятане на най-голямата стойност на F */
@@ -23,11 +24,17 @@ class knapsack2a
             if (k >= weights[i])
             {
                 if (Fn[k - weights[i]] == NotCalculated)
+                {
                     CalculateFunction(k - weights[i]);
+                }
                 if (!set[k - weights[i], i])
+                {
                     fnCur = values[i] + Fn[k - weights[i]];
+                }
                 else
+                {
                     fnCur = 0;
+                }
                 if (fnCur > fnBest)
                 {
                     bestI = i;
@@ -49,9 +56,10 @@ class knapsack2a
         }
     }
 
-    static void Calculate()
+    private static void Calculate()
     {
-        int maxValue, /* Максимална постигната стойност */
+        int maxValue,
+            /* Максимална постигната стойност */
             maxIndex; /* Индекс, за който е постигната */
 
         /* Пресмятане на стойностите на целевата функция */
@@ -59,12 +67,16 @@ class knapsack2a
         {
             maxValue = maxIndex = 0;
             for (int j = 1; j <= N; j++)
+            {
                 if (weights[j] <= i && !set[i - weights[j], j])
+                {
                     if (values[j] + Fn[i - weights[j]] > maxValue)
                     {
                         maxValue = values[j] + Fn[i - weights[j]];
                         maxIndex = j;
                     }
+                }
+            }
 
             if (maxIndex > 0)
             {
@@ -94,13 +106,17 @@ class knapsack2a
         /* Извеждане на резултата */
         Console.Write("Вземете предметите с номера: ");
         for (int i = 1; i <= N; i++)
+        {
             if (set[TotalCapacity, i])
+            {
                 Console.Write("{0} ", i);
+            }
+        }
 
         Console.WriteLine("\nМаксимална постигната стойност: {0}", Fn[TotalCapacity]);
     }
 
-    static void Main()
+    private static void Main()
     {
         Console.WriteLine("Брой предмети: {0}", N);
         Console.WriteLine("Вместимост на раницата: {0}", TotalCapacity);
