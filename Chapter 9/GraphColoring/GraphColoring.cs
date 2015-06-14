@@ -1,19 +1,20 @@
 using System;
 
-class Program
+internal class Program
 {
-    static int[,] A = {
-        { 0, 1, 0, 0, 0, 0 }, 
-        { 1, 0, 1, 0, 0, 1 }, 
-        { 0, 1, 0, 0, 1, 0 }, 
-        { 0, 0, 0, 0, 0, 1 }, 
-        { 0, 0, 1, 0, 0, 0 }, 
+    private static int[,] A =
+    {
+        { 0, 1, 0, 0, 0, 0 },
+        { 1, 0, 1, 0, 0, 1 },
+        { 0, 1, 0, 0, 1, 0 },
+        { 0, 0, 0, 0, 0, 1 },
+        { 0, 0, 1, 0, 0, 0 },
         { 0, 1, 0, 1, 0, 0 }
     };
-    
-    static readonly int rows = A.GetLength(0);
 
-    static void Main()
+    private static readonly int rows = A.GetLength(0);
+
+    private static void Main()
     {
         Console.WriteLine("Оцветяване на върховете по алгоритъм 1:");
         int[] colors1 = Solve1();
@@ -22,32 +23,38 @@ class Program
         int[] colors2 = Solve2();
         ShowColor(colors2);
     }
-    
+
     /* върховете се разглеждат в произволен, а не сортиран по степента им ред */
-    static int[] Solve1()
+
+    private static int[] Solve1()
     {
         int[] colors = new int[rows];
         for (int i = 0; i < rows; i++)
-        { /* оцветява i-тия връх с най-малкият възможен цвят */
-            
+        {
+            /* оцветява i-тия връх с най-малкият възможен цвят */
+
             int c = 0;
             bool flag;
-            do {
+            do
+            {
                 c++;
                 flag = true;
                 for (int j = 0; j < i; j++)
+                {
                     if (A[i, j] == 1 && colors[j] == c)
                     {
                         flag = false;
                         break;
                     }
-            } while (!flag);
+                }
+            }
+            while (!flag);
             colors[i] = c;
         }
         return colors;
     }
-    
-    static int[] Solve2()
+
+    private static int[] Solve2()
     {
         int c = 0, cn = 0;
         int[] colors = new int[rows];
@@ -63,11 +70,13 @@ class Program
                 {
                     bool flag = true;
                     for (int j = 0; j < rows; j++)
+                    {
                         if (A[i, j] == 1 && colors[j] == c)
                         {
                             flag = false;
                             break;
                         }
+                    }
                     if (flag)
                     {
                         colors[i] = c;
@@ -78,11 +87,13 @@ class Program
         }
         return colors;
     }
-    
-    static void ShowColor(int[] colors)
+
+    private static void ShowColor(int[] colors)
     {
-        for (int i = 0; i < colors.Length; i++) 
+        for (int i = 0; i < colors.Length; i++)
+        {
             Console.Write("{0}-{1}; ", i + 1, colors[i]);
+        }
         Console.WriteLine();
     }
 }
