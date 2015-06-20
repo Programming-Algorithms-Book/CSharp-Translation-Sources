@@ -131,10 +131,11 @@
                 return;
             }
 
-            for (int k = 0; k < N; k++)
+            for (uint k = 0; k < N; k++)
             {
                 uint len = (uint)Transf[k].SecondString.Length;
-                for (int i = 0; i < len; i++)
+                uint i;
+                for (i = 0; i < len; i++)
                 {
                     if ((int)i >= Transf[k].SecondString.Length
                         || (int)(i + count) >= str1.Length
