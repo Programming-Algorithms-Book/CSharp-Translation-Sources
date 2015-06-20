@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Majorant8
+﻿namespace Majorant8
 {
-    internal class Majorant8
+    using System;
+
+    public class Majorant8
     {
+        internal static void Main()
+        {
+            char majority;
+            char[] array = { 'A', 'A', 'A', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C', };
+            FindMajority(array, out majority);
+            Console.WriteLine("Мажорант: {0}", majority);
+        }
+
         private static void FindMajority<T>(T[] array, out T majority)
         {
             int size = array.Length;
@@ -23,6 +27,7 @@ namespace Majorant8
                         array[currentCounter++] = array[i];
                     }
                 }
+
                 if (i == size)
                 {
                     array[currentCounter++] = array[i - 1];
@@ -36,18 +41,11 @@ namespace Majorant8
                 {
                     currentCounter--;
                 }
+
                 size = currentCounter;
             }
             while (size > 1);
             majority = array[0];
-        }
-
-        private static void Main()
-        {
-            char majority;
-            char[] array = { 'A', 'A', 'A', 'B', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C', };
-            FindMajority(array, out majority);
-            Console.WriteLine("Мажорант: {0}", majority);
         }
     }
 }

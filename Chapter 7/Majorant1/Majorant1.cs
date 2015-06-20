@@ -1,46 +1,49 @@
-﻿using System;
-
-internal class Majorant1
+﻿namespace Majorant1
 {
-    private static int CountElements<T>(T[] array, T candidate)
+    using System;
+
+    public class Majorant1
     {
-        int counter = 0;
-        for (int i = 0; i < array.Length; i++)
+        internal static void Main()
         {
-            if (array[i].Equals(candidate))
+            char[] array = { 'A', 'C', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C' };
+            char majority = default(char);
+            FindMajority<char>(array, out majority);
+            if (majority != default(char))
             {
-                counter++;
+                Console.WriteLine("Мажорант: {0}", majority);
+            }
+            else
+            {
+                Console.WriteLine("Масивът няма мажорант.");
             }
         }
 
-        return counter;
-    }
-
-    private static void FindMajority<T>(T[] array, out T majority)
-    {
-        majority = default(T);
-        var size = array.Length / 2;
-        for (int i = 0; i < array.Length; i++)
+        private static int CountElements<T>(T[] array, T candidate)
         {
-            if (CountElements(array, array[i]) > size)
+            int counter = 0;
+            for (int i = 0; i < array.Length; i++)
             {
-                majority = array[i];
+                if (array[i].Equals(candidate))
+                {
+                    counter++;
+                }
             }
-        }
-    }
 
-    private static void Main()
-    {
-        char[] array = { 'A', 'C', 'C', 'C', 'C', 'B', 'B', 'C', 'C', 'C', 'B', 'C', 'C' };
-        char majority = default(char);
-        FindMajority<char>(array, out majority);
-        if (majority != default(char))
-        {
-            Console.WriteLine("Мажорант: {0}", majority);
+            return counter;
         }
-        else
+
+        private static void FindMajority<T>(T[] array, out T majority)
         {
-            Console.WriteLine("Масивът няма мажорант.");
+            majority = default(T);
+            var size = array.Length / 2;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (CountElements(array, array[i]) > size)
+                {
+                    majority = array[i];
+                }
+            }
         }
     }
 }

@@ -1,38 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BinaryMerge
+﻿namespace BinaryMerge
 {
-    internal struct Element
+    using System;
+    using System.Diagnostics;
+
+    public class BinaryMerger
     {
-        public int Key { get; set; }
-
-        public Element(int key) : this()
-        {
-            this.Key = key;
-        }
-
-        /* ............. 
-          Някакви данни 
-        ............. */
-    }
-
-    internal class BinaryMerger
-    {
-        private static Random rand = new Random();
         private const int N = 12;
         private const int M = 14;
+        private static readonly Random Rand = new Random();
 
         private static void InitializeArray(Element[] array, int modul1, int modul2)
         {
-            array[0].Key = rand.Next() % modul1;
+            array[0].Key = Rand.Next() % modul1;
             for (int i = 1; i < array.Length; i++)
             {
-                array[i].Key = array[i - 1].Key + (rand.Next() % modul2);
+                array[i].Key = array[i - 1].Key + (Rand.Next() % modul2);
             }
         }
 
@@ -51,6 +33,7 @@ namespace BinaryMerge
                 }
             }
             while (left <= right);
+
             return right;
         }
 
@@ -63,7 +46,7 @@ namespace BinaryMerge
             int k;
             while (n > 0 && m > 0)
             {
-                power = (int) (Math.Log(n / m) / Math.Log(2));
+                power = (int)(Math.Log(n / m) / Math.Log(2));
                 elementsCount = 1 << power; /* elementsCount <-- 2^power */
                 if (m <= n)
                 {
@@ -84,6 +67,7 @@ namespace BinaryMerge
                         {
                             c[totalLength - n + k + j + 1] = a[k + j + 1];
                         }
+
                         totalLength -= n - k - 1;
                         n = k + 1;
                         c[--totalLength] = b[--m];
@@ -107,12 +91,14 @@ namespace BinaryMerge
                         {
                             c[totalLength - m + k + j + 1] = b[k + j + 1];
                         }
+
                         totalLength -= m - k - 1;
                         m = k + 1;
                         c[--totalLength] = a[--n];
                     }
                 }
             }
+
             if (n == 0)
             {
                 for (int i = 0; i < m; i++)
@@ -135,6 +121,7 @@ namespace BinaryMerge
             {
                 Console.Write("{0} ", element.Key);
             }
+
             Console.WriteLine();
         }
 
@@ -142,7 +129,7 @@ namespace BinaryMerge
         {
             for (int i = 1; i < elemets.Length; i++)
             {
-                Debug.Assert(elemets[i - 1].Key <= elemets[i].Key);
+                Debug.Assert(elemets[i - 1].Key <= elemets[i].Key, "Wrong order");
             }
         }
 

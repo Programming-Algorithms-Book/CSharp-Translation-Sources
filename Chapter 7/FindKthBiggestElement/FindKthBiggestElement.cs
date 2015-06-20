@@ -1,119 +1,126 @@
-﻿using System;
-
-internal class FindKElement
+﻿namespace FindKElement
 {
-    private static readonly Random rand = new Random();
-    private static int[] array = new int[10];
+    using System;
 
-    private static void InitializeArray() /* Запълва масива със случайни числа */
+    public class FindKElement
     {
-        for (int i = 0; i < array.Length; i++)
-        {
-            array[i] = rand.Next(int.MaxValue) % (2 * array.Length + 1);
-        }
-    }
+        private static readonly Random Rand = new Random();
+        private static readonly int[] Array = new int[10];
 
-    private static void HeapFindKthElement(int k) /* Търсене на k-ия елемент с пирамида */
-    {
-        int n = array.Length; /* Брой елементи в масива */
-        int left, right;
-        bool useMax = (k > n / 2);
-        if (useMax)
+        private static void InitializeArray() /* Запълва масива със случайни числа */
         {
-            k = n - k - 1;
+            for (int i = 0; i < Array.Length; i++)
+            {
+                Array[i] = Rand.Next(int.MaxValue) % ((2 * Array.Length) + 1);
+            }
         }
 
-        left = n / 2;
-        right = n - 1;
-
-        /* Построяване на пирамидата */
-        while (left > 0)
+        private static void HeapFindKthElement(int k) /* Търсене на k-ия елемент с пирамида */
         {
-            left--;
+            int n = Array.Length; /* Брой елементи в масива */
+            int left, right;
+            bool useMax = k > n / 2;
             if (useMax)
             {
-                SiftMax(left, right);
+                k = n - k - 1;
             }
-            else
-            {
-                SiftMin(left, right);
-            }
-        }
 
-        /* (k-1)-кратно премахване на минималния елемент */
-        for (right = n - 1; right >= n - k; right--)
-        {
-            array[0] = array[right];
-            if (useMax)
-            {
-                SiftMax(0, right);
-            }
-            else
-            {
-                SiftMin(0, right);
-            }
-        }
-    }
+            left = n / 2;
+            right = n - 1;
 
-    private static void SiftMax(int left, int right) /* Отсява елем. от върха на пирамидата */
-    {
-        int i = left;
-        int j = i + i + 1;
-        int x = array[i];
-        while (j <= right)
-        {
-            if (j < right)
+            /* Построяване на пирамидата */
+            while (left > 0)
             {
-                if (array[j] < array[j + 1])
+                left--;
+                if (useMax)
                 {
-                    j++;
+                    SiftMax(left, right);
+                }
+                else
+                {
+                    SiftMin(left, right);
                 }
             }
-            if (x >= array[j])
-            {
-                break;
-            }
 
-            array[i] = array[j];
-            i = j;
-            j = j * 2 + 1;
-        }
-        array[i] = x;
-    }
-
-    private static void SiftMin(int left, int right) /* Отсява елем. от върха на пирамидата */
-    {
-        int i = left;
-        int j = i + i + 1;
-        int x = array[i];
-        while (j <= right)
-        {
-            if (j < right)
+            /* (k-1)-кратно премахване на минималния елемент */
+            for (right = n - 1; right >= n - k; right--)
             {
-                if (array[j] > array[j + 1])
+                Array[0] = Array[right];
+                if (useMax)
                 {
-                    j++;
+                    SiftMax(0, right);
+                }
+                else
+                {
+                    SiftMin(0, right);
                 }
             }
-            if (x <= array[j])
+        }
+
+        private static void SiftMax(int left, int right) /* Отсява елем. от върха на пирамидата */
+        {
+            int i = left;
+            int j = i + i + 1;
+            int x = Array[i];
+            while (j <= right)
             {
-                break;
+                if (j < right)
+                {
+                    if (Array[j] < Array[j + 1])
+                    {
+                        j++;
+                    }
+                }
+
+                if (x >= Array[j])
+                {
+                    break;
+                }
+
+                Array[i] = Array[j];
+                i = j;
+                j = (j * 2) + 1;
             }
 
-            array[i] = array[j];
-            i = j;
-            j = j * 2 + 1;
+            Array[i] = x;
         }
-        array[i] = x;
-    }
 
-    private static void Main()
-    {
-        InitializeArray();
-        Console.WriteLine("Масивът: {0}", string.Join(" ", array));
+        private static void SiftMin(int left, int right) /* Отсява елем. от върха на пирамидата */
+        {
+            int i = left;
+            int j = i + i + 1;
+            int x = Array[i];
+            while (j <= right)
+            {
+                if (j < right)
+                {
+                    if (Array[j] > Array[j + 1])
+                    {
+                        j++;
+                    }
+                }
 
-        int k = 5;
-        HeapFindKthElement(k); /* Пореден номер на търсения елемент */
-        Console.WriteLine("\n K-тия елемент е: {0}", string.Join(" ", array[0]));
+                if (x <= Array[j])
+                {
+                    break;
+                }
+
+                Array[i] = Array[j];
+                i = j;
+                j = (j * 2) + 1;
+            }
+
+            Array[i] = x;
+        }
+
+        private static void Main()
+        {
+            InitializeArray();
+            Console.WriteLine("Масивът: {0}", string.Join(" ", Array));
+
+            int k = 5;
+            HeapFindKthElement(k); /* Пореден номер на търсения елемент */
+            Console.WriteLine("\n K-тия елемент е: {0}", string.Join(" ", Array[0]));
+        }
     }
 }

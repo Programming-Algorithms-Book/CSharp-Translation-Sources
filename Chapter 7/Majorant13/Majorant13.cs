@@ -1,13 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Majorant13
+﻿namespace Majorant13
 {
-    internal class Majorant13
+    using System;
+
+    public class Majorant13
     {
+        internal static void Main()
+        {
+            char majority;
+            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
+            if (FindMajority(array, out majority))
+            {
+                Console.WriteLine("Мажорант: {0}", majority);
+            }
+            else
+            {
+                Console.WriteLine("Няма мажорант.");
+            }
+        }
+
         private static bool FindMajority<T>(T[] array, out T majority)
         {
             majority = default(T);
@@ -29,6 +39,7 @@ namespace Majorant13
                     counter--;
                 }
             }
+
             if (counter > 0)
             {
                 counter = 0;
@@ -39,24 +50,12 @@ namespace Majorant13
                         counter++;
                     }
                 }
+
                 bool isThereMajority = counter > size / 2;
                 return isThereMajority;
             }
-            return false;
-        }
 
-        private static void Main()
-        {
-            char majority;
-            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
-            if (FindMajority(array, out majority))
-            {
-                Console.WriteLine("Мажорант: {0}", majority);
-            }
-            else
-            {
-                Console.WriteLine("Няма мажорант.");
-            }
+            return false;
         }
     }
 }

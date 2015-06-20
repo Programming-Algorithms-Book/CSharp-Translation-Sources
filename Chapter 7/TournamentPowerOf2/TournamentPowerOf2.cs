@@ -1,48 +1,52 @@
-﻿using System;
-
-internal class Program
+﻿namespace Tournament1
 {
-    private const int MaxMatrixSize = 100;
+    using System;
 
-    private static void CopyMatrix(int[,] matrix, int stX, int stY, int cnt, int add)
+    internal class Program
     {
-        for (int i = 0; i < cnt; i++)
+        private const int MaxMatrixSize = 100;
+
+        private static void CopyMatrix(int[,] matrix, int stX, int stY, int cnt, int add)
         {
-            for (int j = 0; j < cnt; j++)
+            for (int i = 0; i < cnt; i++)
             {
-                matrix[i + stX, j + stY] = matrix[i + 1, j + 1] + add;
+                for (int j = 0; j < cnt; j++)
+                {
+                    matrix[i + stX, j + stY] = matrix[i + 1, j + 1] + add;
+                }
             }
         }
-    }
 
-    private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
-    {
-        matrix[1, 1] = 0;
-        for (int i = 1; i <= n; i <<= 1)
+        private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
         {
-            CopyMatrix(matrix, i + 1, 1, i, i);
-            CopyMatrix(matrix, i + 1, i + 1, i, 0);
-            CopyMatrix(matrix, 1, i + 1, i, i);
-        }
-    }
-
-    private static void Print(int[,] matrix, int n) /* Извежда резултата */
-    {
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 1; j <= n; j++)
+            matrix[1, 1] = 0;
+            for (int i = 1; i <= n; i <<= 1)
             {
-                Console.Write("{0} ", matrix[i, j]);
+                CopyMatrix(matrix, i + 1, 1, i, i);
+                CopyMatrix(matrix, i + 1, i + 1, i, 0);
+                CopyMatrix(matrix, 1, i + 1, i, i);
             }
-            Console.WriteLine();
         }
-    }
 
-    private static void Main()
-    {
-        int numberOfPlayers = 8;
-        int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
-        FindSolution(matrix, numberOfPlayers);
-        Print(matrix, numberOfPlayers);
+        private static void Print(int[,] matrix, int n) /* Извежда резултата */
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= n; j++)
+                {
+                    Console.Write("{0} ", matrix[i, j]);
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        private static void Main()
+        {
+            int numberOfPlayers = 8;
+            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
+            FindSolution(matrix, numberOfPlayers);
+            Print(matrix, numberOfPlayers);
+        }
     }
 }

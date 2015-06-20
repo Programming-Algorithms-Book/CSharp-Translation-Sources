@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CList.cs" />
+    <Compile Include="Element.cs" />
     <Compile Include="MergingSortedArrays.cs" />
   </ItemGroup>
   <ItemGroup>

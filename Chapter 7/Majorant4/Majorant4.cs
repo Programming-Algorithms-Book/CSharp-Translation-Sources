@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Majorant4
+﻿namespace Majorant4
 {
+    using System;
+
     internal class Majorant4
     {
         public static void HeapSort(int[] input)
         {
-            //Build-Max-Heap
+            // Build-Max-Heap
             int heapSize = input.Length;
             for (int p = (heapSize - 1) / 2; p >= 0; p--)
             {
@@ -19,7 +15,7 @@ namespace Majorant4
 
             for (int i = input.Length - 1; i > 0; i--)
             {
-                //Swap
+                // Swap
                 int temp = input[i];
                 input[i] = input[0];
                 input[0] = temp;
@@ -29,9 +25,24 @@ namespace Majorant4
             }
         }
 
+        internal static void Main()
+        {
+            int[] array = { 1, 4, 2, 3, 4, 2, 6, 5, 4, 4, 4, 4, 4 };
+            int majority = 0;
+            FindMajority(array, out majority);
+            if (majority != 0)
+            {
+                Console.WriteLine("Мажорант: {0}", majority);
+            }
+            else
+            {
+                Console.WriteLine("Няма мажорант.");
+            }
+        }
+
         private static void MaxHeapify(int[] input, int heapSize, int index)
         {
-            int left = (index + 1) * 2 - 1;
+            int left = ((index + 1) * 2) - 1;
             int right = (index + 1) * 2;
             int largest = 0;
 
@@ -82,21 +93,6 @@ namespace Majorant4
             }
 
             return counter;
-        }
-
-        private static void Main()
-        {
-            int[] array = { 1, 4, 2, 3, 4, 2, 6, 5, 4, 4, 4, 4, 4 };
-            int majority = 0;
-            FindMajority(array, out majority);
-            if (majority != 0)
-            {
-                Console.WriteLine("Мажорант: {0}", majority);
-            }
-            else
-            {
-                Console.WriteLine("Няма мажорант.");
-            }
         }
     }
 }

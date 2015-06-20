@@ -1,11 +1,16 @@
-﻿using System;
-
-namespace FastPow
+﻿namespace FastPow
 {
-    internal class FastPow
+    using System;
+
+    public class FastPow
     {
         private const double BaseNumber = 3.14;
         private const int Power = 11;
+
+        internal static void Main()
+        {
+            Console.WriteLine("{0}^{1} = {2}", BaseNumber, Power, FastPower(BaseNumber, Power));
+        }
 
         private static double FastPower(double x, int n)
         {
@@ -24,11 +29,6 @@ namespace FastPow
                     return FastPower(x * x, n / 2);
                 }
             }
-        }
-
-        private static void Main()
-        {
-            Console.WriteLine("{0}^{1} = {2}", BaseNumber, Power, FastPower(BaseNumber, Power));
         }
     }
 }

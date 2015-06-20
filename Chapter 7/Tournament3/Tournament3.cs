@@ -1,69 +1,76 @@
-﻿using System;
-
-internal class Tournament3
+﻿namespace Tournament3
 {
-    private const int MaxMatrixSize = 100;
+    using System;
 
-    private static void CopyMatrix(int[,] matrix, int stX, int stY, int count, int add)
+    internal class Tournament3
     {
-        for (int i = 0; i < count; i++)
-        {
-            for (int j = 0; j < count; j++)
-            {
-                matrix[i + stX, j + stY] = matrix[i + 1, j + 1] + add;
-            }
-        }
-    }
+        private const int MaxMatrixSize = 100;
 
-    private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
-    {
-        if (n % 2 == 0) /* Ако n е четно, задачата се свежда към n-1 */
+        private static void CopyMatrix(int[,] matrix, int stX, int stY, int count, int add)
         {
-            n--;
-        }
-
-        /* Попълване на таблицата за n - тук е гарантирано нечетно. */
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            for (int i = 0; i < count; i++)
             {
-                matrix[i, j] = i + j < n ? i + j + 1 : i + j + 1 - n;
+                for (int j = 0; j < count; j++)
+                {
+                    matrix[i + stX, j + stY] = matrix[i + 1, j + 1] + add;
+                }
             }
         }
 
-        /* Възстановяване на стойността на n */
-        if (n % 2 == 1)
+        private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
         {
-            n++;
-        }
-
-        for (int i = 0; i < n; i++)
-        {
-            if (n % 2 == 0) /* Запълване на последния стълб и ред при четно n */
+            /* Ако n е четно, задачата се свежда към n-1 */
+            if (n % 2 == 0)
             {
-                matrix[i, n - 1] = matrix[n - 1, i] = matrix[i, i];
+                n--;
             }
-            matrix[i, i] = 0; /* Запълване с 0 на главния диагонал */
-        }
-    }
 
-    private static void Print(int[,] m, int n) /* Извежда резултата */
-    {
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            /* Попълване на таблицата за n - тук е гарантирано нечетно. */
+            for (int i = 0; i < n; i++)
             {
-                Console.Write("{0} ", m[i, j]);
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = i + j < n ? i + j + 1 : i + j + 1 - n;
+                }
             }
-            Console.WriteLine();
-        }
-    }
 
-    private static void Main()
-    {
-        int numberOfTeams = 4;
-        int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
-        FindSolution(matrix, numberOfTeams);
-        Print(matrix, numberOfTeams);
+            /* Възстановяване на стойността на n */
+            if (n % 2 == 1)
+            {
+                n++;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                /* Запълване на последния стълб и ред при четно n */
+                if (n % 2 == 0)
+                {
+                    matrix[i, n - 1] = matrix[n - 1, i] = matrix[i, i];
+                }
+
+                matrix[i, i] = 0; /* Запълване с 0 на главния диагонал */
+            }
+        }
+
+        private static void Print(int[,] m, int n) /* Извежда резултата */
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("{0} ", m[i, j]);
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        private static void Main()
+        {
+            int numberOfTeams = 4;
+            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
+            FindSolution(matrix, numberOfTeams);
+            Print(matrix, numberOfTeams);
+        }
     }
 }

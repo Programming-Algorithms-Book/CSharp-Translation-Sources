@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shift1
+﻿namespace Shift1
 {
+    using System;
+
     internal struct Element
     {
         public int Data { get; set; }
@@ -32,6 +28,7 @@ namespace Shift1
                 y = x % y;
                 x = temp;
             }
+
             return x;
         }
 
@@ -48,6 +45,7 @@ namespace Shift1
                 {
                     nextIndex -= N;
                 }
+
                 while (nextIndex != i)
                 {
                     array[currentIndex] = array[nextIndex];
@@ -58,6 +56,7 @@ namespace Shift1
                         nextIndex -= N;
                     }
                 }
+
                 array[currentIndex] = tempElement;
             }
         }
@@ -68,6 +67,7 @@ namespace Shift1
             {
                 Console.Write("{0} ", array[i].Data);
             }
+
             Console.WriteLine();
         }
 

@@ -1,10 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Majorant12FindWithStack
+﻿namespace Majorant12FindWithStack
 {
-    internal class Majorant12FindWithStack
+    using System;
+    using System.Collections.Generic;
+
+    public class Majorant12FindWithStack
     {
+        internal static void Main()
+        {
+            char majority;
+            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
+            if (FindMajority(array, out majority))
+            {
+                Console.WriteLine("Мажорант: {0}", majority);
+            }
+            else
+            {
+                Console.WriteLine("Няма мажорант.");
+            }
+        }
+
         private static bool FindMajority<T>(T[] array, out T majority)
         {
             majority = default(T);
@@ -26,10 +40,12 @@ namespace Majorant12FindWithStack
                     stack.Pop();
                 }
             }
+
             if (stack.Count == 0)
             {
                 return false;
             }
+
             majority = stack.Pop();
             int counter = 0;
             for (int i = 0; i < size; i++)
@@ -39,22 +55,9 @@ namespace Majorant12FindWithStack
                     counter++;
                 }
             }
+
             bool isThereMajority = counter > size / 2;
             return isThereMajority;
-        }
-
-        private static void Main()
-        {
-            char majority;
-            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
-            if (FindMajority(array, out majority))
-            {
-                Console.WriteLine("Мажорант: {0}", majority);
-            }
-            else
-            {
-                Console.WriteLine("Няма мажорант.");
-            }
         }
     }
 }

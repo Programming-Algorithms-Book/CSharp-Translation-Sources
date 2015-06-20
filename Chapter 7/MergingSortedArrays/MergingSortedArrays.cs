@@ -1,35 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MergingSortedArrays
+﻿namespace MergingSortedArrays
 {
-    internal struct Element
-    {
-        public int Key { get; set; }
-
-        public Element(int key) : this()
-        {
-            this.Key = key;
-        }
-    }
-
-    internal class CList
-    {
-        public int Point { get; set; }
-
-        public Element[] Data { get; set; }
-
-        public CList Next { get; set; }
-
-        public int Length { get; set; }
-    }
+    using System;
 
     internal class MergingSortedArrays
     {
-        private static Random rand = new Random();
         private const int NumberOfArrays = 6;
         private const int ArraysLength = 12;
+
+        private static readonly Random Rand = new Random();
 
         private static CList InitializeArray(int modul)
         {
@@ -40,11 +18,12 @@ namespace MergingSortedArrays
                 currentList.Length = NumberOfArrays;
                 currentList.Point = 0;
                 currentList.Data = new Element[ArraysLength];
-                currentList.Data[0].Key = rand.Next() % modul;
+                currentList.Data[0].Key = Rand.Next() % modul;
                 for (int j = 1; j < ArraysLength; j++)
                 {
-                    currentList.Data[j].Key = currentList.Data[j - 1].Key + rand.Next() % modul;
+                    currentList.Data[j].Key = currentList.Data[j - 1].Key + (Rand.Next() % modul);
                 }
+
                 currentList.Next = head;
                 head = currentList;
             }
@@ -60,6 +39,7 @@ namespace MergingSortedArrays
                 {
                     Console.Write("{0} ", element.Key);
                 }
+
                 Console.WriteLine();
                 list = list.Next;
             }
@@ -82,8 +62,10 @@ namespace MergingSortedArrays
                     {
                         minElementList = currentList;
                     }
+
                     currentList = currentList.Next;
                 }
+
                 Console.WriteLine(minElementList.Next.Data[minElementList.Next.Point].Key);
                 if (minElementList.Next.Data.Length - 1 == minElementList.Next.Point)
                 {

@@ -4,13 +4,13 @@
 
     internal class MinAndMaxElement
     {
-        private static readonly Random rand = new Random();
+        private static readonly Random Rand = new Random();
 
         public static void InitializeArray(int[] numbers) /* Запълва масива със случайни числа */
         {
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = rand.Next(int.MaxValue) % (2 * numbers.Length + 1);
+                numbers[i] = Rand.Next(int.MaxValue) % ((2 * numbers.Length) + 1);
             }
         }
 
@@ -20,6 +20,7 @@
             {
                 Console.Write("{0} ", number);
             }
+
             Console.WriteLine();
         }
 
@@ -61,7 +62,7 @@
         public static void FindMinAndMax(out int min, out int max, int[] numbers, int n)
             /* Намира едновременно максималния и минималния елементи */
         {
-            int n2 = n / 2; //n = 20
+            int n2 = n / 2; // n = 20
             min = max = numbers[n2];
             for (int i = 0; i < n2; i++)
             {
@@ -71,6 +72,7 @@
                     {
                         max = numbers[i];
                     }
+
                     if (numbers[n - i - 1] < min)
                     {
                         min = numbers[n - i - 1];
@@ -82,6 +84,7 @@
                     {
                         max = numbers[n - i - 1];
                     }
+
                     if (numbers[i] < min)
                     {
                         min = numbers[i];

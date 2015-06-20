@@ -1,9 +1,17 @@
-﻿using System;
-
-namespace Majorant11
+﻿namespace Majorant11
 {
-    internal class Majorant11
+    using System;
+
+    public class Majorant11
     {
+        internal static void Main()
+        {
+            char majority;
+            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
+            FindMajority(array, out majority);
+            Console.WriteLine("Мажорант: {0}", majority);
+        }
+
         private static void FindMajority<T>(T[] array, out T majority)
         {
             int size = array.Length;
@@ -12,10 +20,10 @@ namespace Majorant11
             {
                 count[i] = 1;
             }
-            int currentCounter;
+
             do
             {
-                currentCounter = 0;
+                var currentCounter = 0;
                 int i;
                 for (i = 1; i < size; i += 2)
                 {
@@ -35,23 +43,17 @@ namespace Majorant11
                         array[currentCounter++] = array[i - 1];
                     }
                 }
+
                 if ((size & 1) == 1)
                 {
                     count[currentCounter] = count[i - 1];
                     array[currentCounter++] = array[i - 1];
                 }
+
                 size = currentCounter;
             }
             while (size > 1);
             majority = array[0];
-        }
-
-        private static void Main()
-        {
-            char majority;
-            char[] array = { 'A', 'D', 'A', 'B', 'A', 'B', 'A', 'A', 'B', 'A', 'B', 'A', 'C', };
-            FindMajority(array, out majority);
-            Console.WriteLine("Мажорант: {0}", majority);
         }
     }
 }

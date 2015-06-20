@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SolveHanoyTowers
+﻿namespace SolveHanoyTowers
 {
+    using System;
+
     internal class SolveHanoyTowers
     {
         private static void MoveDisk(int n, char a, char b)

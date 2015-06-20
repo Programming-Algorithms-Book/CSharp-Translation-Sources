@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MergesortLinkedListDoubleStep.cs" />
+    <Compile Include="Node.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

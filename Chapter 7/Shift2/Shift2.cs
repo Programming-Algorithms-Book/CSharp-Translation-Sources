@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shift2
+﻿namespace Shift2
 {
+    using System;
+
     internal struct Element
     {
         public int Data { get; set; }
@@ -55,6 +51,7 @@ namespace Shift2
                     j -= i;
                 }
             }
+
             Swap(array, p - i, p, i);
         }
 
@@ -64,6 +61,7 @@ namespace Shift2
             {
                 Console.Write("{0} ", array[i].Data);
             }
+
             Console.WriteLine();
         }
 
