@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetSort2", "C:\Users\Teodor92\Desktop\SortingAlgorithms\SetSort2\SetSort2.csproj", "{47F4505E-79FB-4D51-A900-0CE569FE227C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakerSort", "C:\Users\Teodor92\Desktop\SortingAlgorithms\ShakerSort\ShakerSort.csproj", "{D64E2772-16CC-416B-9016-A465C00831C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellSort", "C:\Users\Teodor92\Desktop\SortingAlgorithms\ShellSort\ShellSort.csproj", "{BB569CD1-94AC-450D-BC87-907A1F7E0B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellSort2", "C:\Users\Teodor92\Desktop\SortingAlgorithms\ShellSort2\ShellSort2.csproj", "{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F4505E-79FB-4D51-A900-0CE569FE227C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64E2772-16CC-416B-9016-A465C00831C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64E2772-16CC-416B-9016-A465C00831C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64E2772-16CC-416B-9016-A465C00831C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64E2772-16CC-416B-9016-A465C00831C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB569CD1-94AC-450D-BC87-907A1F7E0B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB569CD1-94AC-450D-BC87-907A1F7E0B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB569CD1-94AC-450D-BC87-907A1F7E0B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB569CD1-94AC-450D-BC87-907A1F7E0B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA021683-BCBE-40B2-B50E-6BE744E2BAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

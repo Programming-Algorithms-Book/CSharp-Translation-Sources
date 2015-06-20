@@ -20,8 +20,9 @@
             { 1, 1, 0, 1, 0 }
         };
 
+        private static readonly uint[] Col = new uint[MaxN];
+
         private static uint maxCol, count = 0;
-        private static uint[] col = new uint[MaxN];
         private int foundSol = 0;
 
         internal static void Main(string[] args)
@@ -31,7 +32,7 @@
             {
                 for (i = 0; i < N; i++)
                 {
-                    col[i] = 0;
+                    Col[i] = 0;
                 }
 
                 NextCol(0);
@@ -51,7 +52,7 @@
             Console.WriteLine("Минимално оцветяване на графа: ");
             for (i = 0; i < N; i++)
             {
-                Console.WriteLine("Връх {0} - с цвят {1} ", i + 1, col[i]);
+                Console.WriteLine("Връх {0} - с цвят {1} ", i + 1, Col[i]);
             }
         }
 
@@ -67,11 +68,11 @@
 
             for (k = 1; k <= maxCol; k++)
             {
-                col[i] = k;
+                Col[i] = k;
                 success = 1;
                 for (j = 0; j < N; j++)
                 {
-                    if (1 == A[i, j] && col[j] == col[i])
+                    if (1 == A[i, j] && Col[j] == Col[i])
                     {
                         success = 0;
                         break;
@@ -83,7 +84,7 @@
                     NextCol(i + 1);
                 }
 
-                col[i] = 0;
+                Col[i] = 0;
             }
         }
     }
