@@ -7,8 +7,8 @@
     <ProjectGuid>{B1E28920-0ACF-4E26-8AC7-70172B5507EE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>knapsack3b</RootNamespace>
-    <AssemblyName>knapsack3b</AssemblyName>
+    <RootNamespace>Knapsack3b</RootNamespace>
+    <AssemblyName>Knapsack3b</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="knapsack3b.cs" />
+    <Compile Include="Knapsack3b.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

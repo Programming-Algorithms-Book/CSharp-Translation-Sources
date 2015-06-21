@@ -1,16 +1,16 @@
-﻿using System;
-
-namespace Translations._2.brothers
+﻿namespace Alanbob2
 {
-    internal class alanbob2
+    using System;
+
+    internal class Alanbob2
     {
         private const int MaxObjects = 100; /* Максимален брой предмети */
         private const int MaxValue = 200; /* Максимална стойност на отделен предмет */
         private const int NotSet = -1;
         private const int N = 10; /* Общ брой на предметите за поделяне */
 
-        private static int[] lastAdded = new int[MaxObjects * MaxValue]; /* Кой предмет е бил добавен последен? */
-        private static readonly int[] objectValues = new int[] { 3, 2, 3, 2, 2, 77, 89, 23, 90, 11 };
+        private static readonly int[] LastAdded = new int[MaxObjects * MaxValue]; /* Кой предмет е бил добавен последен? */
+        private static readonly int[] ObjectValues = new int[] { 3, 2, 3, 2, 2, 77, 89, 23, 90, 11 };
 
         private static void Solve()
         {
@@ -19,15 +19,14 @@ namespace Translations._2.brothers
             int i, j;
 
             /* Пресмятаме totalSum */
-            for (totalSum = i = 0; i < N; totalSum += objectValues[i++])
+            for (totalSum = i = 0; i < N; totalSum += ObjectValues[i++])
             {
-                ;
             }
 
             /* Начално инициализиране */
-            for (lastAdded[0] = 0, i = 1; i <= totalSum; i++)
+            for (LastAdded[0] = 0, i = 1; i <= totalSum; i++)
             {
-                lastAdded[i] = NotSet;
+                LastAdded[i] = NotSet;
             }
 
             /* Намиране на всевъзможните суми от стойности на подаръците */
@@ -35,26 +34,28 @@ namespace Translations._2.brothers
             {
                 for (j = totalSum; j + 1 > 0; j--)
                 {
-                    if (NotSet != lastAdded[j] && NotSet == lastAdded[j + objectValues[i]])
+                    if (NotSet != LastAdded[j] && NotSet == LastAdded[j + ObjectValues[i]])
                     {
-                        lastAdded[j + objectValues[i]] = i;
+                        LastAdded[j + ObjectValues[i]] = i;
                     }
                 }
-                currSum += objectValues[i];
+
+                currSum += ObjectValues[i];
             }
 
             /* Търсим на най-близка до totalSum/2 стойност и извеждане на решение */
             for (i = totalSum / 2; i > 1; i--)
             {
-                if (lastAdded[i] != NotSet)
+                if (LastAdded[i] != NotSet)
                 {
                     Console.WriteLine("Сума за Алан: {0}, сума за Боб: {1}", i, totalSum - i);
                     Console.WriteLine("Алан взема:");
                     while (i > 0)
                     {
-                        Console.Write("{0} ", objectValues[lastAdded[i]]);
-                        i -= objectValues[lastAdded[i]];
+                        Console.Write("{0} ", ObjectValues[LastAdded[i]]);
+                        i -= ObjectValues[LastAdded[i]];
                     }
+
                     Console.WriteLine("\nБоб взема останалите подаръци.");
                     return;
                 }

@@ -1,108 +1,109 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alanbob", "alanbob\alanbob.csproj", "{1902F106-0B0F-44A9-9E6D-BA988FDEF7B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alanbob", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Alanbob\Alanbob.csproj", "{1902F106-0B0F-44A9-9E6D-BA988FDEF7B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alanbob2", "alanbob2\alanbob2.csproj", "{E64FB404-3D93-4800-B8DF-3B180391831B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alanbob2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Alanbob2\Alanbob2.csproj", "{E64FB404-3D93-4800-B8DF-3B180391831B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "binom", "binom\binom.csproj", "{C9EF172A-BA31-4642-A604-33E339B76DBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binom", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Binom\Binom.csproj", "{C9EF172A-BA31-4642-A604-33E339B76DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "binom2", "binom2\binom2.csproj", "{044C3DD2-BE4C-4BC0-8E28-F35B0530F514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binom2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Binom2\Binom2.csproj", "{044C3DD2-BE4C-4BC0-8E28-F35B0530F514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "board", "board\board.csproj", "{CB590D7B-8BE0-4C91-8813-2A34545C493B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Board", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Board\Board.csproj", "{CB590D7B-8BE0-4C91-8813-2A34545C493B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breaknum", "breaknum\breaknum.csproj", "{283EDBCB-7F4D-4EF8-977E-835586391E7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakNum", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\BreakNum\BreakNum.csproj", "{283EDBCB-7F4D-4EF8-977E-835586391E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catalan", "catalan\catalan.csproj", "{204F57FC-874C-45C2-A8A6-2342A7925B73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalan", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Catalan\Catalan.csproj", "{204F57FC-874C-45C2-A8A6-2342A7925B73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfl", "cfl\cfl.csproj", "{E5E0B594-DD54-47AD-B819-EF4B68ACBF82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cfl", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Cfl\Cfl.csproj", "{E5E0B594-DD54-47AD-B819-EF4B68ACBF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coinmin2", "coinmin2\coinmin2.csproj", "{B2EF2496-B415-477A-B485-E0611D3FEA78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMin", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\CoinMin\CoinMin.csproj", "{D17D7470-3823-43B2-8417-8F51760BBEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coins", "coins\coins.csproj", "{DA8E1A03-CDE7-47EE-96E5-4BC942D113C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMin2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\CoinMin2\CoinMin2.csproj", "{B2EF2496-B415-477A-B485-E0611D3FEA78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coin_min", "coin_min\coin_min.csproj", "{D17D7470-3823-43B2-8417-8F51760BBEAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coins", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Coins\Coins.csproj", "{DA8E1A03-CDE7-47EE-96E5-4BC942D113C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenceRoom", "ConferenceRoom\ConferenceRoom.csproj", "{09FE9E6D-250B-4B19-84C7-2F7E9D1506EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenceRoom", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\ConferenceRoom\ConferenceRoom.csproj", "{09FE9E6D-250B-4B19-84C7-2F7E9D1506EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cuts", "cuts\cuts.csproj", "{E3D9371E-166D-4E6F-975F-A9CC26B280FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cuts", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Cuts\Cuts.csproj", "{E3D9371E-166D-4E6F-975F-A9CC26B280FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domino", "domino\domino.csproj", "{F080DD45-2CBD-4D87-AC46-925833656F5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domino", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Domino\Domino.csproj", "{F080DD45-2CBD-4D87-AC46-925833656F5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibmatr", "fibmatr\fibmatr.csproj", "{8C921405-61D5-42CE-9630-B5E597A83397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibmatr", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Fibmatr\Fibmatr.csproj", "{8C921405-61D5-42CE-9630-B5E597A83397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibmemo", "fibmemo\fibmemo.csproj", "{B5F00E0E-EA61-478E-AB35-83D66AD22CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibmemo", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Fibmemo\Fibmemo.csproj", "{B5F00E0E-EA61-478E-AB35-83D66AD22CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibmemo2", "fibmemo2\fibmemo2.csproj", "{7E5461CE-BA58-4DE3-9B8D-262A63CD2F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibmemo2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Fibmemo2\Fibmemo2.csproj", "{7E5461CE-BA58-4DE3-9B8D-262A63CD2F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibrec", "fibrec\fibrec.csproj", "{A5A15000-9BA6-49CE-813E-5287AA19769D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibrec", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Fibrec\Fibrec.csproj", "{A5A15000-9BA6-49CE-813E-5287AA19769D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hedonia", "hedonia\hedonia.csproj", "{AE8A9AAF-A5E5-45C6-B5BC-646C971899F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hedonia", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Hedonia\Hedonia.csproj", "{AE8A9AAF-A5E5-45C6-B5BC-646C971899F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedSequence", "JaggedSequence\JaggedSequence.csproj", "{A7A39DB2-32B2-4C99-A432-E6DAC90F10B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedSequence", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\JaggedSequence\JaggedSequence.csproj", "{A7A39DB2-32B2-4C99-A432-E6DAC90F10B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack1", "knapsack1\knapsack1.csproj", "{447FA9EA-AED2-4414-8538-9EF94FAD92FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack1\Knapsack1.csproj", "{447FA9EA-AED2-4414-8538-9EF94FAD92FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack2a", "knapsack2a\knapsack2a.csproj", "{6F4CB9CF-023E-4AC0-AB3C-D7A542F68477}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack2a", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack2a\Knapsack2a.csproj", "{6F4CB9CF-023E-4AC0-AB3C-D7A542F68477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack2b", "knapsack2b\knapsack2b.csproj", "{1301A361-1D12-41B5-B51E-FA86B4C64C48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack2b", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack2b\Knapsack2b.csproj", "{1301A361-1D12-41B5-B51E-FA86B4C64C48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack3a", "knapsack3a\knapsack3a.csproj", "{7D8201E0-40BB-48A6-8A52-4FDFCEC9D7DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack3a", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack3a\Knapsack3a.csproj", "{7D8201E0-40BB-48A6-8A52-4FDFCEC9D7DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack3b", "knapsack3b\knapsack3b.csproj", "{B1E28920-0ACF-4E26-8AC7-70172B5507EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack3b", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack3b\Knapsack3b.csproj", "{B1E28920-0ACF-4E26-8AC7-70172B5507EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack3c", "knapsack3c\knapsack3c.csproj", "{3812DB5C-2659-4D8E-9A82-3BC422D3FB70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack3c", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack3c\Knapsack3c.csproj", "{3812DB5C-2659-4D8E-9A82-3BC422D3FB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack4", "knapsack4\knapsack4.csproj", "{E4DF18F9-C8D7-44E3-8496-810801C5D288}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack4", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack4\Knapsack4.csproj", "{E4DF18F9-C8D7-44E3-8496-810801C5D288}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack5", "knapsack5\knapsack5.csproj", "{5FAAB965-75D0-4F30-A537-BD9D3FD1A710}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack5", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Knapsack5\Knapsack5.csproj", "{5FAAB965-75D0-4F30-A537-BD9D3FD1A710}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonSubsequence1", "LongestCommonSubsequence1\LongestCommonSubsequence1.csproj", "{D041475A-BFA4-4012-B7FE-9B1BE9DCBC6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonSubsequence1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\LongestCommonSubsequence1\LongestCommonSubsequence1.csproj", "{D041475A-BFA4-4012-B7FE-9B1BE9DCBC6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonSubsequence2", "LongestCommonSubsequence2\LongestCommonSubsequence2.csproj", "{55694B18-AC04-4E8E-A0F9-BDC7D7C1EB2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonSubsequence2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\LongestCommonSubsequence2\LongestCommonSubsequence2.csproj", "{55694B18-AC04-4E8E-A0F9-BDC7D7C1EB2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence1", "LongestNonDecreasingSubsequence1\LongestNonDecreasingSubsequence1.csproj", "{ACC34303-7B40-46C5-9FA9-0E8CE7DFFFA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\LongestNonDecreasingSubsequence1\LongestNonDecreasingSubsequence1.csproj", "{ACC34303-7B40-46C5-9FA9-0E8CE7DFFFA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence2", "LongestNonDecreasingSubsequence2\LongestNonDecreasingSubsequence2.csproj", "{E28D29D4-F582-484A-8110-1835C0B9F745}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\LongestNonDecreasingSubsequence2\LongestNonDecreasingSubsequence2.csproj", "{E28D29D4-F582-484A-8110-1835C0B9F745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence3", "LongestNonDecreasingSubsequence3\LongestNonDecreasingSubsequence3.csproj", "{FE266546-B106-483F-BC7C-7150844713E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestNonDecreasingSubsequence3", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\LongestNonDecreasingSubsequence3\LongestNonDecreasingSubsequence3.csproj", "{FE266546-B106-483F-BC7C-7150844713E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication1", "MatrixMultiplication1\MatrixMultiplication1.csproj", "{1EA03D3F-E39B-42CE-8ED5-3AEC53280EE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\MatrixMultiplication1\MatrixMultiplication1.csproj", "{1EA03D3F-E39B-42CE-8ED5-3AEC53280EE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication2", "MatrixMultiplication2\MatrixMultiplication2.csproj", "{AFFBD7AB-4036-4EC7-9BF8-F6A927FB83DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\MatrixMultiplication2\MatrixMultiplication2.csproj", "{AFFBD7AB-4036-4EC7-9BF8-F6A927FB83DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication3", "MatrixMultiplication3\MatrixMultiplication3.csproj", "{D7E4B7C3-E74E-4AD1-951C-12A80976FEC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication3", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\MatrixMultiplication3\MatrixMultiplication3.csproj", "{D7E4B7C3-E74E-4AD1-951C-12A80976FEC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTwoZeroes", "NoTwoZeroes\NoTwoZeroes.csproj", "{51F9114F-2812-4CC3-BEF2-11676C7EEE59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTwoZeroes", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\NoTwoZeroes\NoTwoZeroes.csproj", "{51F9114F-2812-4CC3-BEF2-11676C7EEE59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalBinarySearchTree", "OptimalBinarySearchTree\OptimalBinarySearchTree.csproj", "{8E175F88-6130-4C46-B5DB-9D5A8414BBF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalBinarySearchTree", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\OptimalBinarySearchTree\OptimalBinarySearchTree.csproj", "{8E175F88-6130-4C46-B5DB-9D5A8414BBF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalBitonicSequence", "OptimalBitonicSequence\OptimalBitonicSequence.csproj", "{A880CF08-2D13-48B6-B6F5-28D25CAAC079}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalBitonicSequence", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\OptimalBitonicSequence\OptimalBitonicSequence.csproj", "{A880CF08-2D13-48B6-B6F5-28D25CAAC079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partitioning", "Partitioning\Partitioning.csproj", "{F43D54FB-EAFD-4232-AA2C-4A5BA7B21CBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partitioning", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Partitioning\Partitioning.csproj", "{F43D54FB-EAFD-4232-AA2C-4A5BA7B21CBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailwayTickets", "RailwayTickets\RailwayTickets.csproj", "{11FC8C01-7A43-4A44-A800-B5AAD40071E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RailwayTickets", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\RailwayTickets\RailwayTickets.csproj", "{11FC8C01-7A43-4A44-A800-B5AAD40071E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceDistribution", "ResourceDistribution\ResourceDistribution.csproj", "{CE00ACBB-E037-46BA-A461-F57B30D2621D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceDistribution", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\ResourceDistribution\ResourceDistribution.csproj", "{CE00ACBB-E037-46BA-A461-F57B30D2621D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RingExpression", "RingExpression\RingExpression.csproj", "{A7F137A9-1282-4941-9B34-BFB0CAF39570}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RingExpression", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\RingExpression\RingExpression.csproj", "{A7F137A9-1282-4941-9B34-BFB0CAF39570}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries1", "SportSeries1\SportSeries1.csproj", "{12492868-F09C-4200-B83D-FF12B23A68F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\SportSeries1\SportSeries1.csproj", "{12492868-F09C-4200-B83D-FF12B23A68F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries2", "SportSeries2\SportSeries2.csproj", "{226C76ED-4899-4458-A6E6-F3C02FE45B2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\SportSeries2\SportSeries2.csproj", "{226C76ED-4899-4458-A6E6-F3C02FE45B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries3", "SportSeries3\SportSeries3.csproj", "{5C602E0B-8787-4B2A-89A5-E24463A696C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries3", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\SportSeries3\SportSeries3.csproj", "{5C602E0B-8787-4B2A-89A5-E24463A696C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries4", "SportSeries4\SportSeries4.csproj", "{22943427-709D-4BCF-9A2E-320E7A58B555}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportSeries4", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\SportSeries4\SportSeries4.csproj", "{22943427-709D-4BCF-9A2E-320E7A58B555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringTransform", "StringTransform\StringTransform.csproj", "{3AF0AEAF-9011-428D-964A-2A5BD512F05D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringTransform", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\StringTransform\StringTransform.csproj", "{3AF0AEAF-9011-428D-964A-2A5BD512F05D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolicMultiplication", "SymbolicMultiplication\SymbolicMultiplication.csproj", "{E21992C5-C18D-439D-98BA-0B6621080E61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolicMultiplication", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\SymbolicMultiplication\SymbolicMultiplication.csproj", "{E21992C5-C18D-439D-98BA-0B6621080E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi", "Taxi\Taxi.csproj", "{6063BB66-5511-47F9-93C5-4608543C23C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\Taxi\Taxi.csproj", "{6063BB66-5511-47F9-93C5-4608543C23C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketQueue", "TicketQueue\TicketQueue.csproj", "{C4763293-86B4-4351-9BF5-B77669BF3452}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketQueue", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 8\TicketQueue\TicketQueue.csproj", "{C4763293-86B4-4351-9BF5-B77669BF3452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -142,6 +143,10 @@ Global
 		{E5E0B594-DD54-47AD-B819-EF4B68ACBF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E0B594-DD54-47AD-B819-EF4B68ACBF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E0B594-DD54-47AD-B819-EF4B68ACBF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2EF2496-B415-477A-B485-E0611D3FEA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B2EF2496-B415-477A-B485-E0611D3FEA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2EF2496-B415-477A-B485-E0611D3FEA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -150,10 +155,6 @@ Global
 		{DA8E1A03-CDE7-47EE-96E5-4BC942D113C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA8E1A03-CDE7-47EE-96E5-4BC942D113C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA8E1A03-CDE7-47EE-96E5-4BC942D113C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D17D7470-3823-43B2-8417-8F51760BBEAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09FE9E6D-250B-4B19-84C7-2F7E9D1506EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09FE9E6D-250B-4B19-84C7-2F7E9D1506EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09FE9E6D-250B-4B19-84C7-2F7E9D1506EC}.Release|Any CPU.ActiveCfg = Release|Any CPU

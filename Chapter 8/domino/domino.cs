@@ -1,82 +1,85 @@
-﻿using System;
-
-internal class domino
+﻿namespace Domino
 {
-    private const int Max = 100;
-    private const int NumeralSystemBase = 10; /* Основа на бройната система */
-    private const int N = 17; /* Брой елементи в редицата */
+    using System;
 
-    private static int[] successors = new int[Max]; /* Наследници за всеки връх */
-    private static int[] maxLengths = new int[NumeralSystemBase]; /* F[i]: текуща макс. дължина на подредица за i */
-    private static int[] startIndices = new int[NumeralSystemBase]; /* ind[i]: индекс на началото на редицата за i */
-
-    private static int[] sequence = new int[]
-                                    {
-                                        0, 72, 121, 1445, 178, 123, 3462, 762, 33434,
-                                        444, 472, 4, 272, 4657, 7243, 7326, 3432, 3465
-                                    }; /* Редица */
-
-    /* Намира максимална домино-редица */
-
-    private static void Solve()
+    public class Domino
     {
-        int l, r;
+        private const int Max = 100;
+        private const int NumeralSystemBase = 10; /* Основа на бройната система */
+        private const int N = 17; /* Брой елементи в редицата */
 
-        for (int i = 0; i < NumeralSystemBase; i++)
+        private static readonly int[] Successors = new int[Max]; /* Наследници за всеки връх */
+        private static readonly int[] MaxLengths = new int[NumeralSystemBase]; /* F[i]: текуща макс. дължина на подредица за i */
+        private static readonly int[] StartIndices = new int[NumeralSystemBase]; /* ind[i]: индекс на началото на редицата за i */
+
+        private static readonly int[] Sequence = new int[]
         {
-            maxLengths[i] = startIndices[i] = 0;
+            0, 72, 121, 1445, 178, 123, 3462, 762, 33434,
+            444, 472, 4, 272, 4657, 7243, 7326, 3432, 3465
+        }; /* Редица */
+
+        internal static void Main()
+        {
+            Solve();
+            Print();
         }
 
-        /* Намиране дължините на редиците, започващи с цифрите от 0 до 9 */
-        for (int i = N; i > 0; i--)
+        /* Намира максимална домино-редица */
+        private static void Solve()
         {
-            /* Определяне на най-старшата и най-младшата цифри на числото */
-            r = sequence[i] % NumeralSystemBase;
-            l = sequence[i];
+            int l, r;
 
-            while (l > NumeralSystemBase)
+            for (int i = 0; i < NumeralSystemBase; i++)
             {
-                l /= NumeralSystemBase;
+                MaxLengths[i] = StartIndices[i] = 0;
             }
 
-            /* Актуализиране на редицата, започваща със старшата цифра */
-            if (maxLengths[r] >= maxLengths[l])
+            /* Намиране дължините на редиците, започващи с цифрите от 0 до 9 */
+            for (int i = N; i > 0; i--)
             {
-                maxLengths[l] = maxLengths[r] + 1;
-                successors[i] = startIndices[r];
-                startIndices[l] = i;
-            }
-        }
-    }
+                /* Определяне на най-старшата и най-младшата цифри на числото */
+                r = Sequence[i] % NumeralSystemBase;
+                l = Sequence[i];
 
-    private static void Print()
-    {
-        int i, bestIndex = 0;
-        /* Определяне на най-дългата редица */
-        for (i = 1; i < NumeralSystemBase; i++) /* Никое число не започва с 0 */
-        {
-            if (maxLengths[i] > maxLengths[bestIndex])
-            {
-                bestIndex = i;
+                while (l > NumeralSystemBase)
+                {
+                    l /= NumeralSystemBase;
+                }
+
+                /* Актуализиране на редицата, започваща със старшата цифра */
+                if (MaxLengths[r] >= MaxLengths[l])
+                {
+                    MaxLengths[l] = MaxLengths[r] + 1;
+                    Successors[i] = StartIndices[r];
+                    StartIndices[l] = i;
+                }
             }
         }
 
-        /* Извеждане на редицата на екрана */
-        Console.WriteLine("Дължина на максималната домино-подредица: {0}", maxLengths[bestIndex]);
-        i = startIndices[bestIndex];
-        do
+        private static void Print()
         {
-            Console.Write("{0} ", sequence[i]);
-            i = successors[i];
+            int i, bestIndex = 0;
+            /* Определяне на най-дългата редица */
+            /* Никое число не започва с 0 */
+            for (i = 1; i < NumeralSystemBase; i++)
+            {
+                if (MaxLengths[i] > MaxLengths[bestIndex])
+                {
+                    bestIndex = i;
+                }
+            }
+
+            /* Извеждане на редицата на екрана */
+            Console.WriteLine("Дължина на максималната домино-подредица: {0}", MaxLengths[bestIndex]);
+            i = StartIndices[bestIndex];
+            do
+            {
+                Console.Write("{0} ", Sequence[i]);
+                i = Successors[i];
+            }
+            while (i > 0);
+
+            Console.WriteLine();
         }
-        while (i > 0);
-
-        Console.WriteLine();
-    }
-
-    private static void Main()
-    {
-        Solve();
-        Print();
     }
 }

@@ -1,27 +1,31 @@
-﻿using System;
-
-internal class fibmemo
+﻿namespace Fibmemo
 {
-    private const int Max = 256;
-    private const int N = 10;
+    using System;
 
-    private static int[] memo = new int[Max + 1];
-
-    private static int FibMemo(int n)
+    internal class Fibmemo
     {
-        if (n < 2)
-        {
-            memo[n] = n;
-        }
-        else if (0 == memo[n])
-        {
-            memo[n] = FibMemo(n - 1) + FibMemo(n - 2);
-        }
-        return memo[n];
-    }
+        private const int Max = 256;
+        private const int N = 10;
 
-    private static void Main()
-    {
-        Console.WriteLine("{0}-тото число на Фибоначи е: {1}", N, FibMemo(N));
+        private static readonly int[] Memo = new int[Max + 1];
+
+        private static int FibMemo(int n)
+        {
+            if (n < 2)
+            {
+                Memo[n] = n;
+            }
+            else if (0 == Memo[n])
+            {
+                Memo[n] = FibMemo(n - 1) + FibMemo(n - 2);
+            }
+
+            return Memo[n];
+        }
+
+        private static void Main()
+        {
+            Console.WriteLine("{0}-тото число на Фибоначи е: {1}", N, FibMemo(N));
+        }
     }
 }

@@ -1,53 +1,60 @@
-﻿using System;
-
-internal class Program
+﻿namespace SportSeries3
 {
-    private const double NOT_CALCULATED = -1;
-    private const double p = 0.5; /* Вероятност A да спечели отделен мач */
-    private const int n = 5;
+    using System;
 
-    private static double[,] PS = new double[n + 1, n + 1];
-
-    private static void Main()
+    public class Program
     {
-        PDynamic2(n, n);
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                Console.Write("{0:F6} ", PS[i, j]);
-            }
-            Console.WriteLine();
-        }
-    }
+        private const double NotCalculated = -1;
+        private const double P = 0.5; /* Вероятност A да спечели отделен мач */
+        private const int N = 5;
 
-    private static double PDynamic2(int i, int j)
-    {
-        for (int k = 1; k <= i; k++)
+        private static readonly double[,] Ps = new double[N + 1, N + 1];
+
+        internal static void Main()
         {
-            for (int l = 1; l <= j; l++)
+            PDynamic2(N, N);
+            for (int i = 0; i < N; i++)
             {
-                PS[k, l] = NOT_CALCULATED;
+                for (int j = 0; j < N; j++)
+                {
+                    Console.Write("{0:F6} ", Ps[i, j]);
+                }
+
+                Console.WriteLine();
             }
         }
-        for (int k = 1; k <= i; k++)
+
+        private static double PDynamic2(int i, int j)
         {
-            PS[k, 0] = 0.0;
-        }
-        for (int k = 1; k <= j; k++)
-        {
-            PS[0, k] = 1.0;
+            for (int k = 1; k <= i; k++)
+            {
+                for (int l = 1; l <= j; l++)
+                {
+                    Ps[k, l] = NotCalculated;
+                }
+            }
+
+            for (int k = 1; k <= i; k++)
+            {
+                Ps[k, 0] = 0.0;
+            }
+
+            for (int k = 1; k <= j; k++)
+            {
+                Ps[0, k] = 1.0;
+            }
+
+            return PDyn(i, j);
         }
 
-        return PDyn(i, j);
-    }
-
-    private static double PDyn(int i, int j) /* Динамично оптимиране */
-    {
-        if (PS[i, j] < 0)
+        private static double PDyn(int i, int j) /* Динамично оптимиране */
         {
-            PS[i, j] = p * PDyn(i - 1, j) + (1 - p) * PDyn(i, j - 1);
+            if (Ps[i, j] < 0)
+            {
+                Ps[i, j] = (P * PDyn(i - 1, j)) + ((1 - P) * PDyn(i, j - 1));
+            }
+
+            return Ps[i, j];
         }
-        return PS[i, j];
     }
 }

@@ -1,64 +1,68 @@
-﻿using System;
-
-internal class board
+﻿namespace Board
 {
-    private const int Max = 100;
-    private const int N = 9; /* Брой накрайници */
+    using System;
 
-    private static int[] f = new int[Max]; /* Целева функция */
-    private static int[] nextConductor = new int[Max];
-    private static int[] permutation = new int[] { 0, 9, 1, 3, 6, 2, 7, 5, 4, 8 }; /* Изх. пермутация */
-
-    private static void Solve()
+    public class Board
     {
-        /* Инициализиране */
-        for (int i = 1; i <= N; i++)
+        private const int Max = 100;
+        private const int N = 9; /* Брой накрайници */
+
+        private static readonly int[] F = new int[Max]; /* Целева функция */
+        private static readonly int[] NextConductor = new int[Max];
+        private static readonly int[] Permutation = new int[] { 0, 9, 1, 3, 6, 2, 7, 5, 4, 8 }; /* Изх. пермутация */
+
+        internal static void Main()
         {
-            f[i] = 1;
+            Solve();
+            Print();
         }
 
-        /* Основен цикъл */
-        for (int k = N; k >= 1; k--)
+        private static void Solve()
         {
-            for (int i = k + 1; i <= N; i++)
+            /* Инициализиране */
+            for (int i = 1; i <= N; i++)
             {
-                if (permutation[k] < permutation[i])
+                F[i] = 1;
+            }
+
+            /* Основен цикъл */
+            for (int k = N; k >= 1; k--)
+            {
+                for (int i = k + 1; i <= N; i++)
                 {
-                    if (1 + f[i] > f[k])
+                    if (Permutation[k] < Permutation[i])
                     {
-                        f[k] = 1 + f[i];
-                        nextConductor[k] = i;
+                        if (1 + F[i] > F[k])
+                        {
+                            F[k] = 1 + F[i];
+                            NextConductor[k] = i;
+                        }
                     }
                 }
             }
         }
-    }
 
-    private static void Print()
-    {
-        int i, max, index = 1;
-        for (max = f[index], i = 2; i <= N; i++)
+        private static void Print()
         {
-            if (f[i] > max)
+            int i, max, index = 1;
+            for (max = F[index], i = 2; i <= N; i++)
             {
-                max = f[i];
-                index = i;
+                if (F[i] > max)
+                {
+                    max = F[i];
+                    index = i;
+                }
             }
-        }
-        Console.WriteLine("Максимален брой кабели: {0}", max);
-        do
-        {
-            Console.Write("{0} ", index);
-            index = nextConductor[index];
-        }
-        while (index != 0);
 
-        Console.WriteLine();
-    }
+            Console.WriteLine("Максимален брой кабели: {0}", max);
+            do
+            {
+                Console.Write("{0} ", index);
+                index = NextConductor[index];
+            }
+            while (index != 0);
 
-    private static void Main()
-    {
-        Solve();
-        Print();
+            Console.WriteLine();
+        }
     }
 }
