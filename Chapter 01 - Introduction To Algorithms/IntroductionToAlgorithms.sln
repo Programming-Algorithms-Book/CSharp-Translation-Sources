@@ -3,91 +3,91 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseConversions", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\BaseConversions\BaseConversions.csproj", "{36DEEF43-F62D-41A2-8CC9-1F9F8793B27D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseConversions", "IntroductionToAlgorithms\BaseConversions\BaseConversions.csproj", "{36DEEF43-F62D-41A2-8CC9-1F9F8793B27D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BellNumbers", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\BellNumbers\BellNumbers.csproj", "{EB9898D0-6E1C-4D82-8F4D-1B42585C6643}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BellNumbers", "IntroductionToAlgorithms\BellNumbers\BellNumbers.csproj", "{EB9898D0-6E1C-4D82-8F4D-1B42585C6643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinomialCoefficientCalculator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\BinomialCoefficientCalculator\BinomialCoefficientCalculator.csproj", "{3F617055-36F7-4294-97E9-7C52E86785FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinomialCoefficientCalculator", "IntroductionToAlgorithms\BinomialCoefficientCalculator\BinomialCoefficientCalculator.csproj", "{3F617055-36F7-4294-97E9-7C52E86785FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationsGenerator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\CombinationsGenerator\CombinationsGenerator.csproj", "{5A0A5C2E-726F-4F88-94CD-8405E319992F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationsGenerator", "IntroductionToAlgorithms\CombinationsGenerator\CombinationsGenerator.csproj", "{5A0A5C2E-726F-4F88-94CD-8405E319992F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\DevNumber1\DevNumber1.csproj", "{C2F90B5A-2C2C-414B-9F56-41BE3A99BEE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber1", "IntroductionToAlgorithms\DevNumber1\DevNumber1.csproj", "{C2F90B5A-2C2C-414B-9F56-41BE3A99BEE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\DevNumber2\DevNumber2.csproj", "{418A2BE1-691A-4BA1-9FE9-436735727F91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber2", "IntroductionToAlgorithms\DevNumber2\DevNumber2.csproj", "{418A2BE1-691A-4BA1-9FE9-436735727F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber3", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\DevNumber3\DevNumber3.csproj", "{2EEB8246-6254-4334-8F1F-7427D67B962C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevNumber3", "IntroductionToAlgorithms\DevNumber3\DevNumber3.csproj", "{2EEB8246-6254-4334-8F1F-7427D67B962C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitsCountOfANumber", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\DigitsCountOfANumber\DigitsCountOfANumber.csproj", "{9A3AF3B0-CFD6-4FA0-9D7D-321F0AEA8506}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitsCountOfANumber", "IntroductionToAlgorithms\DigitsCountOfANumber\DigitsCountOfANumber.csproj", "{9A3AF3B0-CFD6-4FA0-9D7D-321F0AEA8506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitsOfNFactorial", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\DigitsOfNFactorial\DigitsOfNFactorial.csproj", "{8F59EF13-B79E-4251-A30D-98A48BD87332}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitsOfNFactorial", "IntroductionToAlgorithms\DigitsOfNFactorial\DigitsOfNFactorial.csproj", "{8F59EF13-B79E-4251-A30D-98A48BD87332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialCalculator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\FactorialCalculator\FactorialCalculator.csproj", "{5704A7F1-C766-41CE-BD0C-6D9ADAEB92AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialCalculator", "IntroductionToAlgorithms\FactorialCalculator\FactorialCalculator.csproj", "{5704A7F1-C766-41CE-BD0C-6D9ADAEB92AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialZeroesCountAtTheEnd", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\FactorialZeroesCountAtTheEnd\FactorialZeroesCountAtTheEnd.csproj", "{B754EB4D-AE4F-451F-B270-4107DC95933B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialZeroesCountAtTheEnd", "IntroductionToAlgorithms\FactorialZeroesCountAtTheEnd\FactorialZeroesCountAtTheEnd.csproj", "{B754EB4D-AE4F-451F-B270-4107DC95933B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastRecursiveFactorialCalculator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\FastRecursiveFactorialCalculator\FastRecursiveFactorialCalculator.csproj", "{4AF31BA5-6EEC-451F-A645-B9068E06EF2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastRecursiveFactorialCalculator", "IntroductionToAlgorithms\FastRecursiveFactorialCalculator\FastRecursiveFactorialCalculator.csproj", "{4AF31BA5-6EEC-451F-A645-B9068E06EF2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillingAndPrintingMatrix", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\FillingAndPrintingMatrix\FillingAndPrintingMatrix.csproj", "{8A84C3B3-5EB1-49FD-A7CE-6C9FAC2E2B8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillingAndPrintingMatrix", "IntroductionToAlgorithms\FillingAndPrintingMatrix\FillingAndPrintingMatrix.csproj", "{8A84C3B3-5EB1-49FD-A7CE-6C9FAC2E2B8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPowerOfANumber", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\GetPowerOfANumber\GetPowerOfANumber.csproj", "{B94787C5-9F77-4981-9A5D-990D2310FE3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPowerOfANumber", "IntroductionToAlgorithms\GetPowerOfANumber\GetPowerOfANumber.csproj", "{B94787C5-9F77-4981-9A5D-990D2310FE3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativeFibonacci", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\IterativeFibonacci\IterativeFibonacci.csproj", "{C75BAA83-128A-41B1-96A5-1AE342946A6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativeFibonacci", "IntroductionToAlgorithms\IterativeFibonacci\IterativeFibonacci.csproj", "{C75BAA83-128A-41B1-96A5-1AE342946A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativeGreatestCommonDivisor", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\IterativeGreatestCommonDivisor\IterativeGreatestCommonDivisor.csproj", "{7D985310-8925-40BD-829A-DA2F2B56601E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativeGreatestCommonDivisor", "IntroductionToAlgorithms\IterativeGreatestCommonDivisor\IterativeGreatestCommonDivisor.csproj", "{7D985310-8925-40BD-829A-DA2F2B56601E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativePrint", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\IterativePrint\IterativePrint.csproj", "{9276A5BE-B288-48FC-9E1B-A22715F2FFB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterativePrint", "IntroductionToAlgorithms\IterativePrint\IterativePrint.csproj", "{9276A5BE-B288-48FC-9E1B-A22715F2FFB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeastCommonMultiple", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\LeastCommonMultiple\LeastCommonMultiple.csproj", "{4B3D935E-E272-4696-A2CC-ED81A25F257F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeastCommonMultiple", "IntroductionToAlgorithms\LeastCommonMultiple\LeastCommonMultiple.csproj", "{4B3D935E-E272-4696-A2CC-ED81A25F257F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListPreprocessedPrimeNumbersFinder", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\ListPreprocessedPrimeNumbersFinder\ListPreprocessedPrimeNumbersFinder.csproj", "{29FE1A11-6E13-4D42-8183-FAB5E93706F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListPreprocessedPrimeNumbersFinder", "IntroductionToAlgorithms\ListPreprocessedPrimeNumbersFinder\ListPreprocessedPrimeNumbersFinder.csproj", "{29FE1A11-6E13-4D42-8183-FAB5E93706F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\MatrixMultiplication\MatrixMultiplication.csproj", "{6C8D0581-D98F-4432-BB05-7B633DEDBA2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication", "IntroductionToAlgorithms\MatrixMultiplication\MatrixMultiplication.csproj", "{6C8D0581-D98F-4432-BB05-7B633DEDBA2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MersennePrimeNumbersFinder", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\MersennePrimeNumbersFinder\MersennePrimeNumbersFinder.csproj", "{8CF9BD47-503F-406A-B2F4-083C97ADBF28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MersennePrimeNumbersFinder", "IntroductionToAlgorithms\MersennePrimeNumbersFinder\MersennePrimeNumbersFinder.csproj", "{8CF9BD47-503F-406A-B2F4-083C97ADBF28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalTriangle", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PascalTriangle\PascalTriangle.csproj", "{E026F904-CDBC-42D0-96AB-675EC437A1EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PascalTriangle", "IntroductionToAlgorithms\PascalTriangle\PascalTriangle.csproj", "{E026F904-CDBC-42D0-96AB-675EC437A1EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsCoding", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PermutationsCoding\PermutationsCoding.csproj", "{B6A49184-3DC9-4E42-9262-6EFC65F421E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsCoding", "IntroductionToAlgorithms\PermutationsCoding\PermutationsCoding.csproj", "{B6A49184-3DC9-4E42-9262-6EFC65F421E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsGenerator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PermutationsGenerator\PermutationsGenerator.csproj", "{64A18D01-DB82-486F-A86F-B002E37ADDD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsGenerator", "IntroductionToAlgorithms\PermutationsGenerator\PermutationsGenerator.csproj", "{64A18D01-DB82-486F-A86F-B002E37ADDD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsGeneratorWithSwapping", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PermutationsGeneratorWithSwapping\PermutationsGeneratorWithSwapping.csproj", "{1883E238-4B3F-4B68-A39A-6DF346EAD45C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsGeneratorWithSwapping", "IntroductionToAlgorithms\PermutationsGeneratorWithSwapping\PermutationsGeneratorWithSwapping.csproj", "{1883E238-4B3F-4B68-A39A-6DF346EAD45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreprocessedPrimeNumbersFinder", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PreprocessedPrimeNumbersFinder\PreprocessedPrimeNumbersFinder.csproj", "{1D7CA860-024C-4339-9635-B8CA77111A4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreprocessedPrimeNumbersFinder", "IntroductionToAlgorithms\PreprocessedPrimeNumbersFinder\PreprocessedPrimeNumbersFinder.csproj", "{1D7CA860-024C-4339-9635-B8CA77111A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorization", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PrimeFactorization\PrimeFactorization.csproj", "{72B294D7-DC84-49A0-B8B1-B50A5C914C6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorization", "IntroductionToAlgorithms\PrimeFactorization\PrimeFactorization.csproj", "{72B294D7-DC84-49A0-B8B1-B50A5C914C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNimbersEratosthenes", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PrimeNimbersEratosthenes\PrimeNimbersEratosthenes.csproj", "{BB991FB1-AC49-493D-AF00-8683261C0098}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNimbersEratosthenes", "IntroductionToAlgorithms\PrimeNimbersEratosthenes\PrimeNimbersEratosthenes.csproj", "{BB991FB1-AC49-493D-AF00-8683261C0098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbersFinder", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\PrimeNumbersFinder\PrimeNumbersFinder.csproj", "{695E1AC1-A9B6-4DCE-88D4-5BF34E1C27C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbersFinder", "IntroductionToAlgorithms\PrimeNumbersFinder\PrimeNumbersFinder.csproj", "{695E1AC1-A9B6-4DCE-88D4-5BF34E1C27C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductOfArrayElements", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\ProductOfArrayElements\ProductOfArrayElements.csproj", "{2E7BF6C8-667C-443F-AF78-B72F1CA49CB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductOfArrayElements", "IntroductionToAlgorithms\ProductOfArrayElements\ProductOfArrayElements.csproj", "{2E7BF6C8-667C-443F-AF78-B72F1CA49CB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveFactorialCalculator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\RecursiveFactorialCalculator\RecursiveFactorialCalculator.csproj", "{479E167E-1FCE-498A-ABD7-6898BCC95960}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveFactorialCalculator", "IntroductionToAlgorithms\RecursiveFactorialCalculator\RecursiveFactorialCalculator.csproj", "{479E167E-1FCE-498A-ABD7-6898BCC95960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveFibonacci", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\RecursiveFibonacci\RecursiveFibonacci.csproj", "{F9334FD7-6004-43B1-80AF-3E4BCC643554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveFibonacci", "IntroductionToAlgorithms\RecursiveFibonacci\RecursiveFibonacci.csproj", "{F9334FD7-6004-43B1-80AF-3E4BCC643554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveGreatestCommonDivisor", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\RecursiveGreatestCommonDivisor\RecursiveGreatestCommonDivisor.csproj", "{4A8833CD-0D1D-42FD-9519-0231A25ABD9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveGreatestCommonDivisor", "IntroductionToAlgorithms\RecursiveGreatestCommonDivisor\RecursiveGreatestCommonDivisor.csproj", "{4A8833CD-0D1D-42FD-9519-0231A25ABD9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursivePrint", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\RecursivePrint\RecursivePrint.csproj", "{055D9444-8483-4869-9D53-FA84557B6732}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursivePrint", "IntroductionToAlgorithms\RecursivePrint\RecursivePrint.csproj", "{055D9444-8483-4869-9D53-FA84557B6732}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumerals", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\RomanNumerals\RomanNumerals.csproj", "{5B52DA4E-93C7-4DED-BC62-50171723F842}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumerals", "IntroductionToAlgorithms\RomanNumerals\RomanNumerals.csproj", "{5B52DA4E-93C7-4DED-BC62-50171723F842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint1", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SequencePrint1\SequencePrint1.csproj", "{A7D27F92-14F0-41E6-A075-DAF7ADC641D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint1", "IntroductionToAlgorithms\SequencePrint1\SequencePrint1.csproj", "{A7D27F92-14F0-41E6-A075-DAF7ADC641D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint2", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SequencePrint2\SequencePrint2.csproj", "{F792347E-FB42-4B03-865C-9CE0D9B5920B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint2", "IntroductionToAlgorithms\SequencePrint2\SequencePrint2.csproj", "{F792347E-FB42-4B03-865C-9CE0D9B5920B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint3", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SequencePrint3\SequencePrint3.csproj", "{05D5DC7A-3AF2-47A6-A2D7-54FC58308218}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequencePrint3", "IntroductionToAlgorithms\SequencePrint3\SequencePrint3.csproj", "{05D5DC7A-3AF2-47A6-A2D7-54FC58308218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfArrayElements", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SumOfArrayElements\SumOfArrayElements.csproj", "{CB0A9F3B-771D-43DD-AD31-7C186151C7F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfArrayElements", "IntroductionToAlgorithms\SumOfArrayElements\SumOfArrayElements.csproj", "{CB0A9F3B-771D-43DD-AD31-7C186151C7F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfFirstNNaturalNumbers", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SumOfFirstNNaturalNumbers\SumOfFirstNNaturalNumbers.csproj", "{2FF11C23-06E8-480E-AED6-BDB66D147D0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfFirstNNaturalNumbers", "IntroductionToAlgorithms\SumOfFirstNNaturalNumbers\SumOfFirstNNaturalNumbers.csproj", "{2FF11C23-06E8-480E-AED6-BDB66D147D0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfMatrices", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SumOfMatrices\SumOfMatrices.csproj", "{5A3CF5B1-1989-4366-81BE-B9740062DDFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfMatrices", "IntroductionToAlgorithms\SumOfMatrices\SumOfMatrices.csproj", "{5A3CF5B1-1989-4366-81BE-B9740062DDFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumZero", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\SumZero\SumZero.csproj", "{3E0919B7-8075-43E1-8271-A9952BEF0DEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumZero", "IntroductionToAlgorithms\SumZero\SumZero.csproj", "{3E0919B7-8075-43E1-8271-A9952BEF0DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariationsGenerator", "C:\Users\Teodor92\Desktop\Algo\C-Sharp-Translation-Sources\Chapter 1\IntroductionToAlgorithms\VariationsGenerator\VariationsGenerator.csproj", "{BD6C8C8E-A078-4A13-9467-4A48D22684F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariationsGenerator", "IntroductionToAlgorithms\VariationsGenerator\VariationsGenerator.csproj", "{BD6C8C8E-A078-4A13-9467-4A48D22684F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
