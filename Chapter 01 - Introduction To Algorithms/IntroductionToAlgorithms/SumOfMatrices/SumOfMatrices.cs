@@ -4,7 +4,7 @@
 
     public class SumOfMatrices
     {
-        private static void Main()
+        internal static void Main()
         {
             int[,] a = { { 3, 52, 1, 2 }, { -3, 2, 11, 6 }, { 7, 8, 2, 9 } };
             int[,] b = { { -5, 2, 7, 6 }, { 3, 5, 71, 2 }, { 7, 3, 11, 2 } };

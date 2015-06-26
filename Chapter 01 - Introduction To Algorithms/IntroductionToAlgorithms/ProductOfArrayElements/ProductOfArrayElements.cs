@@ -10,7 +10,7 @@
             long product = GetProduct(elements);
 
             Console.WriteLine(
-                "Сумата на масива с елементи {0} е {1}",             
+                "Произведението на масива с елементи {0} е {1}",             
                 string.Join(", ", elements), 
                 product);
         }
