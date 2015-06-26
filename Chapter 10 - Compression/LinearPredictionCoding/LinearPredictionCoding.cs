@@ -6,7 +6,7 @@ namespace LinearPredictionCoding
 
     public class Program
     {
-        public static void Main()
+        internal static void Main()
         {
             const string Message = "LLLLLLALABALANICAAAABABABBABABABABAAABABALLLLAABB";
 
