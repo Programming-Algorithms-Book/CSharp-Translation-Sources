@@ -2,7 +2,7 @@ namespace KnightsTour
 {
     using System;
 
-    internal class Program
+    public class Program
     {
         private const int MaxMoves = 8;
         private const int N = 12;
@@ -10,7 +10,7 @@ namespace KnightsTour
         private static readonly int[] MoveX = { +1, -1, +1, -1, +2, +2, -2, -2 };
         private static readonly int[] MoveY = { +2, +2, -2, -2, +1, -1, +1, -1 };
 
-        private static void Main()
+        internal static void Main()
         {
             Solve();
         }

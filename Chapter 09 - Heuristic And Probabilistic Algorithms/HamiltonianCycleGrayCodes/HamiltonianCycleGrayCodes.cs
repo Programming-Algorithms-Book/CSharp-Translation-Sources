@@ -3,14 +3,14 @@ namespace HamiltonianCycleGrayCodes
     using System;
     using System.Linq;
 
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             /* код на Грей, Хамилтонов цикъл в n-мерен двоичен куб (Хиперкуб) */
-            const int DIMENSIONS = 3;
-            int[] a = new int[DIMENSIONS + 1];
-            Forwgray(a, DIMENSIONS);
+            const int Dimensions = 3;
+            int[] a = new int[Dimensions + 1];
+            Forwgray(a, Dimensions);
         }
 
         private static void Forwgray(int[] a, int k)

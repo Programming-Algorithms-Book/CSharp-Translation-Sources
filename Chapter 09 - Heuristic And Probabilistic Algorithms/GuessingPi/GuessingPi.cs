@@ -2,9 +2,9 @@ namespace GuessingPi
 {
     using System;
 
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             long t = 1000000; /* брой тестове */
             int d = 10000; /* диаметър на окръжността */

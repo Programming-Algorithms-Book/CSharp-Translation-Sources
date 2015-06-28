@@ -2,9 +2,9 @@ namespace PrimeMonteCarlo
 {
     using System;
 
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             const long N = 127; /* проверява се дали даденото число n е просто */
             const int K = 10; /* брой опити на Монте Карло алгоритъма със случайна база a */

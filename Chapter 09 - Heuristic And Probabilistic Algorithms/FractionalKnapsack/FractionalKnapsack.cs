@@ -3,9 +3,9 @@ namespace FractionalKnapsack
     using System;
     using System.Linq;
 
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             const double M = 16; /* ограничително тегло на раницата */
             double[] value = { 25.0, 12.0, 16.0 }; /* себестойност на предметите */

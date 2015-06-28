@@ -4,13 +4,12 @@ namespace EgyptianFractions
 
     internal class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             Solve(3, 7);
         }
 
         /* намалява p/q, докато p стане равно на 1 */
-
         private static void Cancel(ref long p, ref long q)
         {
             if (q % p == 0)

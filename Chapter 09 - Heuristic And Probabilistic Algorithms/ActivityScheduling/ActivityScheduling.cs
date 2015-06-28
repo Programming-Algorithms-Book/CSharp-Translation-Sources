@@ -4,7 +4,7 @@ namespace ActivityScheduling
 
     internal class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             int[] start = { 3, 5, 7, 9, 13, 15, 17 };
             int[] end = { 8, 10, 12, 14, 15, 19, 20 };

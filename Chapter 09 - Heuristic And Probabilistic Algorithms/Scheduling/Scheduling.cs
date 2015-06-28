@@ -2,9 +2,9 @@ namespace Scheduling
 {
     using System;
 
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        internal static void Main()
         {
             int[] v = { 50, 40, 30, 20, 15 };
             int[] d = { 2, 1, 2, 2, 1 };

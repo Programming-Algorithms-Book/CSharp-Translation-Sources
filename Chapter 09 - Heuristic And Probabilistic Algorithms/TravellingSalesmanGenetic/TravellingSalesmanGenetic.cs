@@ -3,7 +3,7 @@ namespace TravellingSalesmanGenetic
     using System;
     using System.Linq;
 
-    internal class Program
+    public class Program
     {
         /* трябва да бъде такова, че psize % 4 == 0 */
         private const int SizeP = 200;
@@ -13,7 +13,7 @@ namespace TravellingSalesmanGenetic
 
         private static readonly Random Rand = new Random();
 
-        private static void Main()
+        internal static void Main()
         {
             int[,] population = new int[SizeP, MaxN]; /* цикли на популацията */
             int[] result = new int[SizeP];

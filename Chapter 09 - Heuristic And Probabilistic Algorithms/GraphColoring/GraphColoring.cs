@@ -2,7 +2,7 @@ namespace GraphColoring
 {
     using System;
 
-    internal class Program
+    public class Program
     {
         private static readonly int[,] A =
         {
@@ -16,7 +16,7 @@ namespace GraphColoring
 
         private static readonly int Rows = A.GetLength(0);
 
-        private static void Main()
+        internal static void Main()
         {
             Console.WriteLine("Оцветяване на върховете по алгоритъм 1:");
             int[] colors1 = Solve1();
