@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class Program
+    public class Program
     {
         private static readonly int[] F = new int[n + 1]; /* Целева функция */
 
@@ -11,14 +11,13 @@
 
         private static int n = 10; /* Брой фенове */
 
-        private static void Main()
+        internal static void Main()
         {
             Solve();
             Print();
         }
 
         /* Пресмята стойностите на целевата функция */
-
         private static void Solve()
         {
             F[0] = 0;
@@ -30,7 +29,6 @@
         }
 
         /* Извежда решението на екрана */
-
         private static void Print()
         {
             Console.WriteLine("Минимално време за обслужване на опашката: {0}", F[n]);

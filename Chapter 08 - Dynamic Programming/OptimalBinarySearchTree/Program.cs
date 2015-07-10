@@ -19,7 +19,6 @@ namespace OptimalBinarySearchTree
         }
 
         /* Построява оптимално двоично дърво за претърсване */
-
         private static void Solve()
         {
             /* Инициализация */
@@ -57,7 +56,6 @@ namespace OptimalBinarySearchTree
         }
 
         /* Извежда матрицата на минимумите на екрана */
-
         private static void PrintMatrix()
         {
             Console.WriteLine("Матрица на минимумите:");
@@ -72,7 +70,6 @@ namespace OptimalBinarySearchTree
         }
 
         /* Извежда оптималното дърво на екрана */
-
         private static void GetOrder(long ll, long rr, long h)
         {
             if (ll > rr)

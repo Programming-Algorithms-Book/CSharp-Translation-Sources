@@ -2,7 +2,7 @@
 {
     public struct Element
     {
-        public int Num { get; set; }
+        public int Number { get; set; }
 
         public int Last { get; set; }
     }

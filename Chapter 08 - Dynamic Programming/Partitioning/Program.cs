@@ -19,7 +19,6 @@ namespace Partitioning
         }
 
         /* Извършва оптимално разделяне на k групи */
-
         private static long DoPartition(int k)
         {
             P[0] = 0;
@@ -63,7 +62,7 @@ namespace Partitioning
 
         private static void Print(long from, long to)
         {
-            Console.Write("\n");
+            Console.WriteLine();
             for (long i = from; i <= to; i++)
             {
                 Console.Write("{0} ", S[i]);

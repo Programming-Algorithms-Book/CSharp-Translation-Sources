@@ -22,24 +22,23 @@ namespace OptimalBitonicSequence
         }
 
         /* Търси нарастваща редица */
-
         private static void FindIncSequence(St[] max, int[] x)
         {
             /* Основен цикъл */
             for (int i = 1; i <= N; i++)
             {
-                max[i].Len = 0;
+                max[i].Length = 0;
                 max[i].Sum = 0;
                 for (int j = 0; j < i; j++)
                 {
                     if (x[j] <= x[i])
                     {
-                        if ((max[j].Len + 1 > max[i].Len) ||
-                            ((max[j].Len + 1 == max[i].Len) &&
+                        if ((max[j].Length + 1 > max[i].Length) ||
+                            ((max[j].Length + 1 == max[i].Length) &&
                              (max[j].Sum + x[i] > max[i].Sum)))
                         {
                             max[i].Back = j;
-                            max[i].Len = max[j].Len + 1;
+                            max[i].Length = max[j].Length + 1;
                             max[i].Sum = max[j].Sum + x[i];
                         }
                     }
@@ -48,7 +47,6 @@ namespace OptimalBitonicSequence
         }
 
         /* Построява обърнато копие на редицата */
-
         private static void Reverse(int[] x2, int[] x)
         {
             for (int i = 1; i <= N; i++)
@@ -58,7 +56,6 @@ namespace OptimalBitonicSequence
         }
 
         /* Намира търсената редица */
-
         private static void Solve()
         {
             /* стъпка (1) */
@@ -71,11 +68,11 @@ namespace OptimalBitonicSequence
             bestSum = 0;
             for (int i = 1; i <= N; i++)
             {
-                if ((Max1[i].Len + Max2[N - i + 1].Len > bestLen) ||
-                    ((Max1[i].Len + Max2[N - i + 1].Len == bestLen) &&
+                if ((Max1[i].Length + Max2[N - i + 1].Length > bestLen) ||
+                    ((Max1[i].Length + Max2[N - i + 1].Length == bestLen) &&
                      (Max1[i].Sum + Max2[N - i + 1].Sum > bestSum)))
                 {
-                    bestLen = Max1[i].Len + Max2[N - i + 1].Len;
+                    bestLen = Max1[i].Length + Max2[N - i + 1].Length;
                     bestSum = Max1[i].Sum + Max2[N - i + 1].Sum; /* Трябва да се намали с 1 */
                     top = i;
                 }
@@ -83,13 +80,12 @@ namespace OptimalBitonicSequence
         }
 
         /* Построява търсената редица */
-
         private static void BuildSequence()
         {
             int t = top;
             int len = 0;
             /* Построяване на нарастващата част на редицата */
-            for (int l = Max1[t].Len; t != 0; t = Max1[t].Back)
+            for (int l = Max1[t].Length; t != 0; t = Max1[t].Back)
             {
                 Rez[l - len++] = X[t];
             }
@@ -102,7 +98,6 @@ namespace OptimalBitonicSequence
         }
 
         /* Извежда резултата на екрана */
-
         private static void Print()
         {
             Console.WriteLine("Максимален брой дървета, които могат да се запазят: {0}", bestLen - 1);

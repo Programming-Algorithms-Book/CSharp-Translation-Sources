@@ -2,8 +2,8 @@
 {
     public struct BlueRed
     {
-        public int CntBlue { get; set; }
+        public int BlueCount { get; set; }
 
-        public int CntRed { get; set; }
+        public int RedCount { get; set; }
     }
 }

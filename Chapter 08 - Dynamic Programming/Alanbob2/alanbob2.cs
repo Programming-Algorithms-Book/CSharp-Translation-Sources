@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class Alanbob2
+    public class Alanbob2
     {
         private const int MaxObjects = 100; /* Максимален брой предмети */
         private const int MaxValue = 200; /* Максимална стойност на отделен предмет */
@@ -11,6 +11,11 @@
 
         private static readonly int[] LastAdded = new int[MaxObjects * MaxValue]; /* Кой предмет е бил добавен последен? */
         private static readonly int[] ObjectValues = new int[] { 3, 2, 3, 2, 2, 77, 89, 23, 90, 11 };
+
+        internal static void Main()
+        {
+            Solve();
+        }
 
         private static void Solve()
         {
@@ -60,11 +65,6 @@
                     return;
                 }
             }
-        }
-
-        private static void Main()
-        {
-            Solve();
         }
     }
 }

@@ -14,14 +14,13 @@ namespace LongestNonDecreasingSubsequence2
         internal static void Main()
         {
             int start = -1;
-            Console.WriteLine("Дължина на най-дългата ненамаляваща подредица: {0}", LNS_Length(ref start));
+            Console.WriteLine("Дължина на най-дългата ненамаляваща подредица: {0}", LnsLength(ref start));
             Console.Write("Подредицата: ");
-            LNS_Print(start);
+            LnsPrint(start);
         }
 
         /* Намира дължината на най-дългата ненамаляваща подредица */
-
-        private static int LNS_Length(ref int start)
+        private static int LnsLength(ref int start)
         {
             int len = 0; /* Максимална (за момента) дължина на ненамаляваща подредица */
             for (int i = N; i >= 1; i--)
@@ -51,7 +50,7 @@ namespace LongestNonDecreasingSubsequence2
         }
 
         /* Извежда най-дългата ненамаляваща подредица */
-        private static void LNS_Print(int start)
+        private static void LnsPrint(int start)
         {
             for (; Lns[start] >= 1; start = Next[start])
             {

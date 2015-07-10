@@ -47,7 +47,8 @@
             return PDyn(i, j);
         }
 
-        private static double PDyn(int i, int j) /* Динамично оптимиране */
+        /* Динамично оптимиране */
+        private static double PDyn(int i, int j)
         {
             if (Ps[i, j] < 0)
             {

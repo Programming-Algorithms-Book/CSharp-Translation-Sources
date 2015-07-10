@@ -15,7 +15,6 @@ namespace MatrixMultiplication1
         }
 
         /* Неефективна рекурсивна функция */
-
         private static long SolveRecursive(int i, int j)
         {
             if (i == j)
@@ -40,7 +39,8 @@ namespace MatrixMultiplication1
             return M[i, j];
         }
 
-        private static void PrintMatrix() /* Извежда матрицата на минимумите на екрана */
+        /* Извежда матрицата на минимумите на екрана */
+        private static void PrintMatrix()
         {
             Console.Write("Матрица на минимумите:");
             for (int i = 1; i <= N; i++)

@@ -59,7 +59,7 @@
 
             /* Стойността трябва да се пресметне */
             F[beg, len].Min = int.MaxValue;
-            F[beg, len].Max = -int.MaxValue;
+            F[beg, len].Max = int.MinValue;
             for (int i = 1; i < len; i++)
             {
                 /* Пресмятане на всички стойности f[beg, i] и f[beg+i, len-i] */
@@ -75,12 +75,12 @@
                 }
 
                 Calculate(beg2, len - i);
-                var val1 = Oper(F[beg, i].Min, Sign[beg2 - 1], F[beg2, len - i].Min);
-                var val2 = Oper(F[beg, i].Min, Sign[beg2 - 1], F[beg2, len - i].Max);
-                var val3 = Oper(F[beg, i].Max, Sign[beg2 - 1], F[beg2, len - i].Min);
-                var val4 = Oper(F[beg, i].Max, Sign[beg2 - 1], F[beg2, len - i].Max);
+                long val1 = Oper(F[beg, i].Min, Sign[beg2 - 1], F[beg2, len - i].Min);
+                long val2 = Oper(F[beg, i].Min, Sign[beg2 - 1], F[beg2, len - i].Max);
+                long val3 = Oper(F[beg, i].Max, Sign[beg2 - 1], F[beg2, len - i].Min);
+                long val4 = Oper(F[beg, i].Max, Sign[beg2 - 1], F[beg2, len - i].Max);
                 /* Актуализиране на минималната стойност на f[beg, len] */
-                var minValue = Math.Min(val1, Math.Min(val2, Math.Min(val3, val4)));
+                long minValue = Math.Min(val1, Math.Min(val2, Math.Min(val3, val4)));
                 if (minValue < F[beg, len].Min)
                 {
                     F[beg, len].Min = minValue;

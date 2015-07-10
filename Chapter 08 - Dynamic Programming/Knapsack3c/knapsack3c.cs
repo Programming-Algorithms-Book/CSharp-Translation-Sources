@@ -12,8 +12,14 @@
         private static readonly int[] Weights = new int[] { 0, 1, 2, 3, 5, 6, 7 }; /* Тегло на предметите */
         private static readonly int[] Values = new int[] { 0, 1, 10, 19, 22, 25, 30 }; /* Стойност на предметите */
 
-        /* Пресмята стойностите на целевата функция */
+        internal static void Main()
+        {
+            Console.WriteLine("Брой предмети: {0}", N);
+            Console.WriteLine("Максимална допустима обща маса: {0}", TotalCapacity);
+            Console.WriteLine("Максимална постигната ценност: {0}", Calculate());
+        }
 
+        /* Пресмята стойностите на целевата функция */
         private static int Calculate()
         {
             int[] f = new int[MaxCapacity]; /* Целева функция */
@@ -40,13 +46,6 @@
             }
 
             return f[TotalCapacity];
-        }
-
-        private static void Main()
-        {
-            Console.WriteLine("Брой предмети: {0}", N);
-            Console.WriteLine("Максимална допустима обща маса: {0}", TotalCapacity);
-            Console.WriteLine("Максимална постигната ценност: {0}", Calculate());
         }
     }
 }

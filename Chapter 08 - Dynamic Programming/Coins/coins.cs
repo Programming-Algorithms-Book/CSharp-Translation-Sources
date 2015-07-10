@@ -27,7 +27,7 @@
         private static bool CanJ(int i, int j)
         {
             int k = i - Coins[j];
-            if (k > 0 && Sums[k].Num < MaxCoins)
+            if (k > 0 && Sums[k].Number < MaxCoins)
             {
                 while (k > 0)
                 {
@@ -46,17 +46,17 @@
         /* Намира представяне на сумата Sum с минимален брой монети */
         private static void FindMinSolution(int sum)
         {
-            Sums[0].Num = 0;
+            Sums[0].Number = 0;
             for (int i = 1; i <= sum; i++)
             {
-                Sums[i].Num = MaxCoins;
+                Sums[i].Number = MaxCoins;
                 for (int j = 1; j <= N; j++)
                 {
                     if (CanJ(i, j))
                     {
-                        if ((Sums[i - Coins[j]].Num + 1) < Sums[i].Num)
+                        if ((Sums[i - Coins[j]].Number + 1) < Sums[i].Number)
                         {
-                            Sums[i].Num = 1 + Sums[i - Coins[j]].Num;
+                            Sums[i].Number = 1 + Sums[i - Coins[j]].Number;
                             Sums[i].Last = j;
                         }
                     }
@@ -67,13 +67,13 @@
         /* Извежда намереното представяне */
         private static void PrintSolution(int sum)
         {
-            if (Sums[sum].Num == MaxCoins)
+            if (Sums[sum].Number == MaxCoins)
             {
                 Console.WriteLine("Сумата не може да се получи с наличните монети.");
             }
             else
             {
-                Console.WriteLine("Минимален брой необходими монети: {0}", Sums[sum].Num);
+                Console.WriteLine("Минимален брой необходими монети: {0}", Sums[sum].Number);
                 Console.WriteLine("Ето и стойностите на самите монети: ");
                 while (sum > 0)
                 {

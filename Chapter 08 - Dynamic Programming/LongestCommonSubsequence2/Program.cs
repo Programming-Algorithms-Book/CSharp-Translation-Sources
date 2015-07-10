@@ -17,7 +17,7 @@ namespace LongestCommonSubsequence2
 
         internal static void Main()
         {
-            Console.WriteLine("Дължина на най-дългата обща подредица: {0}", LCS_Length());
+            Console.WriteLine("Дължина на най-дългата обща подредица: {0}", LcsLength());
             Console.Write("PrintLCS:  Максимална обща подредица (в обратен ред): ");
             PrintLcs();
             Console.WriteLine();
@@ -29,8 +29,7 @@ namespace LongestCommonSubsequence2
         }
 
         /* Намира дължината на най-дългата обща подредица */
-
-        private static int LCS_Length()
+        private static int LcsLength()
         {
             /* Начална инициализация */
             for (int i = 1; i <= M; i++)
@@ -70,7 +69,6 @@ namespace LongestCommonSubsequence2
         }
 
         /* Намира една възможна максимална обща подредица (обърната) */
-
         private static void PrintLcs()
         {
             int i = X.Length;
@@ -95,7 +93,6 @@ namespace LongestCommonSubsequence2
         }
 
         /* Намира една възможна максимална обща подредица */
-
         private static void PrintLcs2(int i, int j)
         {
             if (i == 0 || j == 0)
@@ -119,7 +116,6 @@ namespace LongestCommonSubsequence2
         }
 
         /* Намира една възможна максимална обща подредица */
-
         private static void PrintLcs3(int i, int j)
         {
             if (i == 0 || j == 0)

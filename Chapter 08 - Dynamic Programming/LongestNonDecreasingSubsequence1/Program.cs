@@ -11,19 +11,18 @@ namespace LongestNonDecreasingSubsequence1
 
         internal static void Main()
         {
-            int len = LNS_Length();
-            Console.Write("Дължина на най-дългата ненамаляваща подредица: {0}", len);
+            int length = LnsLength();
+            Console.Write("Дължина на най-дългата ненамаляваща подредица: {0}", length);
             Console.WriteLine();
             Console.Write("Подредицата (обърната): ");
-            LNS_Print(len);
+            LnsPrint(length);
             Console.WriteLine();
             Console.Write("Подредицата: ");
-            LNS_Print2(N, len);
+            LnsPrint2(N, length);
         }
 
         /* Намира дължината на най-дългата ненамаляваща подредица */
-
-        private static int LNS_Length()
+        private static int LnsLength()
         {
             /* Начална инициализация */
             for (int i = 0; i <= N; i++)
@@ -62,8 +61,7 @@ namespace LongestNonDecreasingSubsequence1
         }
 
         /* Извежда най-дългата ненамаляваща подредица (в обратен ред) */
-
-        private static void LNS_Print(int j)
+        private static void LnsPrint(int j)
         {
             int i = N;
             do
@@ -82,8 +80,7 @@ namespace LongestNonDecreasingSubsequence1
         }
 
         /* Извежда най-дългата ненамаляваща подредица */
-
-        private static void LNS_Print2(int i, int j)
+        private static void LnsPrint2(int i, int j)
         {
             if (i == 0)
             {
@@ -92,11 +89,11 @@ namespace LongestNonDecreasingSubsequence1
 
             if (Lns[i, j] == Lns[i - 1, j])
             {
-                LNS_Print2(i - 1, j);
+                LnsPrint2(i - 1, j);
             }
             else
             {
-                LNS_Print2(i, j - 1);
+                LnsPrint2(i, j - 1);
                 Console.Write("{0} ", X[i]);
             }
         }

@@ -2,13 +2,23 @@
 {
     using System;
 
-    internal class Cuts
+    public class Cuts
     {
         private const int MaxSize = 100;
         private const int NotCalculated = -1;
 
         private static readonly Element[,] F = new Element[MaxSize, MaxSize];
-        private static int sizeX, sizeY; /* Размерност на парчето */
+        private static int sizeX; /* Размерност на парчето */
+        private static int sizeY; /* Размерност на парчето */
+
+        internal static void Main()
+        {
+            Init();
+            Console.WriteLine("Максимална цена {0}", Solve(sizeX, sizeY));
+            Console.WriteLine("Размери (X,Y)-->Цена");
+            PrintSolution(sizeX, sizeY);
+            Console.WriteLine();
+        }
 
         private static void Init()
         {
@@ -43,13 +53,13 @@
         private static int Solve(int x, int y)
         {
             int bestAction = 0;
-            int i, bestSolution, x2 = x / 2, y2 = y / 2;
+            int i, x2 = x / 2, y2 = y / 2;
             if (F[x, y].Value != NotCalculated)
             {
                 return F[x, y].Value; /* Вече е пресмятана */
             }
 
-            bestSolution = 0;
+            int bestSolution = 0;
             if (x > 1)
             {
                 /* Срязваме го хоризонтално и викаме рекурсия за двете части */
@@ -100,15 +110,6 @@
                     Console.Write("({0},{1}) --> {2}  ", x, y, F[x, y].Value);
                 }
             }
-        }
-
-        private static void Main()
-        {
-            Init();
-            Console.WriteLine("Максимална цена {0}", Solve(sizeX, sizeY));
-            Console.WriteLine("Размери (X,Y)-->Цена");
-            PrintSolution(sizeX, sizeY);
-            Console.WriteLine();
         }
     }
 }

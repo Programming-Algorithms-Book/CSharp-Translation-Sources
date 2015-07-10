@@ -6,7 +6,7 @@
     {
         private const int Max = 100;
         private const int NumeralSystemBase = 10; /* Основа на бройната система */
-        private const int N = 17; /* Брой елементи в редицата */
+        private const int SequenceElementCount = 17; /* Брой елементи в редицата */
 
         private static readonly int[] Successors = new int[Max]; /* Наследници за всеки връх */
         private static readonly int[] MaxLengths = new int[NumeralSystemBase]; /* F[i]: текуща макс. дължина на подредица за i */
@@ -35,7 +35,7 @@
             }
 
             /* Намиране дължините на редиците, започващи с цифрите от 0 до 9 */
-            for (int i = N; i > 0; i--)
+            for (int i = SequenceElementCount; i > 0; i--)
             {
                 /* Определяне на най-старшата и най-младшата цифри на числото */
                 r = Sequence[i] % NumeralSystemBase;

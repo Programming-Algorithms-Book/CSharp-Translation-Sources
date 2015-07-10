@@ -11,11 +11,11 @@ namespace LongestNonDecreasingSubsequence3
 
         internal static void Main()
         {
-            Console.WriteLine("Дължина на най-дългата ненамаляваща подредица: {0}", LNS_Length());
+            Console.WriteLine("Дължина на най-дългата ненамаляваща подредица: {0}", LnsLength());
         }
 
         /* Намира дължината на най-дългата ненамаляваща подредица */
-        private static int LNS_Length()
+        private static int LnsLength()
         {
             int k = 1;
             Lns[1] = X[1];

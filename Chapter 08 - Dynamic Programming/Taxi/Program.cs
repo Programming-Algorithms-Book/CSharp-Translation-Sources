@@ -19,7 +19,8 @@
             Print(N);
         }
 
-        private static void Solve(int n) /* Решава задачата чрез динамично оптимиране */
+        /* Решава задачата чрез динамично оптимиране */
+        private static void Solve(int n)
         {
             Dist[0].Value = 0;
             for (int i = 1; i <= n; i++)
@@ -36,7 +37,8 @@
             }
         }
 
-        private static void Print(int n) /* Извежда резултата на екрана */
+        /* Извежда резултата на екрана */
+        private static void Print(int n)
         {
             Console.WriteLine("Обща стойност на пътуването: {0}", Dist[n].Value);
             Console.WriteLine("Дължина и стойности на отделните отсечки:");

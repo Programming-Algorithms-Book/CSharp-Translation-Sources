@@ -25,8 +25,7 @@ namespace MatrixMultiplication3
         }
 
         /* Формира таблица, съдържаща минималния брой умножения, необходими за
-     * умножението на всяка двойка матрици, както и индексът, за който се постига */
-
+        * умножението на всяка двойка матрици, както и индексът, за който се постига */
         private static void Solve()
         {
             /* Инициализация */
@@ -60,7 +59,8 @@ namespace MatrixMultiplication3
             }
         }
 
-        private static int BuildOrder(int ll, int rr) /* Формира алгоритъм за умножение */
+        /* Формира алгоритъм за умножение */
+        private static int BuildOrder(int ll, int rr)
         {
             int ret = cnt++;
             if (ll < rr)
@@ -77,7 +77,8 @@ namespace MatrixMultiplication3
             return ret;
         }
 
-        private static void PrintMatrix() /* Извежда матрицата на минимумите на екрана */
+        /* Извежда матрицата на минимумите на екрана */
+        private static void PrintMatrix()
         {
             Console.WriteLine("Матрица на минимумите:");
             for (int i = 1; i <= N; i++)
@@ -91,7 +92,8 @@ namespace MatrixMultiplication3
             }
         }
 
-        private static void PrintMultiplyPlan() /* Извежда план за умножение на матриците */
+        /* Извежда план за умножение на матриците */
+        private static void PrintMultiplyPlan()
         {
             Console.WriteLine("План за умножение на матриците:");
             for (int i = 0; i < cnt; i++)
@@ -107,7 +109,8 @@ namespace MatrixMultiplication3
             }
         }
 
-        private static void GetOrder(int ll, int rr) /* Изразява реда на умножение с помощта на скоби */
+        /* Изразява реда на умножение с помощта на скоби */
+        private static void GetOrder(int ll, int rr)
         {
             if (ll == rr)
             {

@@ -17,7 +17,7 @@ namespace NoTwoZeroes
             F[0] = 1;
             F[1] = K;
             F[2] = (K * K) - 1;
-            Console.WriteLine("{0}", (K - 1) * Solve(N - 1));
+            Console.WriteLine((K - 1) * Solve(N - 1));
         }
 
         private static void Init()

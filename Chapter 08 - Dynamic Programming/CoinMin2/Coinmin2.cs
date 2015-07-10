@@ -36,7 +36,6 @@
         }
 
         /* Намира броя на представянията на sum при използване на първите k монети */
-
         private static int Count(int sum, int k)
         {
             int j;

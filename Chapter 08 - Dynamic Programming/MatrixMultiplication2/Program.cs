@@ -57,7 +57,8 @@ namespace MatrixMultiplication2
             return SolveMemo(1, N);
         }
 
-        private static void PrintMatrix() /* Извежда матрицата на минимумите на екрана */
+        /* Извежда матрицата на минимумите на екрана */
+        private static void PrintMatrix()
         {
             Console.WriteLine("Матрица на минимумите:");
             for (int i = 1; i <= N; i++)

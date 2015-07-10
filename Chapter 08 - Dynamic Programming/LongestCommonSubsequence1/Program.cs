@@ -9,12 +9,12 @@ namespace LongestCommonSubsequence1
 
         internal static void Main()
         {
-            Console.WriteLine("Дължина на най-дългата обща подредица: {0}", LCS_Length());
+            Console.WriteLine("Дължина на най-дългата обща подредица: {0}", LcsLength());
         }
 
         /* Намира дължината на най-дългата обща подредица */
 
-        private static int LCS_Length()
+        private static int LcsLength()
         {
             int m = X.Length; /* Дължина на първата редица */
             int n = Y.Length; /* Дължина на втората редица */
