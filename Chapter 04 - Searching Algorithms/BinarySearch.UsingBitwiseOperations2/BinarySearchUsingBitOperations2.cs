@@ -119,11 +119,10 @@
 
         private static void PerformSearchTest(Element<int>[] elements, int n)
         {
-            int index;
             for (int elementToSearch = 0; elementToSearch < 2 * MaxValue; elementToSearch++)
             {
                 Console.WriteLine("Търсим елемент с ключ {0}.", elementToSearch);
-                index = BinarySearch(elements, elementToSearch);
+                int index = BinarySearch(elements, elementToSearch);
                 if (index == NotFound)
                 {
                     Console.WriteLine("Елемент с такъв ключ не съществува!");

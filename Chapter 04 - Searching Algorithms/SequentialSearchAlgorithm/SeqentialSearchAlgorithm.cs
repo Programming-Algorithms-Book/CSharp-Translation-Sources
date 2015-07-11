@@ -5,9 +5,11 @@
 
     public class SeqentialSearchAlgorithm
     {
-        private const int MaxValue = 50;              // Максимална стойност на елементите от масива.
+        // Максимална стойност на елементите от масива.
+        private const int MaxValue = 50;
 
-        private static readonly Random Random = new Random();         // Генератор на произволни числа.
+        // Генератор на произволни числа.
+        private static readonly Random Random = new Random();
 
         public static void PerformSearchTest(Element<int>[] elements)
         {
@@ -35,7 +37,9 @@
             for (int index = 0; index < MaxValue; index++)
             {
                 int randomNumber = Random.Next(0, 2 * MaxValue);
-                elements[index] = new Element<int>(randomNumber, index);     // Пълнене на масива с произволни числа.
+
+                // Пълнене на масива с произволни числа.
+                elements[index] = new Element<int>(randomNumber, index);
             }
 
             SortElementsArray(elements);
@@ -47,7 +51,8 @@
             PerformSearchTest(elements);
         }
 
-        private static void SortElementsArray(Element<int>[] elements)        // Сортира елементите в масива.
+        // Сортира елементите в масива.
+        private static void SortElementsArray(Element<int>[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
@@ -73,7 +78,8 @@
             return i;
         }
 
-        private static void PrintElements(Element<int>[] elements)        // Принтира елементите на масива върху конзолата.
+        // Принтира елементите на масива върху конзолата.
+        private static void PrintElements(Element<int>[] elements) 
         {
             StringBuilder output = new StringBuilder();
             for (int i = 0; i < elements.Length; i++)

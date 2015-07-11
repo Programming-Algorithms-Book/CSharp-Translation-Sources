@@ -36,7 +36,8 @@
             PerformSearchTest(elements, n);
         }
 
-        private static void SortElementsArray(Element<int>[] elements)        // Сортира елементите в масива.
+        // Сортира елементите в масива.
+        private static void SortElementsArray(Element<int>[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
@@ -64,7 +65,8 @@
             return power;
         }
 
-        private static int BinarySearch(Element<int>[] elements, int elementToSearch)     // Извърша двоично търсене.
+        // Извърша двоично търсене.
+        private static int BinarySearch(Element<int>[] elements, int elementToSearch) 
         {
             int power = GetMaxPower(elements.Length);
             int leftIndex;
@@ -102,7 +104,8 @@
             return result;
         }
 
-        private static void PrintElements(Element<int>[] elements)        // Принтира елементите на масива върху конзолата.
+        // Принтира елементите на масива върху конзолата.
+        private static void PrintElements(Element<int>[] elements)
         {
             StringBuilder output = new StringBuilder();
             for (int i = 0; i < elements.Length; i++)

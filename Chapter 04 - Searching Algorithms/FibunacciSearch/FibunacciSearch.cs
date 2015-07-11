@@ -3,23 +3,27 @@
     using System;
     using System.Text;
 
-    public class FibSearch
+    public class FibunacciSearch
     {
-        private const int MaxValue = 50;              // Максимална стойност на елементите от масива.
+        // Максимална стойност на елементите от масива.
+        private const int MaxValue = 50;
         private const int NotFound = -1;
 
-        private static readonly Random Random = new Random();         // Генератор на произволни числа.
-        private static readonly int[] FibunacciNumbers = new int[MaxValue]; // Числата на Фибоначи, ненадвишаващи n
+        // Генератор на произволни числа.
+        private static readonly Random Random = new Random();
 
-        private static int n;              // Брой елементи в масива
+        // Числата на Фибоначи, ненадвишаващи n
+        private static readonly int[] FibunacciNumbers = new int[MaxValue];
+
+        // Брой елементи в масива
+        private static int n;
         
         public static void PerformSearchTest(Element<int>[] elements)
         {
-            int index;
             for (int elementToSearch = 0; elementToSearch < 2 * MaxValue; elementToSearch++)
             {
                 Console.WriteLine("Търсим елемент с ключ {0}.", elementToSearch);
-                index = FibunacciSearch(elements, elementToSearch);
+                int index = DoFibunacciSearch(elements, elementToSearch);
                 if (index == -1)
                 {
                     Console.WriteLine("Елемент с такъв ключ не съществува!");
@@ -33,12 +37,17 @@
 
         internal static void Main()
         {
-            n = MaxValue;                                                   // Брой елементи в масива.
-            Element<int>[] elements = new Element<int>[MaxValue];                  // Инициализация на масив със записи.
+            // Брой елементи в масива.
+            n = MaxValue;
+
+            // Инициализация на масив със записи.
+            Element<int>[] elements = new Element<int>[MaxValue];
             for (int index = 0; index < MaxValue; index++)
             {
                 int randomNumber = Random.Next(0, 2 * MaxValue);
-                elements[index] = new Element<int>(randomNumber, index);     // Пълнене на масива с произволни числа.
+
+                // Пълнене на масива с произволни числа.
+                elements[index] = new Element<int>(randomNumber, index);
             }
 
             SortElementsArray(elements);
@@ -50,7 +59,8 @@
             PerformSearchTest(elements);
         }
 
-        private static void SortElementsArray(Element<int>[] elements)        // Сортира елементите в масива.
+        // Сортира елементите в масива.
+        private static void SortElementsArray(Element<int>[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
@@ -66,13 +76,13 @@
             }
         }
 
-        private static int FibunacciSearch(Element<int>[] elements, int keyToSearch)
+        private static int DoFibunacciSearch(Element<int>[] elements, int keyToSearch)
         {
-            int third, second, first;
             int index = FindFibNumber(n);
-            third = FibunacciNumbers[index - 1];
-            second = FibunacciNumbers[index - 2];
-            first = FibunacciNumbers[index - 3];
+            int first = FibunacciNumbers[index - 3];
+            int second = FibunacciNumbers[index - 2];
+            int third = FibunacciNumbers[index - 1];
+
             if (keyToSearch > elements[index].Key)
             {
                 third += n - FibunacciNumbers[index] + 1;
@@ -93,9 +103,8 @@
                     }
                     else
                     {
-                        int exchangeVariable;
                         third -= first;
-                        exchangeVariable = second;
+                        int exchangeVariable = second;
                         second = first;
                         first = exchangeVariable - first;
                     }
@@ -135,7 +144,8 @@
             }
         }
 
-        private static void PrintElements(Element<int>[] elements)        // Принтира елементите на масива върху конзолата.
+        // Принтира елементите на масива върху конзолата.
+        private static void PrintElements(Element<int>[] elements)
         {
             StringBuilder output = new StringBuilder();
             for (int i = 0; i < elements.Length; i++)

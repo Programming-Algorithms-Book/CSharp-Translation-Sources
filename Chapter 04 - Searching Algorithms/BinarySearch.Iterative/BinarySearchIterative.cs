@@ -17,7 +17,7 @@
             for (int elementToSearch = 0; elementToSearch < 2 * MaxValue; elementToSearch++)
             {
                 Console.WriteLine("Търсим елемент с ключ {0}.", elementToSearch);
-                var index = BinarySearch(elements, elementToSearch);
+                int index = BinarySearch(elements, elementToSearch);
                 if (index == NotFound)
                 {
                     Console.WriteLine("Елемент с такъв ключ не съществува!");
@@ -75,11 +75,10 @@
         {
             int leftIndex = 0;
             int rightIndex = elements.Length - 1;
-            int midIndex;
             int result = NotFound;
             while (leftIndex <= rightIndex)
             {
-                midIndex = (leftIndex + rightIndex) / 2;
+                int midIndex = (leftIndex + rightIndex) / 2;
                 if (elementToSearch < elements[midIndex].Key)
                 {
                     rightIndex = midIndex - 1;

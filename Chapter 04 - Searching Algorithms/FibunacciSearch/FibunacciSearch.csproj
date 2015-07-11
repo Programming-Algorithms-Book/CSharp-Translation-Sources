@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Element.cs" />
-    <Compile Include="FibSearch.cs" />
+    <Compile Include="FibunacciSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

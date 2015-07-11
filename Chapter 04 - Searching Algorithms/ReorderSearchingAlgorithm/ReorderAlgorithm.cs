@@ -5,9 +5,11 @@
 
     public class ReorderAlgorithm
     {
-        private const int MaxValue = 50;              // Максимална стойност на елементите от масива.
+        // Максимална стойност на елементите от масива.
+        private const int MaxValue = 50;
 
-        private static readonly Random Random = new Random();         // Генератор на произволни числа.
+        // Генератор на произволни числа.
+        private static readonly Random Random = new Random();
         private static Element<int> head;
 
         public static void PerformSearchTest()
@@ -33,7 +35,8 @@
             Element<int> previous = null;
             for (int index = 0; index < MaxValue; index++)
             {
-                int randomNumber = Random.Next(0, 2 * MaxValue);    // Пълнене на списъка с произволни числа.
+                // Пълнене на списъка с произволни числа.
+                int randomNumber = Random.Next(0, 2 * MaxValue);
                 Element<int> element = new Element<int>(randomNumber, index);
                 if (index == 0)
                 {
@@ -87,7 +90,8 @@
             return null;
         }
 
-        private static void PrintElements()        // Принтира елементите на масива върху конзолата.
+        // Принтира елементите на масива върху конзолата.
+        private static void PrintElements()
         {
             StringBuilder output = new StringBuilder();
             Element<int> currentElement = head;
