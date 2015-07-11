@@ -9,15 +9,15 @@
         /* Брой върхове в графа */
         private const uint N = 6;
         /* Матрица на съседство на графа */
-        private static readonly int[,] A = new int[,]
-                          {
-                              { 0, 10, 0, 5, 0, 0 },
-                              { 0, 0, 5, 0, 0, 15 },
-                              { 0, 0, 0, 10, 5, 0 },
-                              { 0, 10, 0, 0, 10, 0 },
-                              { 0, 5, 0, 0, 0, 0 },
-                              { 0, 0, 0, 0, 0, 0 }
-                          };
+        private static readonly int[,] A =
+        {
+            { 0, 10, 0, 5, 0, 0 },
+            { 0, 0, 5, 0, 0, 15 },
+            { 0, 0, 0, 10, 5, 0 },
+            { 0, 10, 0, 0, 10, 0 },
+            { 0, 5, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0 }
+        };
 
         private static readonly uint[] Vertex = new uint[MaxN];
         private static readonly uint[] SavePath = new uint[MaxN];

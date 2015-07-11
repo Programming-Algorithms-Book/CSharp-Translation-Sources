@@ -23,7 +23,6 @@
         private static readonly uint[] Col = new uint[MaxN];
 
         private static uint maxCol, count = 0;
-        private int foundSol = 0;
 
         internal static void Main(string[] args)
         {
@@ -58,7 +57,7 @@
 
         private static void NextCol(uint i)
         {
-            uint k, j, success;
+            uint k;
 
             if (i == N)
             {
@@ -69,8 +68,8 @@
             for (k = 1; k <= maxCol; k++)
             {
                 Col[i] = k;
-                success = 1;
-                for (j = 0; j < N; j++)
+                uint success = 1;
+                for (uint j = 0; j < N; j++)
                 {
                     if (1 == A[i, j] && Col[j] == Col[i])
                     {

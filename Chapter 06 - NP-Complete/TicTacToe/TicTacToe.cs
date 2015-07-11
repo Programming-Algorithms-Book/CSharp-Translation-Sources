@@ -8,7 +8,7 @@
         private const int StartPlayer = 2;
 
         /* Стартова конфигурация */
-        private static char[,] board =
+        private static readonly char[,] Board =
         {
             { '.', '.', 'X' },
             { '.', '.', '.' },
@@ -17,13 +17,14 @@
 
         internal static void Main(string[] args)
         {
-            Console.WriteLine("{0}", CheckPosition(StartPlayer, board));
+            Console.WriteLine("{0}", CheckPosition(StartPlayer, Board));
         }
 
-        /* Връща стойност 1, ако конфигурацията е терминална и печели играч 1, стойност
-        * 2, ако е терминална и печели играч 2, стойност 3, ако играта е реми, и 0, ако
-        * конфигурацията не е терминална.
-        */
+        /* 
+         * Връща стойност 1, ако конфигурацията е терминална и печели играч 1, стойност
+         * 2, ако е терминална и печели играч 2, стойност 3, ако играта е реми, и 0, ако
+         * конфигурацията не е терминална.
+         */
         private static int Terminal(char[,] a)
         {
             uint i, j;
@@ -111,7 +112,6 @@
         */
         private static byte CheckPosition(int player, char[,] board)
         {
-            uint i, j, result;
             int t = Terminal(board);
             if (t != 0)
             {
@@ -147,14 +147,15 @@
                 /* char boardi[3][3]; Ј
                 * определя позицията
                 */
-                for (i = 0; i < 3; i++)
+                for (uint i = 0; i < 3; i++)
                 {
-                    for (j = 0; j < 3; j++)
+                    uint j;
+                    for (uint j = 0; j < 3; j++)
                     {
                         if (board[i, j] == '.')
                         {
                             board[i, j] = (char)playerSign;
-                            result = CheckPosition(otherPlayer, board);
+                            uint result = CheckPosition(otherPlayer, board);
                             board[i, j] = '.';
                             if (result == 2)
                             {

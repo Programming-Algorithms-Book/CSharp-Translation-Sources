@@ -18,10 +18,10 @@
 
         /* Правила за движение на коня */
         private const uint MaxDiff = 8;
-        private static int[] diffX = { 1, 1, -1, -1, 2, -2, 2, -2 };
-        private static int[] diffY = { 2, -2, 2, -2, 1, 1, -1, -1 };
+        private static readonly int[] DiffX = { 1, 1, -1, -1, 2, -2, 2, -2 };
+        private static readonly int[] DiffY = { 2, -2, 2, -2, 1, 1, -1, -1 };
 
-        private static uint[,] board = new uint[MaxN, MaxN];
+        private static readonly uint[,] Board = new uint[MaxN, MaxN];
         private static uint newX, newY;
 
         internal static void Main(string[] args)
@@ -31,7 +31,7 @@
             {
                 for (j = 0; j < N; j++)
                 {
-                    board[i, j] = 0;
+                    Board[i, j] = 0;
                 }
             }
 
@@ -46,7 +46,7 @@
             {
                 for (j = 0; j < N; j++)
                 {
-                    Console.Write("{0,3}", board[i - 1, j]);
+                    Console.Write("{0,3}", Board[i - 1, j]);
                 }
 
                 Console.WriteLine();
@@ -58,7 +58,7 @@
         private static void NextMove(uint x, uint y, uint i)
         {
             uint k;
-            board[x, y] = i;
+            Board[x, y] = i;
             if (i == N * N)
             {
                 PrintBoard();
@@ -67,15 +67,15 @@
 
             for (k = 0; k < MaxDiff; k++)
             {
-                newX = (uint)(x + diffX[k]);
-                newY = (uint)(y + diffY[k]);
-                if ((newX >= 0 && newX < N && newY >= 0 && newY < N) && (0 == board[newX, newY]))
+                newX = (uint)(x + DiffX[k]);
+                newY = (uint)(y + DiffY[k]);
+                if ((newX >= 0 && newX < N && newY >= 0 && newY < N) && (0 == Board[newX, newY]))
                 {
                     NextMove(newX, newY, i + 1);
                 }
             }
 
-            board[x, y] = 0;
+            Board[x, y] = 0;
         }
     }
 }

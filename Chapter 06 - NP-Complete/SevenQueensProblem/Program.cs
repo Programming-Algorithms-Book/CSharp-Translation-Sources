@@ -10,27 +10,27 @@
         /* Размер на дъската */
         private const uint N = 13;
 
-        private static uint[] col = new uint[MaxN],
-            RD = new uint[(2 * MaxN) - 1],
-            LD = new uint[2 * MaxN],
-            queens = new uint[MaxN];
+        private static readonly uint[] Col = new uint[MaxN];
+        private static readonly uint[] Rd = new uint[(2 * MaxN) - 1];
+        private static readonly uint[] Ld = new uint[2 * MaxN];
+        private static readonly uint[] Queens = new uint[MaxN];
 
         internal static void Main(string[] args)
         {
             uint i;
             for (i = 0; i < N; i++)
             {
-                col[i] = 1;
+                Col[i] = 1;
             }
 
             for (i = 0; i < ((2 * N) - 1); i++)
             {
-                RD[i] = 1;
+                Rd[i] = 1;
             }
 
             for (i = 0; i < 2 * N; i++)
             {
-                LD[i] = 1;
+                Ld[i] = 1;
             }
 
             Generate(0);
@@ -46,7 +46,7 @@
                 Console.WriteLine();
                 for (j = 0; j < N; j++)
                 {
-                    if (queens[i] == j)
+                    if (Queens[i] == j)
                     {
                         Console.Write("x ");
                     }
@@ -72,16 +72,16 @@
             uint k;
             for (k = 0; k <= N; k++)
             {
-                if (col[k] != 0 && RD[i + k] != 0 && LD[N + i - k] != 0)
+                if (Col[k] != 0 && Rd[i + k] != 0 && Ld[N + i - k] != 0)
                 {
-                    col[k] = 0;
-                    RD[i + k] = 0;
-                    LD[N + i - k] = 0;
-                    queens[i] = k;
+                    Col[k] = 0;
+                    Rd[i + k] = 0;
+                    Ld[N + i - k] = 0;
+                    Queens[i] = k;
                     Generate(i + 1);
-                    col[k] = 1;
-                    RD[i + k] = 1;
-                    LD[N + i - k] = 1;
+                    Col[k] = 1;
+                    Rd[i + k] = 1;
+                    Ld[N + i - k] = 1;
                 }
             }
         }

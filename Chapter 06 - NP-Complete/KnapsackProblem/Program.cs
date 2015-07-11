@@ -7,8 +7,9 @@
         private const int MaxN = 100;
         private const uint N = 10;
         private const float M = 10.5F;
-        private static readonly double[] C = new double[] { 10.3, 9.0, 12.0, 8.0, 4.0, 8.4, 9.1, 17.0, 6.0, 9.7 };
-        private static readonly double[] ArrayM = new double[] { 4.0, 2.6, 3.0, 5.3, 6.4, 2.0, 4.0, 5.1, 3.0, 4.0 };
+        private static readonly double[] C = { 10.3, 9.0, 12.0, 8.0, 4.0, 8.4, 9.1, 17.0, 6.0, 9.7 };
+        private static readonly double[] ArrayM = { 4.0, 2.6, 3.0, 5.3, 6.4, 2.0, 4.0, 5.1, 3.0, 4.0 };
+
         private static readonly uint[] Taken = new uint[MaxN];
         private static readonly uint[] SaveTaken = new uint[MaxN];
 

@@ -1,29 +1,33 @@
-﻿using System;
-
-public class Program
+﻿namespace Examples
 {
-    internal static int Main()
+    using System;
+
+    public class Program
     {
-        for (int x = 3;;)
+        internal static void Main(string[] args)
         {
-            for (int a = 1; a <= x; a++)
+            for (int x = 3;;)
             {
-                for (int b = 1; b <= x; b++)
+                for (int a = 1; a <= x; a++)
                 {
-                    for (int c = 1; c <= x; c++)
+                    for (int b = 1; b <= x; b++)
                     {
-                        for (int i = 3; i <= x; i++)
+                        for (int c = 1; c <= x; c++)
                         {
-                            if (Math.Pow(a, i) + Math.Pow(b, i) == Math.Pow(c, i))
+                            for (int i = 3; i <= x; i++)
                             {
-                                Environment.Exit(0);
+                                if (Math.Pow(a, i) + Math.Pow(b, i) == Math.Pow(c, i))
+                                {
+                                    Console.WriteLine("Found");
+                                    return;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            x++;
+                x++;
+            }
         }
     }
 }

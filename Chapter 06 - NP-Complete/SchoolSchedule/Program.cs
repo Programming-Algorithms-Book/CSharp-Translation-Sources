@@ -16,7 +16,7 @@
         /* Брой класове */
         private const uint C = 4;
 
-        private static readonly uint[,] Cl = new uint[,]
+        private static readonly uint[,] Cl =
         {
             { 5, 5, 5 },
             /* информация за клас 1 */ { 5, 5, 5 },

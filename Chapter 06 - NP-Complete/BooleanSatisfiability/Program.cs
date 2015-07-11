@@ -21,7 +21,7 @@
 
         private static int[] values = new int[Maxn];
 
-        ////static void Main(string[] args)
+        ////internal static void Main(string[] args)
         ////{
         ////    Assign(0);
         ////}
