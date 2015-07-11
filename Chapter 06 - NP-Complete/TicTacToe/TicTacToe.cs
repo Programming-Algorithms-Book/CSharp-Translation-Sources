@@ -149,7 +149,6 @@
                 */
                 for (uint i = 0; i < 3; i++)
                 {
-                    uint j;
                     for (uint j = 0; j < 3; j++)
                     {
                         if (board[i, j] == '.')
