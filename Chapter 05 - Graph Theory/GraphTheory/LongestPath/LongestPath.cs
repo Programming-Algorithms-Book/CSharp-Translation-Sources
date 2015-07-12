@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class LongestPath
+    public class LongestPath
     {
         private const int VerticesCount = 6;
 
