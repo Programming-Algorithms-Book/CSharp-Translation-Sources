@@ -2,22 +2,28 @@
 {
     using System;
 
-    internal class MinimalDominatingSets
+    public class MinimalDominatingSets
     {
         private const int VerticesCount = 6;
 
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 1, 0, 1, 0 },
-                                                    { 0, 0, 0, 1, 0, 0 },
-                                                    { 0, 0, 0, 1, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 1 },
-                                                    { 0, 1, 0, 0, 0, 0 },
-                                                    { 1, 0, 0, 0, 0, 0 }
-                                                };
+        {
+            { 0, 1, 1, 0, 1, 0 },
+            { 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 0, 0, 1 },
+            { 0, 1, 0, 0, 0, 0 },
+            { 1, 0, 0, 0, 0, 0 }
+        };
 
         private static readonly int[] Cover = new int[VerticesCount];
         private static readonly bool[] T = new bool[VerticesCount];
+
+        internal static void Main()
+        {
+            Console.WriteLine("Минималните доминиращи множества в графа са:");
+            FindMinDominatingSets(0);
+        }
 
         private static void PrintSet()
         {
@@ -33,7 +39,7 @@
             Console.WriteLine("}");
         }
 
-        private static bool OK()
+        private static bool Ok()
         {
             for (int i = 0; i < VerticesCount; i++)
             {
@@ -94,7 +100,7 @@
                     }
                 }
 
-                if (OK())
+                if (Ok())
                 {
                     FindMinDominatingSets(i + 1);
                 }
@@ -109,12 +115,6 @@
 
                 T[i] = false;
             }
-        }
-
-        private static void Main()
-        {
-            Console.WriteLine("Минималните доминиращи множества в графа са:");
-            FindMinDominatingSets(0);
         }
     }
 }

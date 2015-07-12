@@ -3,32 +3,51 @@
     using System;
     using System.Collections.Generic;
 
-    internal class ShortestPath
+    public class ShortestPath
     {
         private const int VerticesCount = 14;
         private const int StartVertex = 1;
         private const int EndVertex = 10;
 
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
-                                                    { 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
-                                                    { 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1 },
-                                                    { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0 }
-                                                };
+        {
+            { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+            { 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1 },
+            { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+            { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0 }
+        };
 
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly int[] Predecessors = new int[VerticesCount];
+
+        internal static void Main()
+        {
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                Predecessors[i] = -1;
+            }
+
+            BFS(StartVertex - 1);
+            if (Predecessors[EndVertex - 1] > -1)
+            {
+                Console.WriteLine("Намереният път е:");
+                Console.WriteLine("\nДължината на пътя е {0}.", PrintPath(EndVertex - 1));
+            }
+            else
+            {
+                Console.WriteLine("Не съществува път между двата върха!");
+            }
+        }
 
         // Отпечатва върховете от минималния път и връща дължината му
         private static uint PrintPath(int vertex)
@@ -71,25 +90,6 @@
                 }
 
                 levelVertex = verticesQueue.Count;
-            }
-        }
-
-        private static void Main()
-        {
-            for (int i = 0; i < VerticesCount; i++)
-            {
-                Predecessors[i] = -1;
-            }
-
-            BFS(StartVertex - 1);
-            if (Predecessors[EndVertex - 1] > -1)
-            {
-                Console.WriteLine("Намереният път е:");
-                Console.WriteLine("\nДължината на пътя е {0}.", PrintPath(EndVertex - 1));
-            }
-            else
-            {
-                Console.WriteLine("Не съществува път между двата върха!");
             }
         }
     }

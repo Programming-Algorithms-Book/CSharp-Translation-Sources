@@ -3,40 +3,27 @@
     using System;
     using System.Collections.Generic;
 
-    internal class VerticesBaseFinder
+    public class VerticesBaseFinder
     {
         private const int VerticesCount = 9;
 
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 1, 0, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                                                    { 0, 0, 0, 0, 0, 1, 0, 0, 0 },
-                                                    { 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 0, 0, 0, 1, 0, 0, 0 },
-                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0 }
-                                                };
+        {
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 1, 0, 1, 0, 0, 0, 0, 0, 0 },
+            { 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+            { 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+            { 0, 0, 0, 1, 1, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 1, 0, 0, 0, 0, 1, 0, 0, 0 },
+            { 0, 1, 0, 0, 0, 0, 0, 0, 0 }
+        };
 
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly HashSet<int> NonVerticesBase = new HashSet<int>();
 
-        private static void GetVerticesBase(int vertex)
-        {
-            Used[vertex] = true;
-            for (int i = 0; i < VerticesCount; i++)
-            {
-                if (Graph[vertex, i] == 1 && !Used[i])
-                {
-                    NonVerticesBase.Add(i);
-                    GetVerticesBase(i);
-                }
-            }
-        }
-
-        private static void Main()
+        internal static void Main()
         {
             for (int i = 0; i < VerticesCount; i++)
             {
@@ -61,6 +48,19 @@
             }
 
             Console.WriteLine("\nБрой на върховете в базата: {0}", VerticesCount - NonVerticesBase.Count);
+        }
+
+        private static void GetVerticesBase(int vertex)
+        {
+            Used[vertex] = true;
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (Graph[vertex, i] == 1 && !Used[i])
+                {
+                    NonVerticesBase.Add(i);
+                    GetVerticesBase(i);
+                }
+            }
         }
     }
 }

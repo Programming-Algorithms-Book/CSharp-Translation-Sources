@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class PrimAlgorithm
+    public class PrimAlgorithm
     {
         private const int VerticesCount = 9;
 
@@ -22,6 +22,11 @@
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly int[] Previous = new int[VerticesCount];
         private static readonly int[] T = new int[VerticesCount];
+
+        internal static void Main()
+        {
+            FindMinSpanningTree();
+        }
 
         private static void FindMinSpanningTree()
         {
@@ -62,11 +67,6 @@
             }
 
             Console.WriteLine("\nЦената на минималното покриващо дърво е {0}.", minSpanningTree);
-        }
-
-        private static void Main()
-        {
-            FindMinSpanningTree();
         }
     }
 }

@@ -2,25 +2,30 @@
 {
     using System;
 
-    internal class FullTopologicalSorter
+    public class FullTopologicalSorter
     {
         private const int VerticesCount = 8;
 
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 1, 0, 0, 0, 0, 0, 0 },
-                                                   { 0, 0, 1, 0, 0, 0, 1, 0 },
-                                                   { 0, 0, 0, 1, 0, 0, 0, 0 },
-                                                   { 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                   { 0, 0, 0, 0, 0, 0, 0, 1 },
-                                                   { 0, 0, 0, 0, 1, 0, 0, 0 },
-                                                   { 0, 0, 1, 0, 0, 0, 0, 0 },
-                                                   { 0, 0, 0, 0, 0, 0, 0, 0 }
-                                               };
+        {
+            { 0, 1, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 1, 0, 0, 0, 1, 0 },
+            { 0, 0, 0, 1, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 1 },
+            { 0, 0, 0, 0, 1, 0, 0, 0 },
+            { 0, 0, 1, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0 }
+        };
 
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly int[] TopologicalSort = new int[VerticesCount];
         private static int totalSorts = 0;
+
+        internal static void Main()
+        {
+            FullTopologicalSort(0);
+        }
 
         private static void FullTopologicalSort(int count)
         {
@@ -75,11 +80,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            FullTopologicalSort(0);
         }
     }
 }

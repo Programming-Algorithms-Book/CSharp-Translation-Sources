@@ -2,20 +2,26 @@
 {
     using System;
 
-    internal class ACenter
+    public class ACenter
     {
         private const int VerticesCount = 6;
         private const int MaxValue = 1000000;
 
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 1, 0, 0, 0, 0 },
-                                                   { 0, 0, 1, 0, 1, 0 },
-                                                   { 0, 0, 0, 1, 0, 0 },
-                                                   { 0, 0, 0, 0, 1, 0 },
-                                                   { 0, 1, 0, 0, 0, 1 },
-                                                   { 1, 0, 0, 0, 0, 0 }
-                                               };
+        {
+            { 0, 1, 0, 0, 0, 0 },
+            { 0, 0, 1, 0, 1, 0 },
+            { 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 0, 1, 0 },
+            { 0, 1, 0, 0, 0, 1 },
+            { 1, 0, 0, 0, 0, 0 }
+        };
+
+        internal static void Main()
+        {
+            Floyd();
+            FindCenter();
+        }
 
         // Намира дължината на минималния път между всяка двойка върхове
         private static void Floyd()
@@ -85,12 +91,6 @@
 
             Console.WriteLine("Центърът на графа е връх {0}", center + 1);
             Console.WriteLine("Радиусът на графа е {0}", min);
-        }
-
-        private static void Main()
-        {
-            Floyd();
-            FindCenter();
         }
     }
 }

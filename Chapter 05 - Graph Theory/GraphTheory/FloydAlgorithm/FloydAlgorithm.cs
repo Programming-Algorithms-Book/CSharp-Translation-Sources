@@ -2,25 +2,31 @@
 {
     using System;
 
-    internal class FloydAlgorithm
+    public class FloydAlgorithm
     {
         private const int VerticesCount = 10;
         private const uint MaxValue = 1000000;
 
         // Матрица на теглата на графа
         private static readonly uint[,] Graph = new uint[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 23, 0, 0, 0, 0, 0, 8, 0, 0 },
-                                                    { 23, 0, 0, 3, 0, 0, 34, 0, 0, 0 },
-                                                    { 0, 0, 0, 6, 0, 0, 0, 25, 0, 7 },
-                                                    { 0, 3, 6, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 10, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 10, 0, 0, 0, 0, 0 },
-                                                    { 0, 34, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 8, 0, 25, 0, 0, 0, 0, 0, 0, 30 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 7, 0, 0, 0, 0, 30, 0, 0 }
-                                                };
+        {
+            { 0, 23, 0, 0, 0, 0, 0, 8, 0, 0 },
+            { 23, 0, 0, 3, 0, 0, 34, 0, 0, 0 },
+            { 0, 0, 0, 6, 0, 0, 0, 25, 0, 7 },
+            { 0, 3, 6, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 10, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 10, 0, 0, 0, 0, 0 },
+            { 0, 34, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 8, 0, 25, 0, 0, 0, 0, 0, 0, 30 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 7, 0, 0, 0, 0, 30, 0, 0 }
+        };
+
+        internal static void Main()
+        {
+            Floyd();
+            PrintMinimalPaths();
+        }
 
         // Намира дължината на минималния път между всяка двойка върхове
         private static void Floyd()
@@ -75,12 +81,6 @@
 
                 Console.WriteLine();
             }
-        }
-
-        private static void Main()
-        {
-            Floyd();
-            PrintMinimalPaths();
         }
     }
 }

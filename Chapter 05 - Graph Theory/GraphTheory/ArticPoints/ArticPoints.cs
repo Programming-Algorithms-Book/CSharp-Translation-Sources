@@ -3,27 +3,32 @@
     using System;
     using System.Collections.Generic;
 
-    internal class ArticPoints
+    public class ArticPoints
     {
         private const int VerticesCount = 7;
 
         // Матрица на съседство на графа
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 1, 0, 0, 1, 0 },
-                                                    { 0, 1, 0, 1, 0, 1, 0 },
-                                                    { 0, 0, 1, 0, 1, 1, 0 },
-                                                    { 0, 0, 0, 1, 0, 0, 0 },
-                                                    { 0, 1, 1, 1, 0, 0, 1 },
-                                                    { 0, 0, 0, 0, 0, 1, 0 }
-                                                };
+        {
+        { 0, 1, 0, 0, 0, 0, 0 },
+        { 1, 0, 1, 0, 0, 1, 0 },
+        { 0, 1, 0, 1, 0, 1, 0 },
+        { 0, 0, 1, 0, 1, 1, 0 },
+        { 0, 0, 0, 1, 0, 0, 0 },
+        { 0, 1, 1, 1, 0, 0, 1 },
+        { 0, 0, 0, 0, 0, 1, 0 }
+        };
 
         private static readonly int[] Prenum = new int[VerticesCount];
         private static readonly int[] Lowest = new int[VerticesCount];
         private static int cN = 0;
 
-        private static void DFS(int vertex)
+        internal static void Main()
+        {
+            FindArticPoints();
+        }
+
+        private static void Dfs(int vertex)
         {
             Prenum[vertex] = ++cN;
             for (int j = 0; j < VerticesCount; j++)
@@ -31,7 +36,7 @@
                 if (Graph[vertex, j] != 0 && Prenum[j] == 0)
                 {
                     Graph[vertex, j] = 2; // Строим покриващо дърво T
-                    DFS(j);
+                    Dfs(j);
                 }
             }
         }
@@ -67,7 +72,7 @@
 
         private static void FindArticPoints()
         {
-            DFS(0);
+            Dfs(0);
             for (int i = 0; i < VerticesCount; i++)
             {
                 if (Prenum[i] == 0)
@@ -121,11 +126,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            FindArticPoints();
         }
     }
 }

@@ -3,25 +3,47 @@
     using System;
     using System.Collections.Generic;
 
-    internal class FundamentalCycles
+    public class FundamentalCycles
     {
         private const int VerticesCount = 6;
 
         /* Графът, представен с матрица на съседство: 0 - няма ребро; 1 – има;
-       По-късно с 2 ще маркираме ребрата на покриващото дърво на графа. */
-
+         * По-късно с 2 ще маркираме ребрата на покриващото дърво на графа. */
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 1, 0, 0, 0 },
-                                                    { 1, 0, 1, 1, 0, 0 },
-                                                    { 1, 1, 0, 0, 0, 1 },
-                                                    { 0, 1, 0, 0, 1, 1 },
-                                                    { 0, 0, 0, 1, 0, 1 },
-                                                    { 0, 0, 1, 1, 1, 0 }
-                                                };
+        {
+            { 0, 1, 1, 0, 0, 0 },
+            { 1, 0, 1, 1, 0, 0 },
+            { 1, 1, 0, 0, 0, 1 },
+            { 0, 1, 0, 0, 1, 1 },
+            { 0, 0, 0, 1, 0, 1 },
+            { 0, 0, 1, 1, 1, 0 }
+        };
 
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly List<int> Cycle = new List<int>();
+
+        internal static void Main()
+        {
+            FindSpanningTree(0);
+            Console.WriteLine("Простите цикли в графа са:");
+            for (int i = 0; i < VerticesCount - 1; i++)
+            {
+                for (int j = i + 1; j < VerticesCount; j++)
+                {
+                    if (Graph[i, j] == 1)
+                    {
+                        for (int k = 0; k < VerticesCount; k++)
+                        {
+                            Used[k] = false;
+                        }
+
+                        Cycle.Clear();
+                        Cycle.Add(i);
+                        FindCycle(i, j);
+                    }
+                }
+            }
+        }
 
         // Намира произволно покриващо дърво
         private static void FindSpanningTree(int vertex)
@@ -67,29 +89,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            FindSpanningTree(0);
-            Console.WriteLine("Простите цикли в графа са:");
-            for (int i = 0; i < VerticesCount - 1; i++)
-            {
-                for (int j = i + 1; j < VerticesCount; j++)
-                {
-                    if (Graph[i, j] == 1)
-                    {
-                        for (int k = 0; k < VerticesCount; k++)
-                        {
-                            Used[k] = false;
-                        }
-
-                        Cycle.Clear();
-                        Cycle.Add(i);
-                        FindCycle(i, j);
-                    }
-                }
-            }
         }
     }
 }

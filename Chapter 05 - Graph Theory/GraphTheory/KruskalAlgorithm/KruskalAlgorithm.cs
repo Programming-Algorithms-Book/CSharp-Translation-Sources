@@ -2,21 +2,7 @@
 {
     using System;
 
-    internal struct Arc : IComparable<Arc>
-    {
-        public int Vertex1 { get; set; }
-
-        public int Vertex2 { get; set; }
-
-        public int Weight { get; set; }
-
-        public int CompareTo(Arc other)
-        {
-            return this.Weight.CompareTo(other.Weight);
-        }
-    }
-
-    internal class KruskalAlgorithm
+    public class KruskalAlgorithm
     {
         private const int NoParent = -1;
         private const int VerticesCount = 9;
@@ -24,23 +10,33 @@
 
         // Списък от ребрата на графа и техните тегла
         private static readonly Arc[] Graph = new Arc[EdgesCount]
-                                              {
-                                                  new Arc() { Vertex1 = 1, Vertex2 = 2, Weight = 1 },
-                                                  new Arc() { Vertex1 = 1, Vertex2 = 4, Weight = 2 },
-                                                  new Arc() { Vertex1 = 2, Vertex2 = 3, Weight = 3 },
-                                                  new Arc() { Vertex1 = 2, Vertex2 = 5, Weight = 13 },
-                                                  new Arc() { Vertex1 = 3, Vertex2 = 4, Weight = 4 },
-                                                  new Arc() { Vertex1 = 3, Vertex2 = 6, Weight = 3 },
-                                                  new Arc() { Vertex1 = 4, Vertex2 = 6, Weight = 16 },
-                                                  new Arc() { Vertex1 = 4, Vertex2 = 7, Weight = 14 },
-                                                  new Arc() { Vertex1 = 5, Vertex2 = 6, Weight = 12 },
-                                                  new Arc() { Vertex1 = 5, Vertex2 = 8, Weight = 1 },
-                                                  new Arc() { Vertex1 = 5, Vertex2 = 9, Weight = 13 },
-                                                  new Arc() { Vertex1 = 6, Vertex2 = 7, Weight = 1 },
-                                                  new Arc() { Vertex1 = 6, Vertex2 = 9, Weight = 1 }
-                                              };
+        {
+            new Arc() { Vertex1 = 1, Vertex2 = 2, Weight = 1 },
+            new Arc() { Vertex1 = 1, Vertex2 = 4, Weight = 2 },
+            new Arc() { Vertex1 = 2, Vertex2 = 3, Weight = 3 },
+            new Arc() { Vertex1 = 2, Vertex2 = 5, Weight = 13 },
+            new Arc() { Vertex1 = 3, Vertex2 = 4, Weight = 4 },
+            new Arc() { Vertex1 = 3, Vertex2 = 6, Weight = 3 },
+            new Arc() { Vertex1 = 4, Vertex2 = 6, Weight = 16 },
+            new Arc() { Vertex1 = 4, Vertex2 = 7, Weight = 14 },
+            new Arc() { Vertex1 = 5, Vertex2 = 6, Weight = 12 },
+            new Arc() { Vertex1 = 5, Vertex2 = 8, Weight = 1 },
+            new Arc() { Vertex1 = 5, Vertex2 = 9, Weight = 13 },
+            new Arc() { Vertex1 = 6, Vertex2 = 7, Weight = 1 },
+            new Arc() { Vertex1 = 6, Vertex2 = 9, Weight = 1 }
+        };
 
         private static readonly int[] Previous = new int[VerticesCount + 1];
+
+        internal static void Main()
+        {
+            for (int i = 0; i < VerticesCount + 1; i++)
+            {
+                Previous[i] = NoParent;
+            }
+
+            FindMinSpanningTree();
+        }
 
         private static void FindMinSpanningTree()
         {
@@ -82,16 +78,6 @@
             }
 
             return root;
-        }
-
-        private static void Main()
-        {
-            for (int i = 0; i < VerticesCount + 1; i++)
-            {
-                Previous[i] = NoParent;
-            }
-
-            FindMinSpanningTree();
         }
     }
 }

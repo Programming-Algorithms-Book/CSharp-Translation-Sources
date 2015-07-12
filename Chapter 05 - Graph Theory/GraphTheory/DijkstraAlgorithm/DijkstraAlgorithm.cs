@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    internal class DijkstraAlgorithm
+    public class DijkstraAlgorithm
     {
         private const int VerticesCount = 10;
         private const int StartVertex = 1;
@@ -27,6 +27,12 @@
         private static readonly HashSet<int> T = new HashSet<int>();
         private static readonly int[] DijkstraDistances = new int[VerticesCount];
         private static readonly int[] Predecessors = new int[VerticesCount];
+
+        internal static void Main()
+        {
+            Dijkstra(StartVertex - 1);
+            PrintResult(StartVertex - 1);
+        }
 
         // Алгоритъм на Дейкстра - минимален път от s до останалите върхове
         private static void Dijkstra(int startVertex)
@@ -120,12 +126,6 @@
                     }
                 }
             }
-        }
-
-        private static void Main()
-        {
-            Dijkstra(StartVertex - 1);
-            PrintResult(StartVertex - 1);
         }
     }
 }

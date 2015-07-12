@@ -2,26 +2,63 @@
 {
     using System;
 
-    internal class FordFulkersonAlgorithm
+    public class FordFulkersonAlgorithm
     {
         private const int VerticesCount = 6;
         private const int StartVertex = 1; // Връх-източник
         private const int EndVertex = 6; // Връх-консуматор
 
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 5, 5, 10, 0, 0 },
-                                                   { 0, 0, 4, 0, 0, 5 },
-                                                   { 0, 0, 0, 0, 7, 0 },
-                                                   { 0, 0, 0, 0, 0, 7 },
-                                                   { 0, 0, 0, 0, 0, 8 },
-                                                   { 0, 0, 0, 0, 0, 0 }
-                                               };
+        {
+            { 0, 5, 5, 10, 0, 0 },
+            { 0, 0, 4, 0, 0, 5 },
+            { 0, 0, 0, 0, 7, 0 },
+            { 0, 0, 0, 0, 0, 7 },
+            { 0, 0, 0, 0, 0, 8 },
+            { 0, 0, 0, 0, 0, 0 }
+        };
 
         private static readonly int[,] FlowGraph = new int[VerticesCount, VerticesCount];
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly int[] Path = new int[VerticesCount];
         private static bool found = false;
+
+        internal static void Main()
+        {
+            // Намира увеличаващ път, докато е възможно
+            do
+            {
+                for (int i = 0; i < VerticesCount; i++)
+                {
+                    Used[i] = false;
+                }
+
+                found = false;
+                Used[StartVertex - 1] = true;
+                Path[0] = StartVertex - 1;
+                FindAugmentingPath(StartVertex - 1, 1);
+            }
+            while (found);
+
+            Console.WriteLine("Максимален поток през графа:");
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                for (int j = 0; j < VerticesCount; j++)
+                {
+                    Console.Write("{0,4}", FlowGraph[i, j]);
+                }
+
+                Console.WriteLine();
+            }
+
+            int flow = 0;
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                flow += FlowGraph[i, EndVertex - 1];
+            }
+
+            Console.WriteLine("С големина: {0}", flow);
+        }
 
         private static void FindAugmentingPath(int vertex, int level)
         {
@@ -79,43 +116,6 @@
                 Graph[p1, p2] -= increasingFlow;
                 Graph[p2, p1] += increasingFlow;
             }
-        }
-
-        private static void Main()
-        {
-            // Намира увеличаващ път, докато е възможно
-            do
-            {
-                for (int i = 0; i < VerticesCount; i++)
-                {
-                    Used[i] = false;
-                }
-
-                found = false;
-                Used[StartVertex - 1] = true;
-                Path[0] = StartVertex - 1;
-                FindAugmentingPath(StartVertex - 1, 1);
-            }
-            while (found);
-
-            Console.WriteLine("Максимален поток през графа:");
-            for (int i = 0; i < VerticesCount; i++)
-            {
-                for (int j = 0; j < VerticesCount; j++)
-                {
-                    Console.Write("{0,4}", FlowGraph[i, j]);
-                }
-
-                Console.WriteLine();
-            }
-
-            int flow = 0;
-            for (int i = 0; i < VerticesCount; i++)
-            {
-                flow += FlowGraph[i, EndVertex - 1];
-            }
-
-            Console.WriteLine("С големина: {0}", flow);
         }
     }
 }

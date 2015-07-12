@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    internal class EulerCycle
+    public class EulerCycle
     {
         private const int VerticesCount = 8;
 
@@ -18,6 +18,18 @@
                                                     { 0, 0, 0, 0, 0, 0, 0, 1 },
                                                     { 1, 0, 0, 0, 0, 0, 0, 0 }
                                                 };
+
+        internal static void Main()
+        {
+            if (IsEulerGraph())
+            {
+                FindEulerCycle(0);
+            }
+            else
+            {
+                Console.WriteLine("Графът не е Ойлеров!");
+            }
+        }
 
         private static void FindEulerCycle(int vertex)
         {
@@ -83,18 +95,6 @@
             }
 
             return true;
-        }
-
-        private static void Main()
-        {
-            if (IsEulerGraph())
-            {
-                FindEulerCycle(0);
-            }
-            else
-            {
-                Console.WriteLine("Графът не е Ойлеров!");
-            }
         }
     }
 }

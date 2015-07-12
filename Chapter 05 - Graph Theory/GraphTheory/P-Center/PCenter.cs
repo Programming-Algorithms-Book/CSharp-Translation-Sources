@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class PCenter
+    public class PCenter
     {
         private const int MaxValue = 1000000;
         private const int VerticesCount = 7;
@@ -10,19 +10,27 @@
 
         // Матрица на теглата на графа
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 1, 0, 0, 2, 0, 0 },
-                                                   { 1, 0, 4, 0, 0, 0, 0 },
-                                                   { 0, 4, 0, 3, 0, 5, 0 },
-                                                   { 0, 0, 3, 0, 4, 0, 8 },
-                                                   { 2, 0, 0, 4, 0, 0, 0 },
-                                                   { 0, 0, 5, 0, 0, 0, 2 },
-                                                   { 0, 0, 0, 8, 0, 2, 0 }
-                                               };
+        {
+            { 0, 1, 0, 0, 2, 0, 0 },
+            { 1, 0, 4, 0, 0, 0, 0 },
+            { 0, 4, 0, 3, 0, 5, 0 },
+            { 0, 0, 3, 0, 4, 0, 8 },
+            { 2, 0, 0, 4, 0, 0, 0 },
+            { 0, 0, 5, 0, 0, 0, 2 },
+            { 0, 0, 0, 8, 0, 2, 0 }
+        };
 
         private static readonly int[] Center = new int[VerticesCount];
         private static readonly int[] CenterP = new int[P];
         private static int radiusP = 0;
+
+        internal static void Main()
+        {
+            Floyd();
+            radiusP = MaxValue;
+            GenerateCombinations(0, 0);
+            PrintPCenter();
+        }
 
         // Намира дължината на минималния път между всяка двойка върхове
         private static void Floyd()
@@ -124,14 +132,6 @@
 
             Console.WriteLine(")");
             Console.WriteLine("{0}-радиусът в графа е {1}", P, radiusP);
-        }
-
-        private static void Main()
-        {
-            Floyd();
-            radiusP = MaxValue;
-            GenerateCombinations(0, 0);
-            PrintPCenter();
         }
     }
 }

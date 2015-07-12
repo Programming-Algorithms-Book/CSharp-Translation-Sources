@@ -2,26 +2,32 @@
 {
     using System;
 
-    internal class MaximalIndependentSets
+    public class MaximalIndependentSets
     {
         private const int VerticesCount = 8;
 
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 0, 0, 0, 1, 0, 1 },
-                                                    { 1, 0, 1, 0, 0, 1, 0, 0 },
-                                                    { 0, 1, 0, 1, 1, 0, 0, 0 },
-                                                    { 0, 0, 1, 0, 1, 0, 1, 0 },
-                                                    { 0, 0, 1, 1, 0, 1, 0, 0 },
-                                                    { 1, 1, 0, 0, 1, 0, 1, 1 },
-                                                    { 0, 0, 0, 1, 0, 1, 0, 0 },
-                                                    { 1, 0, 0, 0, 0, 1, 0, 0 }
-                                                };
+        {
+            { 0, 1, 0, 0, 0, 1, 0, 1 },
+            { 1, 0, 1, 0, 0, 1, 0, 0 },
+            { 0, 1, 0, 1, 1, 0, 0, 0 },
+            { 0, 0, 1, 0, 1, 0, 1, 0 },
+            { 0, 0, 1, 1, 0, 1, 0, 0 },
+            { 1, 1, 0, 0, 1, 0, 1, 1 },
+            { 0, 0, 0, 1, 0, 1, 0, 0 },
+            { 1, 0, 0, 0, 0, 1, 0, 0 }
+        };
 
         private static readonly int[] S = new int[VerticesCount];
         private static readonly int[] T = new int[VerticesCount];
         private static int sN = 0;
         private static int tN = 0;
+
+        internal static void Main()
+        {
+            Console.WriteLine("Всички максимални независими множества в графа са:");
+            FindMaxIndependentSets(0);
+        }
 
         private static void PrintSet()
         {
@@ -73,12 +79,6 @@
                     }
                 }
             }
-        }
-
-        private static void Main()
-        {
-            Console.WriteLine("Всички максимални независими множества в графа са:");
-            FindMaxIndependentSets(0);
         }
     }
 }

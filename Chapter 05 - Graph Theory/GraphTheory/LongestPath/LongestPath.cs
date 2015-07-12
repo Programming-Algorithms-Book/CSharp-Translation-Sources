@@ -8,44 +8,19 @@
 
         // Матрица на теглата на графа
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 12, 0, 0, 0, 0 },
-                                                   { 0, 0, 40, 0, 17, 0 },
-                                                   { 0, 0, 0, 0, 0, 0 },
-                                                   { 0, 0, 0, 0, 30, 0 },
-                                                   { 0, 0, 0, 0, 0, 20 },
-                                                   { 0, 0, 20, 0, 0, 0 }
-                                               };
+        {
+            { 0, 12, 0, 0, 0, 0 },
+            { 0, 0, 40, 0, 17, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 30, 0 },
+            { 0, 0, 0, 0, 0, 20 },
+            { 0, 0, 20, 0, 0, 0 }
+        };
 
         private static readonly int[] MaximalDistances = new int[VerticesCount];
         private static readonly int[] SavePath = new int[VerticesCount];
 
-        private static void DFS(int vertex)
-        {
-            if (MaximalDistances[vertex] > 0)
-            {
-                return;
-            }
-
-            int max = MaximalDistances[vertex];
-            for (int i = 0; i < VerticesCount; i++)
-            {
-                if (Graph[vertex, i] != 0)
-                {
-                    DFS(i);
-                    int distance = MaximalDistances[i] + Graph[vertex, i];
-                    if (distance > max)
-                    {
-                        max = distance;
-                        SavePath[vertex] = i;
-                    }
-                }
-            }
-
-            MaximalDistances[vertex] = max;
-        }
-
-        private static void Main()
+        internal static void Main()
         {
             for (int i = 0; i < VerticesCount; i++)
             {
@@ -56,7 +31,7 @@
             {
                 if (MaximalDistances[i] == 0)
                 {
-                    DFS(i);
+                    Dfs(i);
                 }
             }
 
@@ -77,6 +52,31 @@
             }
 
             Console.WriteLine("{0} ", maxI + 1);
+        }
+
+        private static void Dfs(int vertex)
+        {
+            if (MaximalDistances[vertex] > 0)
+            {
+                return;
+            }
+
+            int max = MaximalDistances[vertex];
+            for (int i = 0; i < VerticesCount; i++)
+            {
+                if (Graph[vertex, i] != 0)
+                {
+                    Dfs(i);
+                    int distance = MaximalDistances[i] + Graph[vertex, i];
+                    if (distance > max)
+                    {
+                        max = distance;
+                        SavePath[vertex] = i;
+                    }
+                }
+            }
+
+            MaximalDistances[vertex] = max;
         }
     }
 }

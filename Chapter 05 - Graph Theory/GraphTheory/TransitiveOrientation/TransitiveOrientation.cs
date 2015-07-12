@@ -2,30 +2,42 @@
 {
     using System;
 
-    internal class TransitiveOrientation
+    public class TransitiveOrientation
     {
         private const int VerticesCount = 6;
 
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-                                               {
-                                                   { 0, 1, 0, 0, 0, 1 },
-                                                   { 1, 0, 1, 0, 0, 0 },
-                                                   { 0, 1, 0, 1, 0, 0 },
-                                                   { 0, 0, 1, 0, 1, 0 },
-                                                   { 0, 0, 0, 1, 0, 1 },
-                                                   { 1, 0, 0, 0, 1, 0 }
-                                               };
+        {
+            { 0, 1, 0, 0, 0, 1 },
+            { 1, 0, 1, 0, 0, 0 },
+            { 0, 1, 0, 1, 0, 0 },
+            { 0, 0, 1, 0, 1, 0 },
+            { 0, 0, 0, 1, 0, 1 },
+            { 1, 0, 0, 0, 1, 0 }
+        };
 
         /* // Пример за транзитивно неориентируем граф
-    const int VerticesCount = 5;
-    static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
-    {
-        { 0, 1, 0, 0, 1 },
-        { 1, 0, 1, 0, 0 },
-        { 0, 1, 0, 1, 0 },
-        { 0, 0, 1, 0, 1 },
-        { 1, 0, 0, 1, 0 }
-    }; */
+            const int VerticesCount = 5;
+            static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
+            {
+                { 0, 1, 0, 0, 1 },
+                { 1, 0, 1, 0, 0 },
+                { 0, 1, 0, 1, 0 },
+                { 0, 0, 1, 0, 1 },
+                { 1, 0, 0, 1, 0 }
+            }; */
+
+        internal static void Main()
+        {
+            if (IsTransitiveOrientable())
+            {
+                PrintGraph();
+            }
+            else
+            {
+                Console.WriteLine("Графът е транзитивно неориентируем!");
+            }
+        }
 
         private static bool IsTransitiveOrientable()
         {
@@ -168,18 +180,6 @@
                 }
 
                 Console.WriteLine();
-            }
-        }
-
-        private static void Main()
-        {
-            if (IsTransitiveOrientable())
-            {
-                PrintGraph();
-            }
-            else
-            {
-                Console.WriteLine("Графът е транзитивно неориентируем!");
             }
         }
     }
