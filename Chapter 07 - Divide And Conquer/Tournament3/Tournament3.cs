@@ -2,9 +2,17 @@
 {
     using System;
 
-    internal class Tournament3
+    public class Tournament3
     {
         private const int MaxMatrixSize = 100;
+
+        internal static void Main()
+        {
+            int numberOfTeams = 4;
+            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
+            FindSolution(matrix, numberOfTeams);
+            Print(matrix, numberOfTeams);
+        }
 
         private static void CopyMatrix(int[,] matrix, int stX, int stY, int count, int add)
         {
@@ -17,7 +25,8 @@
             }
         }
 
-        private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
+        /* Построява таблицата */
+        private static void FindSolution(int[,] matrix, int n)
         {
             /* Ако n е четно, задачата се свежда към n-1 */
             if (n % 2 == 0)
@@ -52,7 +61,8 @@
             }
         }
 
-        private static void Print(int[,] m, int n) /* Извежда резултата */
+        /* Извежда резултата */
+        private static void Print(int[,] m, int n)
         {
             for (int i = 0; i < n; i++)
             {
@@ -63,14 +73,6 @@
 
                 Console.WriteLine();
             }
-        }
-
-        private static void Main()
-        {
-            int numberOfTeams = 4;
-            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
-            FindSolution(matrix, numberOfTeams);
-            Print(matrix, numberOfTeams);
         }
     }
 }

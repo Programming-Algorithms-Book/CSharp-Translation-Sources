@@ -12,13 +12,14 @@
             Console.WriteLine("Преди сортирането:");
             PrintList(l);
             Console.WriteLine();
-            l = MergeSort(l); /* Предполага се, че списъкът съдържа поне 1 елемент */
+
+            /* Предполага се, че списъкът съдържа поне 1 елемент */
+            l = MergeSort(l);
             Console.WriteLine("След сортирането:");
             PrintList(l);
         }
 
         /* Генерира примерно множество */
-
         private static Node Generate(int n)
         {
             var rand = new Random();
@@ -33,7 +34,6 @@
         }
 
         /* Извежда списъка на екрана */
-
         private static void PrintList(Node p)
         {
             for (; p != Node.Z; p = p.Next)
@@ -79,6 +79,7 @@
                 while (todo != Node.Z)
                 {
                     Node t = todo;
+
                     /* Отделяне на a[] */
                     a = t;
                     for (int i = 1; i < n; i++)
@@ -99,6 +100,7 @@
                     todo = t.Next;
                     t.Next = Node.Z;
                     c.Next = Merge(a, b);
+
                     /* Пропускане на слетия масив */
                     for (int i = 1; i <= n * 2; i++)
                     {

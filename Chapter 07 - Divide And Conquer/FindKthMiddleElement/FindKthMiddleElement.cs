@@ -6,7 +6,8 @@
     {
         private static readonly Random Rand = new Random();
 
-        public static void PrintArray(int[] numbers) /* Извежда масива на екрана */
+        /* Извежда масива на екрана */
+        public static void PrintArray(int[] numbers)
         {
             foreach (int number in numbers)
             {
@@ -16,7 +17,8 @@
             Console.WriteLine();
         }
 
-        public static void Swap(ref int element1, ref int element2) /* Разменя стойностите на две променливи */
+        /* Разменя стойностите на две променливи */
+        public static void Swap(ref int element1, ref int element2)
         {
             int temp = element1;
             element1 = element2;
@@ -70,8 +72,11 @@
 
         internal static void Main()
         {
-            int n = 10; /* Брой елементи в масива */
-            int k = 4; /* Пореден номер на търсения елемент */
+            /* Брой елементи в масива */
+            int n = 10;
+
+            /* Пореден номер на търсения елемент */
+            int k = 4;
 
             int[] array = new int[n];
             InitializeArray(array);
@@ -86,7 +91,8 @@
             Console.WriteLine("\nk-ият елемент е: {0}", array[k]);
         }
 
-        private static void InitializeArray(int[] array) /* Запълва масива със случайни числа */
+        /* Запълва масива със случайни числа */
+        private static void InitializeArray(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {

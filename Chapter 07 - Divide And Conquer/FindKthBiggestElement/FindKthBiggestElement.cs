@@ -7,7 +7,20 @@
         private static readonly Random Rand = new Random();
         private static readonly int[] Array = new int[10];
 
-        private static void InitializeArray() /* Запълва масива със случайни числа */
+        internal static void Main()
+        {
+            InitializeArray();
+            Console.WriteLine("Масивът: {0}", string.Join(" ", Array));
+
+            int k = 5;
+
+            /* Пореден номер на търсения елемент */
+            HeapFindKthElement(k);
+            Console.WriteLine("\n K-тия елемент е: {0}", string.Join(" ", Array[0]));
+        }
+
+        /* Запълва масива със случайни числа */
+        private static void InitializeArray()
         {
             for (int i = 0; i < Array.Length; i++)
             {
@@ -15,18 +28,19 @@
             }
         }
 
-        private static void HeapFindKthElement(int k) /* Търсене на k-ия елемент с пирамида */
+        /* Търсене на k-ия елемент с пирамида */
+        private static void HeapFindKthElement(int k)
         {
-            int n = Array.Length; /* Брой елементи в масива */
-            int left, right;
+            /* Брой елементи в масива */
+            int n = Array.Length;
             bool useMax = k > n / 2;
             if (useMax)
             {
                 k = n - k - 1;
             }
 
-            left = n / 2;
-            right = n - 1;
+            int left = n / 2;
+            int right = n - 1;
 
             /* Построяване на пирамидата */
             while (left > 0)
@@ -57,7 +71,8 @@
             }
         }
 
-        private static void SiftMax(int left, int right) /* Отсява елем. от върха на пирамидата */
+        /* Отсява елем. от върха на пирамидата */
+        private static void SiftMax(int left, int right)
         {
             int i = left;
             int j = i + i + 1;
@@ -85,7 +100,8 @@
             Array[i] = x;
         }
 
-        private static void SiftMin(int left, int right) /* Отсява елем. от върха на пирамидата */
+        /* Отсява елем. от върха на пирамидата */
+        private static void SiftMin(int left, int right)
         {
             int i = left;
             int j = i + i + 1;
@@ -111,16 +127,6 @@
             }
 
             Array[i] = x;
-        }
-
-        private static void Main()
-        {
-            InitializeArray();
-            Console.WriteLine("Масивът: {0}", string.Join(" ", Array));
-
-            int k = 5;
-            HeapFindKthElement(k); /* Пореден номер на търсения елемент */
-            Console.WriteLine("\n K-тия елемент е: {0}", string.Join(" ", Array[0]));
         }
     }
 }

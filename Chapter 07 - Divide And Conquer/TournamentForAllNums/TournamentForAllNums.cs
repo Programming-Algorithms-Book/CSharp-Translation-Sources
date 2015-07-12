@@ -55,11 +55,13 @@
                     matrix[i, n - 1] = matrix[n - 1, i] = matrix[i, i];
                 }
 
-                matrix[i, i] = 0; /* Запълва се с 0 главният диагонал */
+                /* Запълва се с 0 главният диагонал */
+                matrix[i, i] = 0;
             }
         }
 
-        private static void Print(int[,] m, int n) /* Извежда резултата */
+        /* Извежда резултата */
+        private static void Print(int[,] m, int n)
         {
             for (int i = 0; i < n; i++)
             {

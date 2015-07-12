@@ -2,15 +2,21 @@
 {
     using System;
 
-    internal struct Element
+    public class Shift2
     {
-        public int Data { get; set; }
-    }
+        /* Брой елементи в масива */
+        private const int N = 10;
 
-    internal class Shift2
-    {
-        private const int N = 10; /* Брой елементи в масива */
-        private const int K = 2; /* Брой позицции на отместване */
+        /* Брой позицции на отместване */
+        private const int K = 2;
+
+        internal static void Main()
+        {
+            Element[] elements = new Element[N];
+            InitializeArray(elements);
+            ShiftLeft(elements);
+            PrintArray(elements);
+        }
 
         private static void InitializeArray(Element[] array)
         {
@@ -20,20 +26,20 @@
             }
         }
 
+        /* Разменя местата на подмасивите m[a..a+l-1] и m[b..b+l-1] */
         private static void Swap(Element[] array, int a, int b, int l)
-            /* Разменя местата на подмасивите m[a..a+l-1] и m[b..b+l-1] */
         {
-            Element tempElement = new Element();
             for (int i = 0; i < l; i++)
             {
-                tempElement = array[a + i];
+                Element tempElement = array[a + i];
                 array[a + i] = array[b + i];
                 array[b + i] = tempElement;
             }
         }
 
-        private static void ShiftLeft(Element[] array) /* Измества масива m[] на k позиции наляво. 
-   * рекурсивен процес, реализиран итеративно } */
+        /* Измества масива m[] на k позиции наляво. 
+         * Рекурсивен процес, реализиран итеративно */
+        private static void ShiftLeft(Element[] array)
         {
             int i = K;
             int p = K;
@@ -63,14 +69,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            Element[] elements = new Element[N];
-            InitializeArray(elements);
-            ShiftLeft(elements);
-            PrintArray(elements);
         }
     }
 }

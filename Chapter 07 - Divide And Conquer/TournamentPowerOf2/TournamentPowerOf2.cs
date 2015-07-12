@@ -2,9 +2,17 @@
 {
     using System;
 
-    internal class Program
+    public class Program
     {
         private const int MaxMatrixSize = 100;
+
+        internal static void Main()
+        {
+            int numberOfPlayers = 8;
+            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
+            FindSolution(matrix, numberOfPlayers);
+            Print(matrix, numberOfPlayers);
+        }
 
         private static void CopyMatrix(int[,] matrix, int stX, int stY, int cnt, int add)
         {
@@ -17,7 +25,8 @@
             }
         }
 
-        private static void FindSolution(int[,] matrix, int n) /* Построява таблицата */
+        /* Построява таблицата */
+        private static void FindSolution(int[,] matrix, int n)
         {
             matrix[1, 1] = 0;
             for (int i = 1; i <= n; i <<= 1)
@@ -28,7 +37,8 @@
             }
         }
 
-        private static void Print(int[,] matrix, int n) /* Извежда резултата */
+        /* Извежда резултата */
+        private static void Print(int[,] matrix, int n)
         {
             for (int i = 1; i <= n; i++)
             {
@@ -39,14 +49,6 @@
 
                 Console.WriteLine();
             }
-        }
-
-        private static void Main()
-        {
-            int numberOfPlayers = 8;
-            int[,] matrix = new int[MaxMatrixSize, MaxMatrixSize];
-            FindSolution(matrix, numberOfPlayers);
-            Print(matrix, numberOfPlayers);
         }
     }
 }

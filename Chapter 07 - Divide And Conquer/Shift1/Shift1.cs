@@ -2,15 +2,22 @@
 {
     using System;
 
-    internal struct Element
+    public class Shift1
     {
-        public int Data { get; set; }
-    }
+        /* Брой елементи в масива */
+        private const int N = 10;
 
-    internal class Shift1
-    {
-        private const int N = 10; /* Брой елементи в масива */
-        private const int K = 2; /* Брой позиции на отместване */
+        /* Брой позиции на отместване */
+        private const int K = 2;
+
+        internal static void Main()
+        {
+            Element[] elements = new Element[N];
+            InitializeArray(elements);
+            PrintArray(elements);
+            ShiftLeft(elements);
+            PrintArray(elements);
+        }
 
         private static void InitializeArray(Element[] array)
         {
@@ -69,15 +76,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            Element[] elements = new Element[N];
-            InitializeArray(elements);
-            PrintArray(elements);
-            ShiftLeft(elements);
-            PrintArray(elements);
         }
     }
 }

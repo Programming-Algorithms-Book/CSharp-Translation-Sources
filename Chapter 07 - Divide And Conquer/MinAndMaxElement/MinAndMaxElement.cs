@@ -2,11 +2,12 @@
 {
     using System;
 
-    internal class MinAndMaxElement
+    public class MinAndMaxElement
     {
         private static readonly Random Rand = new Random();
 
-        public static void InitializeArray(int[] numbers) /* Запълва масива със случайни числа */
+        /* Запълва масива със случайни числа */
+        public static void InitializeArray(int[] numbers)
         {
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -14,7 +15,8 @@
             }
         }
 
-        public static void PrintArray(int[] numbers) /* Извежда масива на екрана */
+        /* Извежда масива на екрана */
+        public static void PrintArray(int[] numbers)
         {
             foreach (int number in numbers)
             {
@@ -24,7 +26,8 @@
             Console.WriteLine();
         }
 
-        public static int FindMaxElement(int[] numbers) /* Намира максималния елемент */
+        /* Намира максималния елемент */
+        public static int FindMaxElement(int[] numbers)
         {
             int maxElement = numbers[0];
             for (int i = 1; i < numbers.Length; i++)
@@ -38,7 +41,8 @@
             return maxElement;
         }
 
-        public static int FindMinElement(int[] numbers) /* Намира минималния елемент */
+        /* Намира минималния елемент */
+        public static int FindMinElement(int[] numbers)
         {
             int minElement = numbers[0];
             for (int i = 1; i < numbers.Length; i++)
@@ -52,17 +56,19 @@
             return minElement;
         }
 
-        public static void Swap(ref int element1, ref int element2) /* Разменя стойностите на две променливи */
+        /* Разменя стойностите на две променливи */
+        public static void Swap(ref int element1, ref int element2)
         {
             int temp = element1;
             element1 = element2;
             element2 = temp;
         }
 
+        /* Намира едновременно максималния и минималния елементи */
         public static void FindMinAndMax(out int min, out int max, int[] numbers, int n)
-            /* Намира едновременно максималния и минималния елементи */
         {
-            int n2 = n / 2; // n = 20
+            // n = 20
+            int n2 = n / 2;
             min = max = numbers[n2];
             for (int i = 0; i < n2; i++)
             {
@@ -93,7 +99,8 @@
             }
         }
 
-        public static int FindSecondMax(int[] numbers, int n) /* Намира втория по големина елемент */
+        /* Намира втория по големина елемент */
+        public static int FindSecondMax(int[] numbers, int n)
         {
             int x = numbers[0];
             int y = numbers[1];
@@ -117,7 +124,7 @@
             return y;
         }
 
-        private static void Main()
+        internal static void Main()
         {
             int arrayLength = 10;
             int[] array = new int[arrayLength];

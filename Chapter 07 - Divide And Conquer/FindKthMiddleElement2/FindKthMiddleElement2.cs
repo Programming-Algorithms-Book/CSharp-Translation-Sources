@@ -7,7 +7,8 @@
         private static readonly Random Rand = new Random();
         private static int[] array;
 
-        public static void PrintArray(int[] numbers) /* Извежда масива на екрана */
+        /* Извежда масива на екрана */
+        public static void PrintArray(int[] numbers)
         {
             foreach (int number in numbers)
             {
@@ -17,14 +18,16 @@
             Console.WriteLine();
         }
 
-        public static void Swap(ref int element1, ref int element2) /* Разменя стойностите на две променливи */
+        /* Разменя стойностите на две променливи */
+        public static void Swap(ref int element1, ref int element2)
         {
             int temp = element1;
             element1 = element2;
             element2 = temp;
         }
 
-        public static int FindKthElement(int left, int right, int k) /* Търсене по Хоор */
+        /* Търсене по Хоор */
+        public static int FindKthElement(int left, int right, int k)
         {
             if (left == right)
             {
@@ -47,7 +50,8 @@
             PrintArray(array);
         }
 
-        private static int Partition(int left, int right) /* Раделяне по Ломуто */
+        /* Раделяне по Ломуто */
+        private static int Partition(int left, int right)
         {
             int i = left - 1;
             int x = array[right];
@@ -69,11 +73,12 @@
             return i;
         }
 
-        private static void InitializeArray(int[] array) /* Запълва масива със случайни числа */
+        /* Запълва масива със случайни числа */
+        private static void InitializeArray(int[] input)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                array[i] = Rand.Next() % ((2 * array.Length) + 1);
+                input[i] = Rand.Next() % ((2 * input.Length) + 1);
             }
         }
     }

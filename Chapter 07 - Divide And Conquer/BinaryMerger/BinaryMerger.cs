@@ -9,6 +9,23 @@
         private const int M = 14;
         private static readonly Random Rand = new Random();
 
+        internal static void Main()
+        {
+            Element[] a = new Element[N];
+            Element[] b = new Element[M];
+            Element[] c = new Element[N + M];
+            InitializeArray(a, 200, 20);
+            InitializeArray(b, 200, 20);
+            Console.WriteLine("Преди сливането:");
+            Console.WriteLine("Масивът A:");
+            PrintArrays(a);
+            Console.WriteLine("Масивът B:");
+            PrintArrays(b);
+            BinaryMerge(a, b, c);
+            Console.WriteLine("След сливането C:");
+            PrintArrays(c);
+        }
+
         private static void InitializeArray(Element[] array, int modul1, int modul2)
         {
             array[0].Key = Rand.Next() % modul1;
@@ -131,23 +148,6 @@
             {
                 Debug.Assert(elemets[i - 1].Key <= elemets[i].Key, "Wrong order");
             }
-        }
-
-        private static void Main()
-        {
-            Element[] a = new Element[N];
-            Element[] b = new Element[M];
-            Element[] c = new Element[N + M];
-            InitializeArray(a, 200, 20);
-            InitializeArray(b, 200, 20);
-            Console.WriteLine("Преди сливането:");
-            Console.WriteLine("Масивът A:");
-            PrintArrays(a);
-            Console.WriteLine("Масивът B:");
-            PrintArrays(b);
-            BinaryMerge(a, b, c);
-            Console.WriteLine("След сливането C:");
-            PrintArrays(c);
         }
     }
 }

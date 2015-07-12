@@ -2,15 +2,21 @@
 {
     using System;
 
-    internal struct Element
+    public class Shift3
     {
-        public int Data { get; set; }
-    }
+        /* Брой елементи в масива */
+        private const int N = 10;
 
-    internal class Shift3
-    {
-        private const int N = 10; /* Брой елементи в масива */
-        private const int K = 2; /* Брой позицции на отместване */
+        /* Брой позицции на отместване */
+        private const int K = 2;
+
+        internal static void Main()
+        {
+            Element[] elements = new Element[N];
+            InitializeArray(elements);
+            ShiftLeft(elements);
+            PrintArray(elements);
+        }
 
         private static void InitializeArray(Element[] array)
         {
@@ -20,7 +26,8 @@
             }
         }
 
-        private static void Reverse(Element[] array, int a, int b) /* Обръща подмасива m[a..b] */
+        /* Обръща подмасива m[a..b] */
+        private static void Reverse(Element[] array, int a, int b)
         {
             int count = (b - a) / 2;
             int k = a;
@@ -49,14 +56,6 @@
             }
 
             Console.WriteLine();
-        }
-
-        private static void Main()
-        {
-            Element[] elements = new Element[N];
-            InitializeArray(elements);
-            ShiftLeft(elements);
-            PrintArray(elements);
         }
     }
 }

@@ -2,22 +2,32 @@
 {
     using System;
 
-    internal class MergingSortedArrays
+    public class MergingSortedArrays
     {
         private const int NumberOfArrays = 6;
         private const int ArraysLength = 12;
 
         private static readonly Random Rand = new Random();
 
+        internal static void Main()
+        {
+            var head = InitializeArray(500);
+            Console.WriteLine("Масивите преди сортирането:");
+            PrintArrays(head);
+            MergeArrays(head);
+        }
+
         private static CList InitializeArray(int modul)
         {
             CList head = null;
             for (int i = 0; i < NumberOfArrays; i++)
             {
-                var currentList = new CList();
-                currentList.Length = NumberOfArrays;
-                currentList.Point = 0;
-                currentList.Data = new Element[ArraysLength];
+                var currentList = new CList
+                {
+                    Length = NumberOfArrays, 
+                    Point = 0, 
+                    Data = new Element[ArraysLength]
+                };
                 currentList.Data[0].Key = Rand.Next() % modul;
                 for (int j = 1; j < ArraysLength; j++)
                 {
@@ -69,7 +79,6 @@
                 Console.WriteLine(minElementList.Next.Data[minElementList.Next.Point].Key);
                 if (minElementList.Next.Data.Length - 1 == minElementList.Next.Point)
                 {
-                    var q = minElementList.Next;
                     minElementList.Next = minElementList.Next.Next;
                 }
                 else
@@ -77,14 +86,6 @@
                     minElementList.Next.Point++;
                 }
             }
-        }
-
-        private static void Main()
-        {
-            var head = InitializeArray(500);
-            Console.WriteLine("Масивите преди сортирането:");
-            PrintArrays(head);
-            MergeArrays(head);
         }
     }
 }

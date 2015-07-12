@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class Majorant4
+    public class Majorant4
     {
         public static void HeapSort(int[] input)
         {

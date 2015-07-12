@@ -6,7 +6,7 @@
     {
         private const int N = 100;
 
-        private static void Main()
+        internal static void Main()
         {
             Node l = Generate(N);
             Console.WriteLine("Преди сортирането:");
@@ -18,7 +18,6 @@
         }
 
         /* Генерира примерно множество */
-
         private static Node Generate(int n)
         {
             var rand = new Random();
@@ -33,7 +32,6 @@
         }
 
         /* Извежда списъка на екрана */
-
         private static void PrintList(Node p)
         {
             for (; p != Node.Z; p = p.Next)
