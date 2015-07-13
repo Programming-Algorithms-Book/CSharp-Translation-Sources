@@ -45,7 +45,7 @@
         private static void BubbleSort(Element[] elements)
         {
             int k;
-            for (int i = elements.Length - 1; i > -1; i = k)
+            for (int i = elements.Length - 1; i > 0; i = k)
             {
                 for (int j = k = 0; j < i; j++)
                 {
