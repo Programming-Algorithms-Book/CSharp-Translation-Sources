@@ -7,18 +7,18 @@
         private const int VerticesCount = 10;
 
         private static readonly byte[,] Graph = new byte[VerticesCount, VerticesCount]
-                                                {
-                                                    { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 },
-                                                    { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 1, 0, 1, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
-                                                    { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                                                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                                                    { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 }
-                                                };
+        {
+            { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 },
+            { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 1, 0, 1, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+            { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 }
+        };
 
         private static readonly bool[] Used = new bool[VerticesCount];
         private static readonly int[] Postnum = new int[VerticesCount];
@@ -38,7 +38,7 @@
                 {
                     if (!Used[i])
                     {
-                        DFS(i);
+                        Dfs(i);
                     }
                 }
             }
@@ -63,20 +63,20 @@
                 }
 
                 Console.Write("{ ");
-                BackDFS(maxVertex);
+                BackDfs(maxVertex);
                 Console.WriteLine("}");
             }
         }
 
         // Обхождане в дълбочина със запазване на номерацията
-        private static void DFS(int vertex)
+        private static void Dfs(int vertex)
         {
             Used[vertex] = true;
             for (int i = 0; i < VerticesCount; i++)
             {
                 if (!Used[i] && Graph[vertex, i] == 1)
                 {
-                    DFS(i);
+                    Dfs(i);
                 }
             }
 
@@ -84,7 +84,7 @@
         }
 
         // Обхождане в дълбочина на графа G'
-        private static void BackDFS(int vertex)
+        private static void BackDfs(int vertex)
         {
             Console.Write("{0} ", vertex + 1);
             traversedVertices++;
@@ -93,7 +93,7 @@
             {
                 if (!Used[i] && Graph[i, vertex] == 1)
                 {
-                    BackDFS(i);
+                    BackDfs(i);
                 }
             }
         }

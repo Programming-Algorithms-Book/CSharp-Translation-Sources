@@ -4,8 +4,11 @@
 
     public class CompanyControl
     {
-        private const int VerticesCount = 6; // Брой компании (върхове в графа)
-        private const int MasterCompany = 1; // Tърсим кои компании контролира компания 1
+        // Брой компании (върхове в графа)
+        private const int VerticesCount = 6;
+
+        // Tърсим кои компании контролира компания 1
+        private const int MasterCompany = 1;
 
         private static readonly int[,] Graph = new int[VerticesCount, VerticesCount]
         {

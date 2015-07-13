@@ -37,7 +37,7 @@
                 Predecessors[i] = -1;
             }
 
-            BFS(StartVertex - 1);
+            Bfs(StartVertex - 1);
             if (Predecessors[EndVertex - 1] > -1)
             {
                 Console.WriteLine("Намереният път е:");
@@ -63,7 +63,7 @@
         }
 
         // Oбхождане в ширина от даден връх със запазване на предшественика
-        private static void BFS(int startVertex)
+        private static void Bfs(int startVertex)
         {
             Queue<int> verticesQueue = new Queue<int>();
             verticesQueue.Enqueue(startVertex);
