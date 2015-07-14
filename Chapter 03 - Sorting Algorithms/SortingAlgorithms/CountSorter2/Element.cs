@@ -3,8 +3,5 @@
     public struct Element
     {
         public int Key { get; set; }
-        /* .............
-        Някакви данни
-        ............. */
     }
 }

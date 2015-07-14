@@ -1,4 +1,4 @@
-﻿namespace PermutationSort
+﻿namespace RadixSort
 {
     public struct Element
     {

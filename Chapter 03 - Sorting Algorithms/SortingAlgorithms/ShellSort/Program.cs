@@ -46,17 +46,14 @@
 
         private static void ShellSort(Element[] m, uint n)
         {
-            int i, j, k, s;
-            uint stepInd;
-            Element x;
-
-            for (stepInd = 0; stepInd < StepsCount; stepInd++)
+            for (uint stepInd = 0; stepInd < StepsCount; stepInd++)
             {
-                s = -(k = (int)Steps[stepInd]); /* Ограничител */
-                for (i = k + 1; i <= (int)n; i++)
+                int k;
+                int s = (k = (int)Steps[stepInd]);
+                for (int i = k + 1; i <= (int)n; i++)
                 {
-                    x = m[i];
-                    j = i - k;
+                    Element x = m[i];
+                    int j = i - k;
                     if (0 == s)
                     {
                         s = -k;
@@ -84,7 +81,6 @@
 
         private static void Check(Element[] m, Element[] saveM, uint n)
         {
-            uint j;
             bool[] found = new bool[n + 1]; /* третира се като масив от булев тип */
 
             /* 1. Проверка за наредба във възходящ ред */
@@ -100,6 +96,7 @@
 
             for (int i = 1; i <= n; i++)
             {
+                uint j;
                 for (j = 1; j <= n; j++)
                 {
                     if (found[j] == false && m[i].Key == saveM[j].Key)

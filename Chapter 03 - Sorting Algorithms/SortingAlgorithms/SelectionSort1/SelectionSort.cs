@@ -12,7 +12,7 @@
 
         internal static void Main()
         {
-            CustomElement[] elements = new CustomElement[Max];
+            Element[] elements = new Element[Max];
 
             for (int i = 1; i <= TestLoopCount; i++)
             {
@@ -31,23 +31,23 @@
         }
 
         // Запълва масива със случайни цели числа
-        private static void Init(CustomElement[] elements)
+        private static void Init(Element[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
                 int key = Random.Next() % elements.Length;
-                elements[i] = new CustomElement() { Key = key };
+                elements[i] = new Element() { Key = key };
             }
         }
 
-        private static void Swap(CustomElement e1, CustomElement e2)
+        private static void Swap(Element e1, Element e2)
         {
-            CustomElement old = e1;
+            Element old = e1;
             e1 = e2;
             e2 = old;
         }
 
-        private static void StraightSelection(CustomElement[] elements)
+        private static void StraightSelection(Element[] elements)
         {
             for (int i = 0; i < elements.Length - 1; i++)
             {
@@ -56,7 +56,7 @@
                     if (elements[i].Key > elements[j].Key)
                     {
                         Swap(elements[i], elements[j]);
-                        CustomElement old = elements[i];
+                        Element old = elements[i];
                         elements[i] = elements[j];
                         elements[j] = old;
                     }
@@ -65,7 +65,7 @@
         }
 
         // Извежда ключовете на масива на екрана
-        private static void Print(CustomElement[] elements)
+        private static void Print(Element[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
@@ -76,7 +76,7 @@
         }
 
         // TODO: Transfer to unit tests
-        private static void Check(CustomElement[] elements)
+        private static void Check(Element[] elements)
         {
             // 1. Проверка за наредба във възходящ ре
             for (int i = 0; i < elements.Length - 1; i++)

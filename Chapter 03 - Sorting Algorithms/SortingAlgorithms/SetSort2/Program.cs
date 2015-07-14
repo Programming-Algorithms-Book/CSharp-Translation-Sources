@@ -20,7 +20,8 @@
             Console.WriteLine();
         }
 
-        private static void Init(Element[] array, uint n) /* Запълва масива със случайни цели числа */
+        /* Запълва масива със случайни цели числа */
+        private static void Init(Element[] array, uint n)
         {
             /* 1. Запълване със случайни стойности в нарастващ ред */
             Random rand = new Random();
@@ -44,7 +45,8 @@
             }
         }
 
-        private static void Print(Element[] array, uint n) /* Извежда ключовете на масива на екрана */
+        /* Извежда ключовете на масива на екрана */
+        private static void Print(Element[] array, uint n)
         {
             for (int i = 0; i < n; i++)
             {
@@ -59,7 +61,8 @@
             Console.Write("{0,4}", e.Key);
         }
 
-        private static void SetSort(Element[] array, uint n) /* Сортира масив с използване на множество */
+        /* Сортира масив с използване на множество */
+        private static void SetSort(Element[] array, uint n)
         {
             int[] indexSet = new int[MaxValue]; /* Индексно множество */
 

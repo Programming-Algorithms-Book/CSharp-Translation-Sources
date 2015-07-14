@@ -34,10 +34,8 @@
 
         private static NodeElement BitwiseSort(NodeElement head)
         {
-            uint maxBit;
-
             /* 0. Определяне на максималната битова маска */
-            maxBit = (uint)int.MaxValue + 1;
+            long maxBit = (long)int.MaxValue + 1;
 
             /* 1. Фиктивен елемент в началото на списъците */
             NodeElement zeroList = new NodeElement();

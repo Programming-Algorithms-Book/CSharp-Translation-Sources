@@ -6,14 +6,18 @@
     public class RadixSort
     {
         private const int Max = 100;
-        private const int Pow2 = 4; // Броя битове - дължината на нашата група (Степен на двойката)
-        private const int BitsCount = 32; // Броя битове на int в C#
+
+        // Броя битове - дължината на нашата група (Степен на двойката)
+        private const int Pow2 = 4;
+
+        // Броя битове на int в C#
+        private const int BitsCount = 32;
 
         private static readonly Random Random = new Random();
 
         internal static void Main()
         {
-            CustomElement[] elements = Init(Max);
+            Element[] elements = Init(Max);
             Console.WriteLine("Масивът преди сортирането:");
             Print(elements);
 
@@ -24,13 +28,13 @@
             Check(elements);
         }
 
-        private static CustomElement[] Init(int n)
+        private static Element[] Init(int n)
         {
-            CustomElement[] elements = new CustomElement[n];
+            Element[] elements = new Element[n];
 
             for (int i = 0; i < n; i++)
             {
-                CustomElement currentElement = new CustomElement
+                Element currentElement = new Element
                 {
                     Key = Random.Next()
                 };
@@ -41,10 +45,10 @@
             return elements;
         }
 
-        private static CustomElement[] SortRadix(CustomElement[] elements)
+        private static Element[] SortRadix(Element[] elements)
         {
             // Допълнителен помощен масив
-            CustomElement[] helper = new CustomElement[elements.Length];
+            Element[] helper = new Element[elements.Length];
 
             // Масив брояч и масив с префикси
             int[] count = new int[1 << Pow2];
@@ -94,7 +98,7 @@
             return elements;
         }
 
-        private static void Print(CustomElement[] elements)
+        private static void Print(Element[] elements)
         {
             for (int i = 0; i < elements.Length; i++)
             {
@@ -105,7 +109,7 @@
         }
 
         // TODO: Transfer to unit tests
-        private static void Check(CustomElement[] elements)
+        private static void Check(Element[] elements)
         {
             // 1. Проверка за наредба във възходящ ред
             for (int i = 0; i < elements.Length - 1; i++)
