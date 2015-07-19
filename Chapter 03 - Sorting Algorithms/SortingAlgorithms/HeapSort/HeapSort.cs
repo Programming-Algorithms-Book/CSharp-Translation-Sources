@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Text;
 
     public class HeapSort
     {
@@ -10,6 +11,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] array = new Element[MaxValue];
             Element[] saveArray = new Element[MaxValue];
             Array.Copy(array, saveArray, array.Length); /* Запазва се копие на масива */

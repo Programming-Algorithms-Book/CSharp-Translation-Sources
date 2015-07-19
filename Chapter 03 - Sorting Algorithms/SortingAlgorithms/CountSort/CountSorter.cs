@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Text;
 
     public class CountSorter
     {
@@ -10,6 +11,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             uint[] array = new uint[MaxValue];
             InitializeArray(array);
             uint[] copiedArray = new uint[MaxValue];

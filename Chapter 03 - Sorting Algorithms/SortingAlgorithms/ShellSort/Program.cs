@@ -1,6 +1,7 @@
 ﻿namespace ShellSort
 {
     using System;
+    using System.Text;
 
     public class Program
     {
@@ -14,6 +15,8 @@
 
         internal static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] pm = new Element[Max + Steps0 + 2];
             Element[] saveM = new Element[Max + 1];
             Element[] m = new Element[Max + 1];

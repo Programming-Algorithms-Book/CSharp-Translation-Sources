@@ -1,6 +1,7 @@
 ﻿namespace BubbleSort2
 {
     using System;
+    using System.Text;
 
     public class BubbleSortingAlgorithm2
     {
@@ -10,6 +11,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] elements = new Element[MaxValue];
             for (int i = 0; i < TestsCount; i++)
             {

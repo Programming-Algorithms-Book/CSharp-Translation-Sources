@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Text;
 
     public class RadixSort
     {
@@ -17,6 +18,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] elements = Init(Max);
             Console.WriteLine("Масивът преди сортирането:");
             Print(elements);

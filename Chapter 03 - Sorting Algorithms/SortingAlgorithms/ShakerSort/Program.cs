@@ -1,6 +1,7 @@
 ﻿namespace ShakerSort
 {
     using System;
+    using System.Text;
 
     public class Program
     {
@@ -9,6 +10,8 @@
 
         internal static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] m = new Element[Max];
             Element[] saveM = new Element[Max];
             uint loopInd;

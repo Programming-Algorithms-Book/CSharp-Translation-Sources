@@ -1,6 +1,7 @@
 ﻿namespace InsertionSort2
 {
     using System;
+    using System.Text;
 
     public class InsertionSort2
     {
@@ -11,6 +12,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] array = new Element[Max + 1];
             Element[] arrayCopy = new Element[Max + 1];
 

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Text;
 
     public class SelectionSort
     {
@@ -12,6 +13,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] elements = new Element[Max];
 
             for (int i = 1; i <= TestLoopCount; i++)

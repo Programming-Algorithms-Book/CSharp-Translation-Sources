@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Text;
 
     public class SetSort
     {
@@ -14,6 +15,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             int[] elements = new int[Max];
 
             for (int i = 1; i <= TestLoopCount; i++)

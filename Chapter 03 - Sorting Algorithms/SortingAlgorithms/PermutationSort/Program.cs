@@ -1,6 +1,7 @@
 ﻿namespace PermutationSort
 {
     using System;
+    using System.Text;
 
     public class PermutationSort
     {
@@ -11,6 +12,8 @@
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Element[] array = new Element[Max];
             Element[] arrayCopy = new Element[Max];
 
