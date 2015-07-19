@@ -5,21 +5,25 @@
 
     public class Program
     {
-        private const double EPS = 0.0001;
+        private const double Eps = 0.0001;
 
         internal static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Console.WriteLine("!!! Демонстрация на преобразуването между бройни системи !!!");
             Console.WriteLine("Седмичният запис на 777.777 (10) е {0}", ToStringReal(777.777, 7, 10));
             Console.WriteLine("Десетичният запис на 11.D873 (16) е: {0:F10}", ToStringReal(ToValueReal("11.D873", 16), 10, 10));
         }
 
-        private static char GetChar(int n) /* Връща символа, съответстващ на n */
+        /* Връща символа, съответстващ на n */
+        private static char GetChar(int n)
         {
             return (char)((n < 10) ? n + '0' : n + 'A' - 10);
         }
 
-        private static int GetValue(char c) /* Връща стойността на символа c */
+        /* Връща стойността на символа c */
+        private static int GetValue(char c)
         {
             return (c >= '0' && c <= '9') ? c - '0' : c - 'A' + 10;
         }
@@ -78,7 +82,7 @@
             {
                 cnt -= 1;
                 /* Дали не сме получили 0? */
-                if (Math.Abs(n) < EPS)
+                if (Math.Abs(n) < Eps)
                 {
                     break;
                 }
