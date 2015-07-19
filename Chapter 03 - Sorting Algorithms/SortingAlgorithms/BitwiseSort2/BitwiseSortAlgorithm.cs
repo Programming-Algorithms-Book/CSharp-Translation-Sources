@@ -14,7 +14,7 @@
             for (int i = 0; i < TestsCount; i++)
             {
                 Console.WriteLine("----------Тест " + i + "----------");
-                Initialize(elements);
+                Initialize(elements, MaxValue);
                 Console.WriteLine("Масив преди сортиране : ");
                 PrintElements(elements);
                 uint bitMask = (uint)int.MaxValue + 1;
@@ -25,20 +25,22 @@
             }
         }
 
-        private static void Initialize(Element[] elements)
+        private static void Initialize(Element[] elements, int maxValue)
         {
             for (int i = 0; i < elements.Length; i++)
             {
-                elements[i] = new Element();
-                elements[i].Key = Rand.Next(0, MaxValue * 2);
+                elements[i] = new Element
+                {
+                    Key = Rand.Next(0, maxValue * 2)
+                };
             }
         }
 
         private static void SwapValues(ref Element first, ref Element second)
         {
-            Element swapper = first;
+            Element oldValue = first;
             first = second;
-            second = swapper;
+            second = oldValue;
         }
 
         private static void BitwiseSort(Element[] elements, int leftIndex, int rightIndex, uint bitMask)
@@ -76,9 +78,10 @@
         {
             for (int i = 0; i < elements.Length; i++)
             {
-                Console.Write(elements[i].Key + " ");
+                Console.Write("{0} ", elements[i].Key);
             }
 
+            Console.WriteLine();
             Console.WriteLine();
         }
 
