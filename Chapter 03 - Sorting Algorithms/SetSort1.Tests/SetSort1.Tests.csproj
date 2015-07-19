@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25474C4E-D7F4-4638-8EF0-B5AA5BC63212}</ProjectGuid>
+    <ProjectGuid>{21879FFC-4C5E-4393-BEA8-C65E0AB006DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BitwiseSort2.Tests</RootNamespace>
-    <AssemblyName>BitwiseSort2.Tests</AssemblyName>
+    <RootNamespace>SetSort1.Tests</RootNamespace>
+    <AssemblyName>SetSort1.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -70,17 +70,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BitwiseSortTest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SortingAlgorithms\BitwiseSort2\BitwiseSort2.csproj">
-      <Project>{c926eaf3-42f7-4037-9d70-3ab09bf2a18e}</Project>
-      <Name>BitwiseSort2</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

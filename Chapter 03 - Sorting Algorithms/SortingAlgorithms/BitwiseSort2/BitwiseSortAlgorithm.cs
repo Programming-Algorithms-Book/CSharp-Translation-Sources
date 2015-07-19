@@ -9,45 +9,18 @@
         private const int TestsCount = 100;
         private static readonly Random Rand = new Random();
 
-        internal static void Main()
+        public static void BitwiseSort(Element[] elements, int leftIndex, int rightIndex, uint bitMask)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-
-            Element[] elements = new Element[MaxValue];
-            for (int i = 0; i < TestsCount; i++)
+            if (elements == null)
             {
-                Console.WriteLine("----------Тест " + i + "----------");
-                Initialize(elements, MaxValue);
-                Console.WriteLine("Масив преди сортиране : ");
-                PrintElements(elements);
-                uint bitMask = (uint)int.MaxValue + 1;
-                BitwiseSort(elements, 0, MaxValue - 1, bitMask);
-                Console.WriteLine("Масив след сортиране : ");
-                PrintElements(elements);
-                Check(elements);
+                throw new ArgumentException("Element sequence must not be null", "elements");
             }
-        }
 
-        private static void Initialize(Element[] elements, int maxValue)
-        {
-            for (int i = 0; i < elements.Length; i++)
+            if (elements.Length == 0)
             {
-                elements[i] = new Element
-                {
-                    Key = Rand.Next(0, maxValue * 2)
-                };
+                return;
             }
-        }
 
-        private static void SwapValues(ref Element first, ref Element second)
-        {
-            Element oldValue = first;
-            first = second;
-            second = oldValue;
-        }
-
-        private static void BitwiseSort(Element[] elements, int leftIndex, int rightIndex, uint bitMask)
-        {
             if (rightIndex > leftIndex && bitMask > 0)
             {
                 int i = leftIndex;
@@ -69,12 +42,49 @@
 
                 if ((elements[rightIndex].Key & bitMask) != bitMask)
                 {
-                    j++; 
+                    j++;
                 }
 
                 BitwiseSort(elements, leftIndex, j - 1, bitMask >> 1);
                 BitwiseSort(elements, j, rightIndex, bitMask >> 1);
             }
+        }
+
+        public static void Initialize(Element[] elements, int maxValue)
+        {
+            for (int i = 0; i < elements.Length; i++)
+            {
+                elements[i] = new Element
+                {
+                    Key = Rand.Next(0, maxValue * 2)
+                };
+            }
+        }
+
+        internal static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            Element[] elements = new Element[MaxValue];
+            for (int i = 0; i < TestsCount; i++)
+            {
+                Console.WriteLine("----------Тест " + i + "----------");
+                Initialize(elements, MaxValue);
+                Console.WriteLine("Масив преди сортиране : ");
+                PrintElements(elements);
+                uint bitMask = (uint)int.MaxValue + 1;
+                BitwiseSort(elements, 0, MaxValue - 1, bitMask);
+                Console.WriteLine("Масив след сортиране : ");
+                PrintElements(elements);
+                Check(elements);
+            }
+        }
+
+        private static void SwapValues(ref Element first, ref Element second)
+        {
+            Element oldValue = first;
+            first = second;
+            second = oldValue;
         }
 
         private static void PrintElements(Element[] elements)
@@ -90,19 +100,12 @@
 
         private static void Check(Element[] elements)
         {
-            bool isSorted = true;
             for (int i = 0; i < elements.Length - 1; i++)
             {
                 if (elements[i].Key > elements[i + 1].Key)
                 {
-                    isSorted = false;
-                    break;
+                    throw new Exception("Масивът не е сортиран правилно.");
                 }
-            }
-
-            if (!isSorted)
-            {
-                throw new Exception("Масивът не е сортиран правилно.");
             }
         }
     }
