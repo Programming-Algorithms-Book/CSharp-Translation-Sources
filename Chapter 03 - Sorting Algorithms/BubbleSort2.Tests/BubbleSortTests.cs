@@ -3,7 +3,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class UnitTest1
+    public class BubbleSortTests
     {
         [Test]
         public void Test1()

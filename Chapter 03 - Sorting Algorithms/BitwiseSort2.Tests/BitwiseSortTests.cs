@@ -5,10 +5,10 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class BitwiseSortTest
+    public class BitwiseSortTests
     {
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void BitwiseSortNullElementsShouldThrowException()
         {
             BitwiseSortAlgorithm.BitwiseSort(null, 0, 0, 0);

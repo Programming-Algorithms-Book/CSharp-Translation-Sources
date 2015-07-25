@@ -18,7 +18,7 @@
                     Data =
                     {
                         Key = Rand.Next(1, maxValue * 2)
-                    }, 
+                    },
                     Next = head
                 };
 
@@ -32,7 +32,9 @@
         {
             if (head == null)
             {
-                throw new ArgumentException("NodeElement must not be null!", "head");
+                throw new ArgumentNullException(
+                    nameof(head),
+                    "NodeElement must not be null!");
             }
 
             /* 0. Определяне на максималната битова маска */

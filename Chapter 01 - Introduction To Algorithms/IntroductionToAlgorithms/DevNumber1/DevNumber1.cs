@@ -7,23 +7,7 @@
         private const int Number = 7;
         private static int[] mp = new int[Number + 1];
 
-        internal static void Main()
-        {
-            mp[0] = Number + 1;
-            DevNum(Number, 1);
-        }
-
-        private static void Print(int length)
-        {
-            for (int i = 1; i < length; i++)
-            {
-                Console.Write("{0} + ", mp[i]);
-            }
-
-            Console.WriteLine("{0}", mp[length]);
-        }
-
-        private static void DevNum(int n, int pos)
+        public static void DevNum(int n, int pos)
         {
             if (n == 0)
             {
@@ -40,6 +24,22 @@
                     }
                 }
             }
+        }
+
+        internal static void Main()
+        {
+            mp[0] = Number + 1;
+            DevNum(Number, 1);
+        }
+
+        private static void Print(int length)
+        {
+            for (int i = 1; i < length; i++)
+            {
+                Console.Write("{0} + ", mp[i]);
+            }
+
+            Console.WriteLine("{0}", mp[length]);
         }
     }
 }

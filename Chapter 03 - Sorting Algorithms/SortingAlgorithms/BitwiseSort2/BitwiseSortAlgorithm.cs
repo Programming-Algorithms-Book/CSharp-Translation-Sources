@@ -13,7 +13,9 @@
         {
             if (elements == null)
             {
-                throw new ArgumentException("Element sequence must not be null", "elements");
+                throw new ArgumentNullException(
+                    nameof(elements), 
+                    "Element sequence must not be null");
             }
 
             if (elements.Length == 0)
