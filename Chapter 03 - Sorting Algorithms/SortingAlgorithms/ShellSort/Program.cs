@@ -52,7 +52,7 @@
             for (uint stepInd = 0; stepInd < StepsCount; stepInd++)
             {
                 int k;
-                int s = (k = (int)Steps[stepInd]);
+                int s = k = (int)Steps[stepInd];
                 for (int i = k + 1; i <= (int)n; i++)
                 {
                     Element x = m[i];
