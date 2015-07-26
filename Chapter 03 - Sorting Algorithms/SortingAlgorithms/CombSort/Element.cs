@@ -2,6 +2,6 @@
 {
     public struct Element
     {
-        public int Key { get; set; } 
+        public int Key { get; set; }
     }
 }

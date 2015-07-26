@@ -81,6 +81,12 @@
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SortingAlgorithms\BubbleSort2\BubbleSort2.csproj">
+      <Project>{963e9984-fb25-4ddc-805f-6712802a3a26}</Project>
+      <Name>BubbleSort2</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -9,13 +9,13 @@
     {
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void BitwiseSortNullElementsShouldThrowException()
+        public void BubbleSortNullElementsShouldThrowException()
         {
             BubbleSortingAlgorithm.BubbleSort(null);
         }
 
         [Test]
-        public void BitwiseSortEmptyElementsShouldNotSort()
+        public void BubbleSortEmptyElementsShouldNotSort()
         {
             const int MaxValue = 0;
 
@@ -25,7 +25,7 @@
         }
 
         [Test]
-        public void BitwiseSortRandomElementsSholdSortCorrectly()
+        public void BubbleSortRandomElementsSholdSortCorrectly()
         {
             const int MaxValue = 100;
             const int TestsCount = 100;

@@ -22,6 +22,13 @@
 
         public static void BubbleSort(Element[] elements)
         {
+            if (elements == null)
+            {
+                throw new ArgumentNullException(
+                    nameof(elements),
+                    "Elements must not be null!");
+            }
+
             int k;
             for (int i = elements.Length - 1; i > 0; i = k)
             {
