@@ -1,7 +1,7 @@
 C# Translation of ["Programming =++ Algorithms;"](https://github.com/Programming-Algorithms-Book/C-Original-Sources) book
 ===
 
-###Authors:
+### Authors
 * Velko Nikolov (https://github.com/staafl)
 * Vladislav Karamfilov (https://github.com/vladislav-karamfilov)
 * Vladimir Georgiev (https://github.com/VGGeorgiev)
